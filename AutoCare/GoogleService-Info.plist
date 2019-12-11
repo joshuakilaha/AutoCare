@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>282108624838-v94760ecs9r74f86vpm34la3egrm31pb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.282108624838-v94760ecs9r74f86vpm34la3egrm31pb</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCSw6k8TEw_1eiHfrQFlQkILYEDJKZ6fxg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>282108624838</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.joshua.AutoCare1</string>
+	<key>PROJECT_ID</key>
+	<string>autocare-238711</string>
+	<key>STORAGE_BUCKET</key>
+	<string>autocare-238711.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<true/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:282108624838:ios:b25c0c7f3470b5dcb97cc7</string>
+	<key>DATABASE_URL</key>
+	<string>https://autocare-238711.firebaseio.com</string>
+</dict>
+</plist>
