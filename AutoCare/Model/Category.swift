@@ -2,8 +2,8 @@
 //  Category.swift
 //  AutoCare
 //
-//  Created by Kilz on 06/12/2019.
-//  Copyright © 2019 joshua kilaha. All rights reserved.
+//  Created by Kilz on 15/12/2019.
+//  Copyright © 2019 Kilz. All rights reserved.
 //
 
 import Foundation
@@ -38,7 +38,7 @@ class Category {
 func getCategoriesFromFirebase(completion: @escaping (_ categoryArray: [Category]) -> Void){
     
     var categoryArray: [Category] = []
-    FirebaseReference(.Category).getDocuments { (snapshot, error) in
+    FirebaseReference(.cCATEGORY_PATH).getDocuments { (snapshot, error) in
         guard let snapshot = snapshot else {
             completion(categoryArray)
             return
@@ -62,7 +62,7 @@ func saveCategoryToFirebase(_ category: Category){
     let id = UUID().uuidString
     category.id = id
     
-    FirebaseReference(.Category).document(id).setData(categoryDictionaryFrom(category)
+    FirebaseReference(.cCATEGORY_PATH).document(id).setData(categoryDictionaryFrom(category)
         as! [String: Any])
     
 }
@@ -76,31 +76,31 @@ func categoryDictionaryFrom(_ category: Category) -> NSDictionary {
     
 }
 
-//creatingCategorySet one time
 
-//func createCategorySet(){
-//    let Toyota = Category(_name: "Toyota", _imageName: "toyota")
-//    let Mercedes_Benz = Category(_name: "Mercedes Benz ", _imageName: "Mercedes-Benz")
-//    let Bmw = Category(_name: "Bmw", _imageName: "Bmw")
-//    let LandRover = Category(_name: "LandRover", _imageName: "LandRover")
-//    let Honda = Category(_name: "Honda", _imageName: "Honda")
-//    let Jeep = Category(_name: "Jeep", _imageName: "Jeep")
-//    let Alfa_Romeo = Category(_name: "Alfa Romeo", _imageName: "Alfa-Romeo")
-//    let Volkswagen = Category(_name: "Volkswagen", _imageName: "Volkswagen")
-//    let Audi = Category(_name: "Audi", _imageName: "Audi")
-//    let Mazda = Category(_name: "Mazda", _imageName: "Mazda")
-//    let Nissan = Category(_name: "Nissan", _imageName: "Nissan")
-//    let Subaru = Category(_name: "Subaru", _imageName: "Subaru")
-//    let Mitsubishi = Category(_name: "Mitsubishi", _imageName: "Mitsubishi")
-//    let Suzuki = Category(_name: "Suzuki", _imageName: "Suzuki")
-//    let Lexus = Category(_name: "Lexus", _imageName: "Lexus")
-//
-//
-//    let arrayOfCategories = [Toyota,Mercedes_Benz,Bmw,LandRover,Honda,Jeep,Alfa_Romeo,Volkswagen,Audi,
-//                             Mazda,Nissan,Subaru,Mitsubishi,Suzuki,Lexus]
-//
-//    for category in arrayOfCategories {
-//        saveCategoryToFirebase(category)
-//    }
-//
-//}
+        //creatingCategorySet one time
+func createCategorySet(){
+    let Toyota = Category(_name: "Toyota", _imageName: "toyota")
+    let Mercedes_Benz = Category(_name: "Mercedes Benz ", _imageName: "Mercedes-Benz")
+    let Bmw = Category(_name: "Bmw", _imageName: "Bmw")
+    let LandRover = Category(_name: "LandRover", _imageName: "LandRover")
+    let Honda = Category(_name: "Honda", _imageName: "Honda")
+    let Jeep = Category(_name: "Jeep", _imageName: "Jeep")
+    let Alfa_Romeo = Category(_name: "Alfa Romeo", _imageName: "Alfa-Romeo")
+    let Volkswagen = Category(_name: "Volkswagen", _imageName: "Volkswagen")
+    let Audi = Category(_name: "Audi", _imageName: "Audi")
+    let Mazda = Category(_name: "Mazda", _imageName: "Mazda")
+    let Nissan = Category(_name: "Nissan", _imageName: "Nissan")
+    let Subaru = Category(_name: "Subaru", _imageName: "Subaru")
+    let Mitsubishi = Category(_name: "Mitsubishi", _imageName: "Mitsubishi")
+    let Suzuki = Category(_name: "Suzuki", _imageName: "Suzuki")
+    let Lexus = Category(_name: "Lexus", _imageName: "Lexus")
+
+
+    let arrayOfCategories = [Toyota,Mercedes_Benz,Bmw,LandRover,Honda,Jeep,Alfa_Romeo,Volkswagen,Audi,
+                             Mazda,Nissan,Subaru,Mitsubishi,Suzuki,Lexus]
+
+    for category in arrayOfCategories {
+        saveCategoryToFirebase(category)
+    }
+
+}

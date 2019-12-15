@@ -2,8 +2,8 @@
 //  SceneDelegate.swift
 //  AutoCare
 //
-//  Created by Kilz on 04/12/2019.
-//  Copyright © 2019 joshua kilaha. All rights reserved.
+//  Created by Kilz on 14/12/2019.
+//  Copyright © 2019 Kilz. All rights reserved.
 //
 
 import UIKit

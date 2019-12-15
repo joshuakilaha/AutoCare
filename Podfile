@@ -18,4 +18,13 @@ pod 'PayPal-iOS-SDK'
 
   # Pods for AutoCare
 
+  target 'AutoCareTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'AutoCareUITests' do
+    # Pods for testing
+  end
+
 end

@@ -2,21 +2,27 @@
 //  FirebaseCollectionReferences.swift
 //  AutoCare
 //
-//  Created by Kilz on 05/12/2019.
-//  Copyright © 2019 joshua kilaha. All rights reserved.
+//  Created by Kilz on 15/12/2019.
+//  Copyright © 2019 Kilz. All rights reserved.
 //
 
 import Foundation
 import FirebaseFirestore
 
-enum FCollectionReference : String {
-    case User
-    case Category
-    case Items
-    case Cart
+
+enum FCollectionReference: String {
+    case cUSER_PATH
+    case cBRAND_PATH
+    case cCATEGORY_PATH
+    case CITEMS_PATH
+    case cBASKETS_PATH
 }
 
-func FirebaseReference(_ collectionReference: FCollectionReference) -> CollectionReference {
+func FirebaseReference(_ collectionReference: FCollectionReference) -> CollectionReference{
     
     return Firestore.firestore().collection(collectionReference.rawValue)
+    
+    
 }
+
+
