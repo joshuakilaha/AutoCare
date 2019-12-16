@@ -60,8 +60,7 @@ class BrandCollectionViewController: UICollectionViewController {
     }
     
     
-    //Mark: Download Brands
-
+        //Mark: Download Brands
     private func loadBrands(){
         getBrandFromFirebase { (allBrands) in
             print("Brands are", allBrands.count)

@@ -6,8 +6,15 @@
 //  Copyright © 2019 Kilz. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class CategoryCollectionViewCell{
+class CategoryCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var CategoryImage: UIImageView!
+    @IBOutlet weak var CategoryName: UILabel!
+    
+     func generateCategoryCell(_ category: Category) {
+           CategoryName.text = category.name
+           CategoryImage.image = category.image
+       }
 }

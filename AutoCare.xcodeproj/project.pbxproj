@@ -20,7 +20,8 @@
 		AB3CB5D623A58D8E008D5806 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3CB5D523A58D8E008D5806 /* Constants.swift */; };
 		AB3CB5D823A630C7008D5806 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3CB5D723A630C7008D5806 /* Brand.swift */; };
 		AB3CB5DA23A63965008D5806 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3CB5D923A63965008D5806 /* Category.swift */; };
-		AB3CB5DE23A64B3D008D5806 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3CB5DD23A64B3D008D5806 /* CategoryCollectionViewCell.swift */; };
+		AB3CB5E023A678C4008D5806 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3CB5DF23A678C4008D5806 /* CategoryCollectionViewCell.swift */; };
+		AB3CB5E223A678F0008D5806 /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3CB5E123A678F0008D5806 /* CategoryCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +45,8 @@
 		AB3CB5D523A58D8E008D5806 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB3CB5D723A630C7008D5806 /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
 		AB3CB5D923A63965008D5806 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		AB3CB5DD23A64B3D008D5806 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB3CB5DF23A678C4008D5806 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB3CB5E123A678F0008D5806 /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		C45BC352CDACD5035D23AC90 /* Pods-AutoCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCare.release.xcconfig"; path = "Target Support Files/Pods-AutoCare/Pods-AutoCare.release.xcconfig"; sourceTree = "<group>"; };
 		C4A3071E7D8B9A8138AE1F05 /* Pods-AutoCareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCareTests.debug.xcconfig"; path = "Target Support Files/Pods-AutoCareTests/Pods-AutoCareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0C080F19CBB8521D4A8C8C2 /* Pods-AutoCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCare.debug.xcconfig"; path = "Target Support Files/Pods-AutoCare/Pods-AutoCare.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				AB3CB5C723A582EF008D5806 /* BrandCollectionViewController.swift */,
+				AB3CB5E123A678F0008D5806 /* CategoryCollectionViewController.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -142,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				AB3CB5C923A583A9008D5806 /* BrandCollectionViewCell.swift */,
-				AB3CB5DD23A64B3D008D5806 /* CategoryCollectionViewCell.swift */,
+				AB3CB5DF23A678C4008D5806 /* CategoryCollectionViewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -272,11 +275,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB3CB5E223A678F0008D5806 /* CategoryCollectionViewController.swift in Sources */,
 				AB3CB5C823A582EF008D5806 /* BrandCollectionViewController.swift in Sources */,
 				AB3CB5CE23A58763008D5806 /* FirebaseCollectionReferences.swift in Sources */,
 				AB3CB59623A50FB9008D5806 /* AppDelegate.swift in Sources */,
 				AB3CB5D623A58D8E008D5806 /* Constants.swift in Sources */,
-				AB3CB5DE23A64B3D008D5806 /* CategoryCollectionViewCell.swift in Sources */,
+				AB3CB5E023A678C4008D5806 /* CategoryCollectionViewCell.swift in Sources */,
 				AB3CB5D823A630C7008D5806 /* Brand.swift in Sources */,
 				AB3CB5CA23A583A9008D5806 /* BrandCollectionViewCell.swift in Sources */,
 				AB3CB59823A50FB9008D5806 /* SceneDelegate.swift in Sources */,
