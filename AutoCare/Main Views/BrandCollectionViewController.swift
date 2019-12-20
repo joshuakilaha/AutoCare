@@ -11,9 +11,6 @@ import UIKit
 
 class BrandCollectionViewController: UICollectionViewController {
     
-   
-    
-    
     
    //Mark: vars
    var BrandArray: [Brand] = []
@@ -30,7 +27,6 @@ class BrandCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
     
         //createBrandSet()
-        
         
       
     }
@@ -57,6 +53,26 @@ class BrandCollectionViewController: UICollectionViewController {
         
         return cell
        
+    }
+    
+    
+    
+    
+    //Mark: UICOllectionView Delegate
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "brandToCategorySegue", sender: BrandArray[indexPath.row])
+    }
+    
+    //Mark: Navigation calling the item from segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "brandToCategorySegue" {
+            let vc = segue.destination as! CategoryCollectionViewController
+            vc.brand  =  sender as! Brand
+            
+        }
+        
     }
     
     

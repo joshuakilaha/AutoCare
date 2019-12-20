@@ -38,6 +38,8 @@ class Brand {
     
     
         //creating Brand
+
+/*
     func createBrandSet() {
         let Toyota = Brand(_name: "Toyota", _imageName: "toyota")
             let Mercedes_Benz = Brand(_name: "Mercedes Benz ", _imageName: "mercedes-benz")
@@ -64,7 +66,8 @@ class Brand {
             }
     }
     
-    
+    */
+
     
         //save Brand to Database
     func saveBrandToFirebase(_ brand: Brand) {

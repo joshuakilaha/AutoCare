@@ -79,7 +79,7 @@ func categoryDictionaryFrom(_ category: Category) -> NSDictionary {
 
         //creatingCategorySet one time
 func createCategorySet(){
-    let Toyota = Category(_name: "Toyota", _imageName: "toyota")
+    let Toyota = Category(_name: "Tires", _imageName: "toyota")
     let Mercedes_Benz = Category(_name: "Mercedes Benz ", _imageName: "Mercedes-Benz")
     let Bmw = Category(_name: "Bmw", _imageName: "Bmw")
     let LandRover = Category(_name: "LandRover", _imageName: "LandRover")

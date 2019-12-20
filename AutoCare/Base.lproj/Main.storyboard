@@ -64,7 +64,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="147" height="118"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jCs-1c-RFx">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jCs-1c-RFx">
                                             <rect key="frame" x="22.666666666666671" y="0.0" width="75" height="75"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="75" id="8dc-bs-Z4N"/>
@@ -104,7 +104,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Brand" id="04F-Er-VVf"/>
                     <connections>
-                        <segue destination="6Ar-mM-LaL" kind="show" id="Kwi-ug-FVl"/>
+                        <segue destination="6Ar-mM-LaL" kind="show" identifier="brandToCategorySegue" id="Kwi-ug-FVl"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MtB-fC-M80" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -171,17 +171,17 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="rbB-5k-Z1T"/>
                     <connections>
-                        <segue destination="kT2-Xg-qci" kind="show" identifier="categoryToItemsSeg" id="gKT-oD-jbs"/>
+                        <segue destination="kT2-Xg-qci" kind="show" identifier="categoryToItemsSegue" id="gKT-oD-jbs"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyN-pj-eQ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="904.79999999999995" y="-236.45320197044336"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Items Table View Controller-->
         <scene sceneID="lXb-K4-wfw">
             <objects>
-                <tableViewController id="kT2-Xg-qci" sceneMemberID="viewController">
+                <tableViewController id="kT2-Xg-qci" customClass="ItemsTableViewController" customModule="AutoCare" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NsQ-mF-lxb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,7 +250,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ElA-6l-ZFj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3061.5999999999999" y="-236.45320197044336"/>
+            <point key="canvasLocation" x="2196" y="-236"/>
         </scene>
         <!--Brand-->
         <scene sceneID="d6X-eH-o2r">
