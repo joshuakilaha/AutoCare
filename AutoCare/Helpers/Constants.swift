@@ -15,11 +15,23 @@ public let cImageName = "imageName"
 public let cObjectID = "objectID"
 
 
+
+//Category
+//public let cBrandID = "brandId"
+
+
+//Items
+public let cBrandID = "brandId"
+public let cCategoryID = "categoryId"
+public let cDescription = "description"
+public let cPrice = "price"
+public let cImageLinks = "imageLinks"
+
+
 //Firebase headers
 public let cUSER_PATH = "User"
 public let cBRAND_PATH = "Brands"
 public let cCATEGORY_PATH = "Category"
 public let cITEMS_PATH = "Items"
-public let cBASKETS_PATH = "Baskets"
-
+public let cCart_PATH = "Carts"
 

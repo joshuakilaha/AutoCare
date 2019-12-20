@@ -12,12 +12,14 @@ import UIKit
 class Category {
     
     var id: String
+    var brandId: String!
     var name: String
     var image: UIImage?
     var imageName: String?
     
-    init(_name : String, _imageName: String) {
+    init(_brandId: String, _name : String, _imageName: String) {
         id = ""
+        brandId = _brandId
         name = _name
         imageName = _imageName
         image = UIImage(named: _imageName)
@@ -27,6 +29,7 @@ class Category {
     init(_dictionary: NSDictionary) {
         
         id = _dictionary[cObjectID] as! String
+        brandId = _dictionary[cBrandID] as? String
         name = _dictionary[cName] as! String
         image = UIImage(named:_dictionary[cImageName] as? String ?? "")
         
@@ -71,36 +74,36 @@ func saveCategoryToFirebase(_ category: Category){
 //helpers
 func categoryDictionaryFrom(_ category: Category) -> NSDictionary {
     
-    return NSDictionary(objects: [category.id, category.name, category.imageName],
-                        forKeys: [cObjectID as NSCopying, cName as NSCopying, cImageName as NSCopying])
+    return NSDictionary(objects: [category.id, category.brandId ,category.name, category.imageName],
+                        forKeys: [cObjectID as NSCopying, cBrandID as NSCopying, cName as NSCopying, cImageName as NSCopying])
     
 }
 
 
         //creatingCategorySet one time
-func createCategorySet(){
-    let Toyota = Category(_name: "Tires", _imageName: "toyota")
-    let Mercedes_Benz = Category(_name: "Mercedes Benz ", _imageName: "Mercedes-Benz")
-    let Bmw = Category(_name: "Bmw", _imageName: "Bmw")
-    let LandRover = Category(_name: "LandRover", _imageName: "LandRover")
-    let Honda = Category(_name: "Honda", _imageName: "Honda")
-    let Jeep = Category(_name: "Jeep", _imageName: "Jeep")
-    let Alfa_Romeo = Category(_name: "Alfa Romeo", _imageName: "Alfa-Romeo")
-    let Volkswagen = Category(_name: "Volkswagen", _imageName: "Volkswagen")
-    let Audi = Category(_name: "Audi", _imageName: "Audi")
-    let Mazda = Category(_name: "Mazda", _imageName: "Mazda")
-    let Nissan = Category(_name: "Nissan", _imageName: "Nissan")
-    let Subaru = Category(_name: "Subaru", _imageName: "Subaru")
-    let Mitsubishi = Category(_name: "Mitsubishi", _imageName: "Mitsubishi")
-    let Suzuki = Category(_name: "Suzuki", _imageName: "Suzuki")
-    let Lexus = Category(_name: "Lexus", _imageName: "Lexus")
-
-
-    let arrayOfCategories = [Toyota,Mercedes_Benz,Bmw,LandRover,Honda,Jeep,Alfa_Romeo,Volkswagen,Audi,
-                             Mazda,Nissan,Subaru,Mitsubishi,Suzuki,Lexus]
-
-    for category in arrayOfCategories {
-        saveCategoryToFirebase(category)
-    }
-
-}
+//func createCategorySet(){
+//    let Toyota = Category(_name: "Tires", _imageName: "toyota")
+//    let Mercedes_Benz = Category(_name: "Mercedes Benz ", _imageName: "Mercedes-Benz")
+//    let Bmw = Category(_name: "Bmw", _imageName: "Bmw")
+//    let LandRover = Category(_name: "LandRover", _imageName: "LandRover")
+//    let Honda = Category(_name: "Honda", _imageName: "Honda")
+//    let Jeep = Category(_name: "Jeep", _imageName: "Jeep")
+//    let Alfa_Romeo = Category(_name: "Alfa Romeo", _imageName: "Alfa-Romeo")
+//    let Volkswagen = Category(_name: "Volkswagen", _imageName: "Volkswagen")
+//    let Audi = Category(_name: "Audi", _imageName: "Audi")
+//    let Mazda = Category(_name: "Mazda", _imageName: "Mazda")
+//    let Nissan = Category(_name: "Nissan", _imageName: "Nissan")
+//    let Subaru = Category(_name: "Subaru", _imageName: "Subaru")
+//    let Mitsubishi = Category(_name: "Mitsubishi", _imageName: "Mitsubishi")
+//    let Suzuki = Category(_name: "Suzuki", _imageName: "Suzuki")
+//    let Lexus = Category(_name: "Lexus", _imageName: "Lexus")
+//
+//
+//    let arrayOfCategories = [Toyota,Mercedes_Benz,Bmw,LandRover,Honda,Jeep,Alfa_Romeo,Volkswagen,Audi,
+//                             Mazda,Nissan,Subaru,Mitsubishi,Suzuki,Lexus]
+//
+//    for category in arrayOfCategories {
+//        saveCategoryToFirebase(category)
+//    }
+//
+//}

@@ -14,9 +14,11 @@ enum FCollectionReference: String {
     case cUSER_PATH
     case cBRAND_PATH
     case cCATEGORY_PATH
-    case CITEMS_PATH
-    case cBASKETS_PATH
+    case cITEMS_PATH
+    case cCart_PATH
+
 }
+
 
 func FirebaseReference(_ collectionReference: FCollectionReference) -> CollectionReference{
     
