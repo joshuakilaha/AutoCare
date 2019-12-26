@@ -72,12 +72,22 @@ func saveCategoryToFirebase(_ category: Category){
 
 
 //helpers
+
+//createing Cagetory
 func categoryDictionaryFrom(_ category: Category) -> NSDictionary {
     
     return NSDictionary(objects: [category.id, category.brandId ,category.name, category.imageName],
                         forKeys: [cObjectID as NSCopying, cBrandID as NSCopying, cName as NSCopying, cImageName as NSCopying])
     
 }
+
+
+    //saving category
+func saveItems(_ category: Category){
+    FirebaseReference(.cCATEGORY_PATH).document(category.id).setData(categoryDictionaryFrom(category) as! [String: Any])
+}
+
+
 
 
         //creatingCategorySet one time

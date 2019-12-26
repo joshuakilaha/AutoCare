@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oh9-VH-faE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1415" y="443"/>
+            <point key="canvasLocation" x="-1415" y="624"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2qi-kT-0G9">
@@ -49,7 +49,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="CCG-tw-XSf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="unW-2L-DZf">
                             <size key="itemSize" width="120" height="120"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -109,9 +109,9 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MtB-fC-M80" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-302" y="-236"/>
+            <point key="canvasLocation" x="-292" y="-236"/>
         </scene>
-        <!--Category Collection View Controller-->
+        <!--Category-->
         <scene sceneID="axD-CU-Bob">
             <objects>
                 <collectionViewController id="6Ar-mM-LaL" customClass="CategoryCollectionViewController" customModule="AutoCare" customModuleProvider="target" sceneMemberID="viewController">
@@ -169,7 +169,13 @@
                             <outlet property="delegate" destination="6Ar-mM-LaL" id="RRC-KG-Dtc"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="rbB-5k-Z1T"/>
+                    <navigationItem key="navigationItem" title="Category" id="rbB-5k-Z1T">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="iiQ-me-T4u">
+                            <connections>
+                                <segue destination="hQc-QR-9BP" kind="show" id="CBF-7K-Zq3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="kT2-Xg-qci" kind="show" identifier="categoryToItemsSegue" id="gKT-oD-jbs"/>
                     </connections>
@@ -178,7 +184,7 @@
             </objects>
             <point key="canvasLocation" x="904.79999999999995" y="-236.45320197044336"/>
         </scene>
-        <!--Items Table View Controller-->
+        <!--Item-->
         <scene sceneID="lXb-K4-wfw">
             <objects>
                 <tableViewController id="kT2-Xg-qci" customClass="ItemsTableViewController" customModule="AutoCare" customModuleProvider="target" sceneMemberID="viewController">
@@ -248,17 +254,17 @@
                             <outlet property="delegate" destination="kT2-Xg-qci" id="Ylv-0W-IqT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="OcC-0Q-YIH">
+                    <navigationItem key="navigationItem" title="Item" id="OcC-0Q-YIH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3Or-DL-7eS">
                             <connections>
-                                <segue destination="MBI-b6-D5I" kind="show" id="5DX-8I-XKS"/>
+                                <segue destination="MBI-b6-D5I" kind="show" identifier="itemToAddItemSegue" id="5DX-8I-XKS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ElA-6l-ZFj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2196" y="-236"/>
+            <point key="canvasLocation" x="2090" y="-236"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="hTD-yq-c8k">
@@ -295,9 +301,13 @@
                                     <constraint firstAttribute="height" constant="30" id="XX4-9C-LeZ"/>
                                 </constraints>
                                 <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="cameraButton:" destination="MBI-b6-D5I" eventType="touchUpInside" id="dzX-LT-U1m"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="4R4-Zv-sGk" firstAttribute="leading" secondItem="SAM-6h-UWx" secondAttribute="leading" constant="20" id="1D0-da-hKd"/>
                             <constraint firstItem="cPt-Ef-0Vz" firstAttribute="leading" secondItem="SAM-6h-UWx" secondAttribute="leading" constant="20" id="9PL-bI-9gd"/>
@@ -313,14 +323,31 @@
                             <constraint firstItem="SAM-6h-UWx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cPt-Ef-0Vz" secondAttribute="trailing" symbolic="YES" id="vaD-25-xaL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SAM-6h-UWx"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="NQx-SL-4Ng" appends="YES" id="bir-4a-JkD"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Add Item" id="Yid-Ze-Mnm">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="CQY-0L-cRV"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="CQY-0L-cRV">
+                            <connections>
+                                <action selector="doneButton:" destination="MBI-b6-D5I" id="yfy-YJ-Wpf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="Z8d-Az-crg" id="IN2-NQ-3dx"/>
+                        <outlet property="priceTextField" destination="4R4-Zv-sGk" id="exb-Dz-xHx"/>
+                        <outlet property="titleTextField" destination="uBk-Cu-jBu" id="tzn-Mc-I0a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vcA-Nq-CWb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="NQx-SL-4Ng">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="MBI-b6-D5I" id="uCF-Rl-NFL"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3112.8000000000002" y="-236.45320197044336"/>
+            <point key="canvasLocation" x="3071" y="-236"/>
         </scene>
         <!--Brand-->
         <scene sceneID="d6X-eH-o2r">
@@ -340,6 +367,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7PI-3x-fuh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1415.2" y="-235.71428571428572"/>
+        </scene>
+        <!--Add Category-->
+        <scene sceneID="iue-7S-6nV">
+            <objects>
+                <viewController id="hQc-QR-9BP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kaE-Wf-Q3b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UCY-z3-DS5">
+                                <rect key="frame" x="20" y="108" width="335" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BN2-De-ZC4">
+                                <rect key="frame" x="20" y="162" width="335" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bri-UL-Wn8">
+                                <rect key="frame" x="165" y="246" width="45" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="FBl-NC-i6S"/>
+                                </constraints>
+                                <state key="normal" title="Camera"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bri-UL-Wn8" firstAttribute="top" secondItem="BN2-De-ZC4" secondAttribute="bottom" constant="50" id="0yF-AV-LGc"/>
+                            <constraint firstItem="ssN-JH-rlZ" firstAttribute="trailing" secondItem="bri-UL-Wn8" secondAttribute="trailing" constant="165" id="9AN-Pc-bup"/>
+                            <constraint firstItem="BN2-De-ZC4" firstAttribute="leading" secondItem="ssN-JH-rlZ" secondAttribute="leading" constant="20" id="GTZ-SG-uSh"/>
+                            <constraint firstItem="ssN-JH-rlZ" firstAttribute="trailing" secondItem="UCY-z3-DS5" secondAttribute="trailing" constant="20" id="QLM-39-Nmh"/>
+                            <constraint firstItem="BN2-De-ZC4" firstAttribute="top" secondItem="UCY-z3-DS5" secondAttribute="bottom" constant="20" id="ak4-gX-zC4"/>
+                            <constraint firstItem="UCY-z3-DS5" firstAttribute="leading" secondItem="ssN-JH-rlZ" secondAttribute="leading" constant="20" id="dcq-Ma-ZOw"/>
+                            <constraint firstItem="bri-UL-Wn8" firstAttribute="leading" secondItem="ssN-JH-rlZ" secondAttribute="leading" constant="165" id="ePI-OB-pTj"/>
+                            <constraint firstItem="ssN-JH-rlZ" firstAttribute="trailing" secondItem="BN2-De-ZC4" secondAttribute="trailing" constant="20" id="fmO-0d-512"/>
+                            <constraint firstItem="UCY-z3-DS5" firstAttribute="top" secondItem="ssN-JH-rlZ" secondAttribute="top" constant="20" id="tBE-jL-5bT"/>
+                            <constraint firstItem="BN2-De-ZC4" firstAttribute="top" secondItem="UCY-z3-DS5" secondAttribute="bottom" constant="20" id="vCm-AH-1fa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssN-JH-rlZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Category" id="Qd9-sf-zwp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="uzV-vj-JpR"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yNx-vo-mHr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1725.5999999999999" y="-1109.113300492611"/>
         </scene>
     </scenes>
     <resources>
