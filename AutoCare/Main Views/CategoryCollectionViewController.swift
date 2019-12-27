@@ -12,6 +12,7 @@ private let reuseIdentifier = "Cell"
 
 class CategoryCollectionViewController: UICollectionViewController {
     
+    
     //Mark: Vars
     
     var brand: Brand?

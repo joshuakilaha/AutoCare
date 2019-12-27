@@ -19,6 +19,10 @@ class Item {
     var price: Double!
     var imageLinks: [String]!
     
+    init() {
+        
+    }
+    
     
     init(_dictionary: NSDictionary) {
         id = _dictionary[cObjectID] as? String

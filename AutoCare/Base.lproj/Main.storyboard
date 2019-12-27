@@ -81,6 +81,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="jCs-1c-RFx" firstAttribute="top" secondItem="iE5-ky-LfM" secondAttribute="top" id="7bX-Zb-X3l"/>
                                         <constraint firstItem="Zu3-aX-Ax1" firstAttribute="leading" secondItem="iE5-ky-LfM" secondAttribute="leading" constant="20" symbolic="YES" id="FTX-Gl-EWd"/>
@@ -150,6 +151,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="vqO-Xh-8So" secondAttribute="bottom" constant="20" symbolic="YES" id="GKE-qi-UVx"/>
                                         <constraint firstItem="sTt-Hf-o1A" firstAttribute="centerX" secondItem="Qdd-Ig-g15" secondAttribute="centerX" id="Kcj-i0-uyf"/>

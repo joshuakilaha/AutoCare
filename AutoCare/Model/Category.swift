@@ -59,7 +59,8 @@ func getCategoriesFromFirebase(completion: @escaping (_ categoryArray: [Category
 
 
 
-/// saving category function to firebase
+        /// saving category function to firebase
+
 func saveCategoryToFirebase(_ category: Category){
     
     let id = UUID().uuidString

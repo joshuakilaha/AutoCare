@@ -12,7 +12,11 @@ import UIKit
 class BrandCollectionViewController: UICollectionViewController {
     
     
-   //Mark: vars
+    //Mark: UIViewRadius
+    
+    @IBOutlet weak var ContentUIView: UIView!
+    
+    //Mark: vars
    var BrandArray: [Brand] = []
     
    private let sectionInsets = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 20.0, right: 10.0)
@@ -59,8 +63,11 @@ class BrandCollectionViewController: UICollectionViewController {
     
     
     //Mark: UICOllectionView Delegate
+    
+    //Brand Clicked
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "brandToCategorySegue", sender: BrandArray[indexPath.row])
+        
     }
     
     //Mark: Navigation calling the item from segue
@@ -76,6 +83,10 @@ class BrandCollectionViewController: UICollectionViewController {
     }
     
     
+    
+
+    
+    
         //Mark: Download Brands
     private func loadBrands(){
         getBrandFromFirebase { (allBrands) in
@@ -84,7 +95,6 @@ class BrandCollectionViewController: UICollectionViewController {
             self.collectionView.reloadData()
         }
     }
-
 }
 
 

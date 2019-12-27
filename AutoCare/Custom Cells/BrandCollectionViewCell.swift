@@ -15,6 +15,8 @@ class BrandCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var BrandName: UILabel!
     
     
+    
+    
     func generateBrandCell(_ brand: Brand) {
         BrandName.text = brand.name
         BrandImageView.image = brand.image

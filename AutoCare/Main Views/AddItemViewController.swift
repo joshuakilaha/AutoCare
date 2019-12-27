@@ -20,12 +20,14 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     
     
+    
     //MARK: Vars
     var category: Category!
+    var brand: Brand!
     
+    var itemImages: [UIImage?] = []
     
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,7 +47,9 @@ class AddItemViewController: UIViewController {
         dismissKeyboard()
         
         if checkFieldsIfEmpty() {
-            print("Values gotten")
+            
+            saveItem()
+            
         }
         else {
             print("Please fill in all fields")
@@ -58,14 +62,43 @@ class AddItemViewController: UIViewController {
     }
     
     
-    //helpers
+    //Mark: saving items to Database 
+
+    private func saveItem() {
+        
+         let item = Item()
+                
+                item.id = UUID().uuidString
+                item.name = titleTextField.text!
+                //item.brandId = brand.id
+                item.categoryId = category.id
+                item.description = descriptionTextView.text
+                item.price = Double(priceTextField.text!)
+                
+                if itemImages.count > 0 {
+                    
+                } else {
+                    saveItems(item)
+                    popView()
+                }
+    }
     
+    
+    //helpers
     private func checkFieldsIfEmpty() -> Bool {
         
         return (titleTextField.text != "" && priceTextField.text != "" && descriptionTextView.text != "")
     }
     
+    // dismissing KeyBoard
     private func dismissKeyboard() {
         self.view.endEditing(false)
     }
+     
+    // moving back to tableviewController
+    private func popView() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
 }
