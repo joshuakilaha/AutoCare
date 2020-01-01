@@ -77,7 +77,7 @@ func saveCategoryToFirebase(_ category: Category){
 //createing Cagetory
 func categoryDictionaryFrom(_ category: Category) -> NSDictionary {
     
-    return NSDictionary(objects: [category.id, category.brandId ,category.name, category.imageName],
+    return NSDictionary(objects: [category.id,category.brandId ,category.name, category.imageName],
                         forKeys: [cObjectID as NSCopying, cBrandID as NSCopying, cName as NSCopying, cImageName as NSCopying])
     
 }

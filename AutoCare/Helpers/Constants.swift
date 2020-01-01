@@ -8,6 +8,12 @@
 
 import Foundation
 
+
+
+//IDS and KEYS
+public let cFileStorage = "gs://autocare-34be1.appspot.com"
+
+
 //Brands
 
 public let cName = "name"
@@ -34,4 +40,8 @@ public let cBRAND_PATH = "Brands"
 public let cCATEGORY_PATH = "Category"
 public let cITEMS_PATH = "Items"
 public let cCart_PATH = "Carts"
+
+
+//color
+public let colorBlue = "#0000ff"
 

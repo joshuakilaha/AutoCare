@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Gallery
+import JGProgressHUD
+import NVActivityIndicatorView
 
 class AddItemViewController: UIViewController {
 
@@ -25,9 +28,23 @@ class AddItemViewController: UIViewController {
     var category: Category!
     var brand: Brand!
     
+    var gallery: GalleryController!
+    let  hud = JGProgressHUD(style: .light)
+    
+    var activityIndicator: NVActivityIndicatorView?
+    
     var itemImages: [UIImage?] = []
     
 
+    
+    //Mark View Life cycle
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 60, height: 60), type: .ballPulse, color: #colorLiteral(red: 0.004859850742, green: 0.09608627111, blue: 0.5749928951, alpha: 1), padding: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,7 +54,8 @@ class AddItemViewController: UIViewController {
     
     
     @IBAction func cameraButton(_ sender: Any) {
-        
+        itemImages = []
+        showImageGallery()
         
     }
     
@@ -66,18 +84,28 @@ class AddItemViewController: UIViewController {
 
     private func saveItem() {
         
+        showLoadingIndicator()
+        
          let item = Item()
                 
                 item.id = UUID().uuidString
                 item.name = titleTextField.text!
-                //item.brandId = brand.id
+               // item.brandId = brand.id
                 item.categoryId = category.id
                 item.description = descriptionTextView.text
                 item.price = Double(priceTextField.text!)
                 
                 if itemImages.count > 0 {
-                    
-                } else {
+                    UploadImages(images: itemImages, itemId: item.id) { (imagelikArray) in
+                        item.imageLinks = imagelikArray
+                        
+                        saveItems(item)
+                        self.hideLoadingIndicator()
+                        self.popView()
+                    }
+            
+                } else
+                {
                     saveItems(item)
                     popView()
                 }
@@ -101,4 +129,67 @@ class AddItemViewController: UIViewController {
     }
     
     
+    //Mark: show Gallery
+        
+    private func showImageGallery() {
+           
+           self.gallery = GalleryController()
+           self.gallery.delegate = self
+           
+           Config.tabsToShow = [.imageTab, .cameraTab]
+           Config.Camera.imageLimit = 6
+           
+           self.present(self.gallery, animated: true, completion: nil)
+       }
+    
+    
+    //Mark: Activity Indicator
+    
+    private func showLoadingIndicator(){
+        if activityIndicator != nil {
+            self.view.addSubview(activityIndicator!)
+            activityIndicator!.startAnimating()
+        }
+    }
+    
+    private func hideLoadingIndicator(){
+        if activityIndicator != nil {
+            activityIndicator!.removeFromSuperview()
+            activityIndicator!.stopAnimating()
+        }
+    }
+    
+    
+    
 }
+
+extension AddItemViewController: GalleryControllerDelegate {
+    
+    func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
+        
+        if images.count > 0 {
+            
+            Image.resolve(images: images) { (resolvedImages) in
+                
+                self.itemImages = resolvedImages
+            }
+        }
+        
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func galleryController(_ controller: GalleryController, didSelectVideo video: Video) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func galleryController(_ controller: GalleryController, requestLightbox images: [Image]) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func galleryControllerDidCancel(_ controller: GalleryController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
+    
+}
+

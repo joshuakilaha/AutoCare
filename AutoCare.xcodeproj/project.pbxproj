@@ -22,6 +22,8 @@
 		AB3CB5DA23A63965008D5806 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3CB5D923A63965008D5806 /* Category.swift */; };
 		AB3CB5E023A678C4008D5806 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3CB5DF23A678C4008D5806 /* CategoryCollectionViewCell.swift */; };
 		AB3CB5E223A678F0008D5806 /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3CB5E123A678F0008D5806 /* CategoryCollectionViewController.swift */; };
+		AB5D62E823BCA83E0097D501 /* Richability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5D62E723BCA83E0097D501 /* Richability.swift */; };
+		AB5D62EA23BCA8E40097D501 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5D62E923BCA8E40097D501 /* Downloader.swift */; };
 		ABA7F49623AD26BB006B566C /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7F49523AD26BB006B566C /* ItemsTableViewController.swift */; };
 		ABA7F49823AD2E34006B566C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7F49723AD2E34006B566C /* Item.swift */; };
 		ABA7F49A23AD6FEE006B566C /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7F49923AD6FEE006B566C /* AddItemViewController.swift */; };
@@ -50,6 +52,8 @@
 		AB3CB5D923A63965008D5806 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		AB3CB5DF23A678C4008D5806 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB3CB5E123A678F0008D5806 /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		AB5D62E723BCA83E0097D501 /* Richability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Richability.swift; sourceTree = "<group>"; };
+		AB5D62E923BCA8E40097D501 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		ABA7F49523AD26BB006B566C /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		ABA7F49723AD2E34006B566C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		ABA7F49923AD6FEE006B566C /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 			children = (
 				AB3CB5CD23A58763008D5806 /* FirebaseCollectionReferences.swift */,
 				AB3CB5D523A58D8E008D5806 /* Constants.swift */,
+				AB5D62E723BCA83E0097D501 /* Richability.swift */,
+				AB5D62E923BCA8E40097D501 /* Downloader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -286,8 +292,10 @@
 			files = (
 				AB3CB5E223A678F0008D5806 /* CategoryCollectionViewController.swift in Sources */,
 				AB3CB5C823A582EF008D5806 /* BrandCollectionViewController.swift in Sources */,
+				AB5D62E823BCA83E0097D501 /* Richability.swift in Sources */,
 				AB3CB5CE23A58763008D5806 /* FirebaseCollectionReferences.swift in Sources */,
 				ABA7F49623AD26BB006B566C /* ItemsTableViewController.swift in Sources */,
+				AB5D62EA23BCA8E40097D501 /* Downloader.swift in Sources */,
 				ABA7F49823AD2E34006B566C /* Item.swift in Sources */,
 				ABA7F49A23AD6FEE006B566C /* AddItemViewController.swift in Sources */,
 				AB3CB59623A50FB9008D5806 /* AppDelegate.swift in Sources */,
@@ -440,7 +448,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F0C080F19CBB8521D4A8C8C2 /* Pods-AutoCare.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Z3UL2PDB7;
 				INFOPLIST_FILE = AutoCare/Info.plist;
@@ -460,7 +468,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C45BC352CDACD5035D23AC90 /* Pods-AutoCare.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Z3UL2PDB7;
 				INFOPLIST_FILE = AutoCare/Info.plist;
