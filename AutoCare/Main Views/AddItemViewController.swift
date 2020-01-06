@@ -43,7 +43,7 @@ class AddItemViewController: UIViewController {
         super.viewDidAppear(animated)
         
         
-        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 60, height: 60), type: .ballPulse, color: #colorLiteral(red: 0.004859850742, green: 0.09608627111, blue: 0.5749928951, alpha: 1), padding: nil)
+        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 60, height: 60), type: .circleStrokeSpin, color: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1), padding: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +70,12 @@ class AddItemViewController: UIViewController {
             
         }
         else {
-            print("Please fill in all fields")
+            self.hud.textLabel.text = "Please fill in all fields"
+            self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+            self.hud.show(in: self.view)
+            self.hud.dismiss(afterDelay: 2.0)
+            
+           // print("Please fill in all fields")
         }
         
     }

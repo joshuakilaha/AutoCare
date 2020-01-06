@@ -27,8 +27,8 @@ class CategoryCollectionViewController: UICollectionViewController {
             super.viewDidLoad()
             //createCategorySet()
             
+            self.title = brand?.name
             
-       
         }
 
         

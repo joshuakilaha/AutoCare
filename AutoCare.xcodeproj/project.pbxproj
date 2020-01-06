@@ -27,6 +27,8 @@
 		ABA7F49623AD26BB006B566C /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7F49523AD26BB006B566C /* ItemsTableViewController.swift */; };
 		ABA7F49823AD2E34006B566C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7F49723AD2E34006B566C /* Item.swift */; };
 		ABA7F49A23AD6FEE006B566C /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7F49923AD6FEE006B566C /* AddItemViewController.swift */; };
+		ABAA2CA323C3C3BF00CA83FD /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAA2CA223C3C3BF00CA83FD /* ItemTableViewCell.swift */; };
+		ABAA2CA523C3D11100CA83FD /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAA2CA423C3D11100CA83FD /* HelperFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		ABA7F49523AD26BB006B566C /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		ABA7F49723AD2E34006B566C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		ABA7F49923AD6FEE006B566C /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		ABAA2CA223C3C3BF00CA83FD /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		ABAA2CA423C3D11100CA83FD /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		C45BC352CDACD5035D23AC90 /* Pods-AutoCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCare.release.xcconfig"; path = "Target Support Files/Pods-AutoCare/Pods-AutoCare.release.xcconfig"; sourceTree = "<group>"; };
 		C4A3071E7D8B9A8138AE1F05 /* Pods-AutoCareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCareTests.debug.xcconfig"; path = "Target Support Files/Pods-AutoCareTests/Pods-AutoCareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0C080F19CBB8521D4A8C8C2 /* Pods-AutoCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCare.debug.xcconfig"; path = "Target Support Files/Pods-AutoCare/Pods-AutoCare.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 				AB3CB5D523A58D8E008D5806 /* Constants.swift */,
 				AB5D62E723BCA83E0097D501 /* Richability.swift */,
 				AB5D62E923BCA8E40097D501 /* Downloader.swift */,
+				ABAA2CA423C3D11100CA83FD /* HelperFunctions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 			children = (
 				AB3CB5C923A583A9008D5806 /* BrandCollectionViewCell.swift */,
 				AB3CB5DF23A678C4008D5806 /* CategoryCollectionViewCell.swift */,
+				ABAA2CA223C3C3BF00CA83FD /* ItemTableViewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -294,6 +300,7 @@
 				AB3CB5C823A582EF008D5806 /* BrandCollectionViewController.swift in Sources */,
 				AB5D62E823BCA83E0097D501 /* Richability.swift in Sources */,
 				AB3CB5CE23A58763008D5806 /* FirebaseCollectionReferences.swift in Sources */,
+				ABAA2CA323C3C3BF00CA83FD /* ItemTableViewCell.swift in Sources */,
 				ABA7F49623AD26BB006B566C /* ItemsTableViewController.swift in Sources */,
 				AB5D62EA23BCA8E40097D501 /* Downloader.swift in Sources */,
 				ABA7F49823AD2E34006B566C /* Item.swift in Sources */,
@@ -302,6 +309,7 @@
 				AB3CB5D623A58D8E008D5806 /* Constants.swift in Sources */,
 				AB3CB5E023A678C4008D5806 /* CategoryCollectionViewCell.swift in Sources */,
 				AB3CB5D823A630C7008D5806 /* Brand.swift in Sources */,
+				ABAA2CA523C3D11100CA83FD /* HelperFunctions.swift in Sources */,
 				AB3CB5CA23A583A9008D5806 /* BrandCollectionViewCell.swift in Sources */,
 				AB3CB59823A50FB9008D5806 /* SceneDelegate.swift in Sources */,
 				AB3CB5DA23A63965008D5806 /* Category.swift in Sources */,

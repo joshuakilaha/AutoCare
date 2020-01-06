@@ -195,7 +195,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="97" id="s64-wd-peN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TableCell" rowHeight="97" id="s64-wd-peN" customClass="ItemTableViewCell" customModule="AutoCare" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s64-wd-peN" id="NSy-g2-4i6">
@@ -209,8 +209,8 @@
                                                 <constraint firstAttribute="height" constant="80" id="sxV-H4-slr"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQ5-dn-D0b">
-                                            <rect key="frame" x="135.33333333333337" y="10.999999999999998" width="160.66666666666663" height="20.333333333333329"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQ5-dn-D0b">
+                                            <rect key="frame" x="123" y="11" width="173" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -235,20 +235,26 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="hQ3-5c-2O4" firstAttribute="top" secondItem="cQ5-dn-D0b" secondAttribute="bottom" constant="8" symbolic="YES" id="5F6-NY-eAP"/>
                                         <constraint firstItem="hQ3-5c-2O4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jag-sI-DLf" secondAttribute="trailing" constant="8" symbolic="YES" id="5wj-TB-NAe"/>
                                         <constraint firstAttribute="bottom" secondItem="Uef-TT-lQp" secondAttribute="bottom" constant="5" id="Au8-Jb-IrL"/>
-                                        <constraint firstItem="cQ5-dn-D0b" firstAttribute="top" secondItem="NSy-g2-4i6" secondAttribute="topMargin" id="BnC-P8-Uuq"/>
+                                        <constraint firstItem="cQ5-dn-D0b" firstAttribute="leading" secondItem="Uef-TT-lQp" secondAttribute="leading" id="C8e-uM-NFT"/>
                                         <constraint firstItem="Uef-TT-lQp" firstAttribute="leading" secondItem="jag-sI-DLf" secondAttribute="trailing" constant="8" id="Fng-KM-xJ3"/>
-                                        <constraint firstItem="cQ5-dn-D0b" firstAttribute="width" secondItem="Uef-TT-lQp" secondAttribute="width" multiplier="0.64486" id="IyB-Xv-Nf2"/>
                                         <constraint firstAttribute="trailing" secondItem="Uef-TT-lQp" secondAttribute="trailing" constant="11" id="Jci-Tq-SAo"/>
-                                        <constraint firstAttribute="trailing" secondItem="cQ5-dn-D0b" secondAttribute="trailing" constant="87" id="KTt-bx-mQf"/>
-                                        <constraint firstItem="cQ5-dn-D0b" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jag-sI-DLf" secondAttribute="trailing" symbolic="YES" id="bux-Hk-9Re"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="cQ5-dn-D0b" secondAttribute="trailing" constant="79" id="MYa-Jo-W0o"/>
+                                        <constraint firstItem="cQ5-dn-D0b" firstAttribute="top" secondItem="NSy-g2-4i6" secondAttribute="topMargin" id="TSe-XT-dyz"/>
                                         <constraint firstItem="jag-sI-DLf" firstAttribute="centerY" secondItem="NSy-g2-4i6" secondAttribute="centerY" id="d42-YI-sTA"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="hQ3-5c-2O4" secondAttribute="trailing" constant="1" id="nlI-PF-QA5"/>
                                         <constraint firstItem="jag-sI-DLf" firstAttribute="leading" secondItem="NSy-g2-4i6" secondAttribute="leading" constant="15" id="uDt-3I-Qwz"/>
                                         <constraint firstItem="hQ3-5c-2O4" firstAttribute="centerY" secondItem="NSy-g2-4i6" secondAttribute="centerY" id="w0z-Ds-V4z"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ItemNameLable" destination="cQ5-dn-D0b" id="tel-DG-Blp"/>
+                                    <outlet property="descriptionLable" destination="Uef-TT-lQp" id="325-nw-fr5"/>
+                                    <outlet property="itemImageView" destination="jag-sI-DLf" id="mTo-AG-VxS"/>
+                                    <outlet property="priceLable" destination="hQ3-5c-2O4" id="gYA-yB-cHg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -266,7 +272,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ElA-6l-ZFj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2090" y="-236"/>
+            <point key="canvasLocation" x="2089.2857142857142" y="-236.23188405797103"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="hTD-yq-c8k">
