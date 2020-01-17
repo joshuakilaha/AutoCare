@@ -9,11 +9,11 @@
 import Foundation
 
 func convertToCurrency(_ number: Double) -> String {
-    let currencyForMatter = NumberFormatter()
-    currencyForMatter.usesGroupingSeparator = true
-    currencyForMatter.numberStyle = .currency
-    currencyForMatter.locale = Locale.current
+    let currencyForValue = NumberFormatter()
+    currencyForValue.usesGroupingSeparator = true
+    currencyForValue.numberStyle = .currency
+    currencyForValue.locale = Locale.current
     
-    return currencyForMatter.string(from: NSNumber(value: number))!
+    return currencyForValue.string(from: NSNumber(value: number))!
     
 }

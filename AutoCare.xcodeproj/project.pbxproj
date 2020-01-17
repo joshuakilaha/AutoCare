@@ -29,6 +29,8 @@
 		ABA7F49A23AD6FEE006B566C /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA7F49923AD6FEE006B566C /* AddItemViewController.swift */; };
 		ABAA2CA323C3C3BF00CA83FD /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAA2CA223C3C3BF00CA83FD /* ItemTableViewCell.swift */; };
 		ABAA2CA523C3D11100CA83FD /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAA2CA423C3D11100CA83FD /* HelperFunctions.swift */; };
+		ABD7D85423D0E09C006F0286 /* ItemUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7D85323D0E09C006F0286 /* ItemUIViewController.swift */; };
+		ABD7D85623D2391B006F0286 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7D85523D2391B006F0286 /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		ABA7F49923AD6FEE006B566C /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		ABAA2CA223C3C3BF00CA83FD /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		ABAA2CA423C3D11100CA83FD /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		ABD7D85323D0E09C006F0286 /* ItemUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemUIViewController.swift; sourceTree = "<group>"; };
+		ABD7D85523D2391B006F0286 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		C45BC352CDACD5035D23AC90 /* Pods-AutoCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCare.release.xcconfig"; path = "Target Support Files/Pods-AutoCare/Pods-AutoCare.release.xcconfig"; sourceTree = "<group>"; };
 		C4A3071E7D8B9A8138AE1F05 /* Pods-AutoCareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCareTests.debug.xcconfig"; path = "Target Support Files/Pods-AutoCareTests/Pods-AutoCareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0C080F19CBB8521D4A8C8C2 /* Pods-AutoCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoCare.debug.xcconfig"; path = "Target Support Files/Pods-AutoCare/Pods-AutoCare.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				AB3CB5E123A678F0008D5806 /* CategoryCollectionViewController.swift */,
 				ABA7F49523AD26BB006B566C /* ItemsTableViewController.swift */,
 				ABA7F49923AD6FEE006B566C /* AddItemViewController.swift */,
+				ABD7D85323D0E09C006F0286 /* ItemUIViewController.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 				AB3CB5C923A583A9008D5806 /* BrandCollectionViewCell.swift */,
 				AB3CB5DF23A678C4008D5806 /* CategoryCollectionViewCell.swift */,
 				ABAA2CA223C3C3BF00CA83FD /* ItemTableViewCell.swift */,
+				ABD7D85523D2391B006F0286 /* ImageCollectionViewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -309,10 +315,12 @@
 				AB3CB5D623A58D8E008D5806 /* Constants.swift in Sources */,
 				AB3CB5E023A678C4008D5806 /* CategoryCollectionViewCell.swift in Sources */,
 				AB3CB5D823A630C7008D5806 /* Brand.swift in Sources */,
+				ABD7D85423D0E09C006F0286 /* ItemUIViewController.swift in Sources */,
 				ABAA2CA523C3D11100CA83FD /* HelperFunctions.swift in Sources */,
 				AB3CB5CA23A583A9008D5806 /* BrandCollectionViewCell.swift in Sources */,
 				AB3CB59823A50FB9008D5806 /* SceneDelegate.swift in Sources */,
 				AB3CB5DA23A63965008D5806 /* Category.swift in Sources */,
+				ABD7D85623D2391B006F0286 /* ImageCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
