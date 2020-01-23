@@ -10,7 +10,6 @@
 		4525A28BCD7C3C1810613D96 /* Pods_AutoCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9668954C6AB8289F3C3BB9A1 /* Pods_AutoCare.framework */; };
 		AB3CB59623A50FB9008D5806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3CB59523A50FB9008D5806 /* AppDelegate.swift */; };
 		AB3CB59823A50FB9008D5806 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3CB59723A50FB9008D5806 /* SceneDelegate.swift */; };
-		AB3CB59D23A50FB9008D5806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3CB59B23A50FB9008D5806 /* Main.storyboard */; };
 		AB3CB59F23A50FBA008D5806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB3CB59E23A50FBA008D5806 /* Assets.xcassets */; };
 		AB3CB5A223A50FBA008D5806 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3CB5A023A50FBA008D5806 /* LaunchScreen.storyboard */; };
 		AB3CB5C623A56BCE008D5806 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB3CB5C523A56BCE008D5806 /* GoogleService-Info.plist */; };
@@ -31,6 +30,7 @@
 		ABAA2CA523C3D11100CA83FD /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAA2CA423C3D11100CA83FD /* HelperFunctions.swift */; };
 		ABD7D85423D0E09C006F0286 /* ItemUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7D85323D0E09C006F0286 /* ItemUIViewController.swift */; };
 		ABD7D85623D2391B006F0286 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7D85523D2391B006F0286 /* ImageCollectionViewCell.swift */; };
+		ABD7D85723D75B34006F0286 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3CB59B23A50FB9008D5806 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -249,7 +249,7 @@
 				AB3CB5A223A50FBA008D5806 /* LaunchScreen.storyboard in Resources */,
 				AB3CB5C623A56BCE008D5806 /* GoogleService-Info.plist in Resources */,
 				AB3CB59F23A50FBA008D5806 /* Assets.xcassets in Resources */,
-				AB3CB59D23A50FB9008D5806 /* Main.storyboard in Resources */,
+				ABD7D85723D75B34006F0286 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

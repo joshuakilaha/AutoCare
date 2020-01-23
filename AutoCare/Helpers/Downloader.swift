@@ -76,12 +76,12 @@ func saveImageInDatabase(imageData: Data, fileName: String, completion: @escapin
 }
 
 // download Image
-func downloadImages(imageurl: [String], completion: @escaping (_ images: [UIImage?]) -> Void) {
+func downloadImages(imageurls: [String], completion: @escaping (_ images: [UIImage?]) -> Void) {
     var imageArray: [UIImage] = []
     
     var downloadCounter = 0
     
-    for link in imageurl {
+    for link in imageurls {
         
         let url = NSURL(string: link)
         

@@ -38,8 +38,8 @@ class ItemTableViewCell: UITableViewCell {
         
     
         if item.imageLinks != nil && item.imageLinks.count > 0 {
-            downloadImages(imageurl: [item.imageLinks.first!]) { (images) in
-                self.itemImageView.image = images.first as? UIImage 
+            downloadImages(imageurls: [item.imageLinks.last!]) { (images) in
+                self.itemImageView.image = images.last as? UIImage 
             }
         }
         

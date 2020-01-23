@@ -37,6 +37,10 @@ class ItemUIViewController: UIViewController {
 
         setupUI()
         downloadPictures()
+        
+        self.navigationItem.leftBarButtonItems = [UIBarButtonItem (image: UIImage(named: "back"), style: .plain, target: self, action: #selector(self.backAction))]
+        
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem (image: UIImage(named: "basket"), style: .plain, target: self, action: #selector(self.addToBasketButtonPressed))]
     }
     
     //Mark Download pictures
@@ -44,7 +48,7 @@ class ItemUIViewController: UIViewController {
     private func downloadPictures(){
         
         if item != nil && item.imageLinks != nil {
-            downloadImages(imageurl: item.imageLinks) { (allImages) in
+            downloadImages(imageurls: item.imageLinks) { (allImages) in
                 
                 if allImages.count > 0 {
                     self.itemImages = allImages as! [UIImage]
@@ -64,8 +68,24 @@ class ItemUIViewController: UIViewController {
             descriptionTextView.text = item.description
         }
     }
+    
+    //Mark IBAction
+
+       @objc func backAction(){
+       
+        self.navigationController?.popViewController(animated: true)
+           
+       }
+    
+    @objc func addToBasketButtonPressed(){
+        
+        print("Item added to basket", item.name)
+         
+    }
 
 }
+
+   
 
 
 extension ItemUIViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -86,7 +106,7 @@ extension ItemUIViewController: UICollectionViewDataSource, UICollectionViewDele
         return cell
     }
 
-}
+} 
 
 
 extension ItemUIViewController: UICollectionViewDelegateFlowLayout {

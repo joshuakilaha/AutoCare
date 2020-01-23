@@ -68,6 +68,7 @@ class Brand {
     
     */
 
+
     
         //save Brand to Database
     func saveBrandToFirebase(_ brand: Brand) {
@@ -79,7 +80,16 @@ class Brand {
             as! [String: Any])
         
     }
-    
+
+
+      //helpers
+    func brandDictionaryFrom(_ brand: Brand) -> NSDictionary {
+        
+        return NSDictionary(objects: [brand.id, brand.name, brand.imageName],
+                            forKeys: [cObjectID as NSCopying, cName as NSCopying, cImageName as NSCopying])
+     
+    }
+        
         //getting Brand From Database
     func getBrandFromFirebase(completion: @escaping (_ brandArray: [Brand]) -> Void){
         var brandArray: [Brand] = []
@@ -99,13 +109,7 @@ class Brand {
     }
     
     
-        //helpers
-    func brandDictionaryFrom(_ brand: Brand) -> NSDictionary {
-        
-        return NSDictionary(objects: [brand.id, brand.name, brand.imageName],
-                            forKeys: [cObjectID as NSCopying, cName as NSCopying, cImageName as NSCopying])
-     
-    }
+  
     
 
 
