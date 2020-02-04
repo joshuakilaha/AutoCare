@@ -21,11 +21,13 @@ public let cName = "name"
 
 //Category
 public let Category_Path = "Category"
+public let cCategoryName = "categoryName"
 public let cCategoryId = "categoryId"
 
 
 //Items
 public let Items_Path = "Item"
+public let cItemName = "itemName"
 public let cImageLinks = "imageLinks"
 public let cDesctiption = "description"
 public let cPrice = "price"

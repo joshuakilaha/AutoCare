@@ -2,16 +2,43 @@
 //  ItemTableViewController.swift
 //  Auto Care
 //
-//  Created by Kilz on 29/01/2020.
+//  Created by Kilz on 04/02/2020.
 //  Copyright © 2020 Kilz. All rights reserved.
 //
 
 import UIKit
 
 class ItemTableViewController: UITableViewController {
+    
+    //Mark: VAR
+    
+    var category: Category?
+    var brand: Brand?
+    var itemArray: [Item] = []
 
+    
+    
+    //life Cycle
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if category != nil {
+                   
+                   //get items from database
+                    downloadItem()
+               }
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.tableFooterView = UIView()
+        
+        self.title = category?.categoryName
+        print("BrandId is from Item Table is: ", brand!.id)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -22,25 +49,23 @@ class ItemTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return itemArray.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! ItemTableViewCell
+        
+        cell.generateItemCell(itemArray[indexPath.row])
+        
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -77,14 +102,27 @@ class ItemTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "toAddItemSegue" {
+            let toAddItemVC = segue.destination as! AddItemViewController
+            toAddItemVC.brand = brand
+            toAddItemVC.category = category
+        }
     }
-    */
+    
+    
+    private func downloadItem() {
+        downloadItemsFromDatabase(category!.id) { (allItems) in
+            self.itemArray = allItems
+            self.tableView.reloadData()
+        }
+    }
 
 }

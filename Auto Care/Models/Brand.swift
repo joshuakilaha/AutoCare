@@ -28,22 +28,24 @@ class Brand {
 }
 
 
-//create Brand
+        //MARK: create Brand
 
 func brandDictionaryFrom(_ brand: Brand) -> NSDictionary {
-    return NSDictionary(objects: [brand.id, brand.brandName, brand.imageLinks], forKeys: [cObjectId as NSCopying, cBrandName as NSCopying, cImageLinks as NSCopying])
+    return NSDictionary(objects: [brand.id!, brand.brandName!, brand.imageLinks!], forKeys: [cObjectId as NSCopying, cBrandName as NSCopying, cImageLinks as NSCopying])
     
 }
 
 
-//Saving brand
+        //MARK: Saving brand
 
 func saveBrand(_ brand: Brand){
+    let id = UUID().uuidString
+    brand.id = id
     FirebaseReference(.Brand).document(brand.id).setData(brandDictionaryFrom(brand) as! [String: Any])
 }
 
 
-//Downloading Brand
+        //MARK: Downloading Brand
 
 func downloadBrandFromDatabase(completion: @escaping (_ brandArray: [Brand]) -> Void){
     

@@ -24,6 +24,13 @@
 		AB2DB64E23E446DB007C7DAB /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB64D23E446DB007C7DAB /* Downloader.swift */; };
 		AB2DB65023E44B13007C7DAB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB64F23E44B13007C7DAB /* Reachability.swift */; };
 		AB2DB65223E469FC007C7DAB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB2DB65123E469FC007C7DAB /* GoogleService-Info.plist */; };
+		AB5AC6FC23E4A722001C563E /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC6FB23E4A722001C563E /* CategoryCollectionViewController.swift */; };
+		AB5AC6FE23E4B682001C563E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC6FD23E4B682001C563E /* Category.swift */; };
+		AB5AC70023E4BD95001C563E /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC6FF23E4BD95001C563E /* AddCategoryViewController.swift */; };
+		AB5AC70223E93E35001C563E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC70123E93E35001C563E /* Item.swift */; };
+		AB5AC70423E9449E001C563E /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC70323E9449E001C563E /* AddItemViewController.swift */; };
+		AB5AC70623E94CDB001C563E /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC70523E94CDB001C563E /* ItemTableViewController.swift */; };
+		AB5AC70823E96DC9001C563E /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC70723E96DC9001C563E /* ItemTableViewCell.swift */; };
 		C87F897FBCDDA89D0EA0AF4E /* Pods_Auto_Care.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7BAA68158037ADF0BBECE96 /* Pods_Auto_Care.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +57,13 @@
 		AB2DB64D23E446DB007C7DAB /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		AB2DB64F23E44B13007C7DAB /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		AB2DB65123E469FC007C7DAB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AB5AC6FB23E4A722001C563E /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		AB5AC6FD23E4B682001C563E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		AB5AC6FF23E4BD95001C563E /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		AB5AC70123E93E35001C563E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Item.swift; path = ../Views/Item.swift; sourceTree = "<group>"; };
+		AB5AC70323E9449E001C563E /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		AB5AC70523E94CDB001C563E /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
+		AB5AC70723E96DC9001C563E /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +109,7 @@
 			children = (
 				AB2DB61223E079E1007C7DAB /* AppDelegate.swift */,
 				AB2DB61B23E079E4007C7DAB /* Assets.xcassets */,
-				AB2DB62C23E08414007C7DAB /* Custom Cells */,
+				AB2DB62C23E08414007C7DAB /* Contollers */,
 				AB2DB65123E469FC007C7DAB /* GoogleService-Info.plist */,
 				AB2DB62E23E0844C007C7DAB /* Helpers */,
 				AB2DB62023E079E4007C7DAB /* Info.plist */,
@@ -112,17 +126,20 @@
 			isa = PBXGroup;
 			children = (
 				AB2DB62F23E0846B007C7DAB /* Brand.swift */,
+				AB5AC6FD23E4B682001C563E /* Category.swift */,
+				AB5AC70123E93E35001C563E /* Item.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		AB2DB62C23E08414007C7DAB /* Custom Cells */ = {
+		AB2DB62C23E08414007C7DAB /* Contollers */ = {
 			isa = PBXGroup;
 			children = (
 				AB2DB64323E1C948007C7DAB /* BrandCollectionViewCell.swift */,
 				AB2DB64523E1C958007C7DAB /* CategoryCollectionViewCell.swift */,
+				AB5AC70723E96DC9001C563E /* ItemTableViewCell.swift */,
 			);
-			path = "Custom Cells";
+			path = Contollers;
 			sourceTree = "<group>";
 		};
 		AB2DB62D23E08420007C7DAB /* Views */ = {
@@ -130,6 +147,10 @@
 			children = (
 				AB2DB64723E1CEA8007C7DAB /* AddBrandViewController.swift */,
 				AB2DB63F23E15199007C7DAB /* BrandCollectionViewController.swift */,
+				AB5AC6FB23E4A722001C563E /* CategoryCollectionViewController.swift */,
+				AB5AC6FF23E4BD95001C563E /* AddCategoryViewController.swift */,
+				AB5AC70323E9449E001C563E /* AddItemViewController.swift */,
+				AB5AC70523E94CDB001C563E /* ItemTableViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,16 +293,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB5AC70023E4BD95001C563E /* AddCategoryViewController.swift in Sources */,
 				AB2DB65023E44B13007C7DAB /* Reachability.swift in Sources */,
+				AB5AC70223E93E35001C563E /* Item.swift in Sources */,
 				AB2DB64423E1C948007C7DAB /* BrandCollectionViewCell.swift in Sources */,
 				AB2DB63823E0854B007C7DAB /* CurrencyConverter.swift in Sources */,
+				AB5AC70423E9449E001C563E /* AddItemViewController.swift in Sources */,
 				AB2DB61323E079E1007C7DAB /* AppDelegate.swift in Sources */,
 				AB2DB63C23E085A6007C7DAB /* FirebaseReferences.swift in Sources */,
 				AB2DB63023E0846B007C7DAB /* Brand.swift in Sources */,
+				AB5AC6FC23E4A722001C563E /* CategoryCollectionViewController.swift in Sources */,
 				AB2DB61523E079E1007C7DAB /* SceneDelegate.swift in Sources */,
 				AB2DB64023E15199007C7DAB /* BrandCollectionViewController.swift in Sources */,
+				AB5AC70823E96DC9001C563E /* ItemTableViewCell.swift in Sources */,
+				AB5AC70623E94CDB001C563E /* ItemTableViewController.swift in Sources */,
 				AB2DB63623E084BA007C7DAB /* Constants.swift in Sources */,
 				AB2DB64E23E446DB007C7DAB /* Downloader.swift in Sources */,
+				AB5AC6FE23E4B682001C563E /* Category.swift in Sources */,
 				AB2DB64623E1C958007C7DAB /* CategoryCollectionViewCell.swift in Sources */,
 				AB2DB63A23E08580007C7DAB /* InternetReachability.swift in Sources */,
 				AB2DB64823E1CEA8007C7DAB /* AddBrandViewController.swift in Sources */,

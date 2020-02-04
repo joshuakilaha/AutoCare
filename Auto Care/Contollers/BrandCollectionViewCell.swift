@@ -11,15 +11,17 @@ import UIKit
 class BrandCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var brandImageView: UIImageView!
-    @IBOutlet weak var brandName: UILabel!
+    @IBOutlet weak var brandNameCell: UILabel!
     
-   override func awakeFromNib(){
-               super.awakeFromNib()
-           }
      
     func generateBrandCell(_ brand: Brand) {
-        brandName.text = brand.brandName
-        //brandImageView.image = brand.brandImage 
+        brandNameCell.text = brand.brandName
+        
+        if brand.imageLinks != nil && brand.imageLinks.count > 0 {
+            downloadImages(imageurls: [brand.imageLinks.last!]) { (images) in
+                self.brandImageView.image = images.last as? UIImage
+            }
+        }
         }
        
     }

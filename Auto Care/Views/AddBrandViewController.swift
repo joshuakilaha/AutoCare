@@ -14,12 +14,12 @@ import NVActivityIndicatorView
 
 class AddBrandViewController: UIViewController {
     
-    //VAR: Gallery
+    //MARK: VAR: Gallery
     var gallery: GalleryController!
     let hud = JGProgressHUD(style: .light)
     var brandImages: [UIImage?] = []
     
-    //VAR: Activiry Indicator
+    //MARK: VAR: Activity Indicator
     var activityIndicator:  NVActivityIndicatorView?
     
 
@@ -72,7 +72,7 @@ class AddBrandViewController: UIViewController {
     
     
     
-                            ///MARK:   FUNCTIONS
+                            //MARK:   FUNCTIONS
     
     //dismissing keyboard
     private func dismissKeyboard(){
@@ -123,7 +123,7 @@ class AddBrandViewController: UIViewController {
     }
     
     
-    /// MARK: Saving Brand
+    // MARK: Saving Brand
     private func savingBrand(){
         showLoadingIndicator()
         
@@ -183,7 +183,8 @@ extension AddBrandViewController: GalleryControllerDelegate {
  
     
     func galleryController(_ controller: GalleryController, didSelectVideo video: Video) {
-        controller.dismiss(animated: true, completion: nil)
+            controller.dismiss(animated: true, completion: nil)
+
     }
     
     func galleryController(_ controller: GalleryController, requestLightbox images: [Image]) {
