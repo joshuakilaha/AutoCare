@@ -10,10 +10,12 @@ import UIKit
 
 class ItemTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var itemImage: UIImageView!
+
+    @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemNameText: UILabel!
-    @IBOutlet weak var ItemDescription: UILabel!
-    @IBOutlet weak var ItemPriceText: UILabel!
+    @IBOutlet weak var itemDescriptionText: UILabel!
+    @IBOutlet weak var itemPriceText: UILabel!
+    
     
     
     override func awakeFromNib() {
@@ -30,18 +32,32 @@ class ItemTableViewCell: UITableViewCell {
     }
     
     
+    
     func generateItemCell(_ item: Item) {
         itemNameText.text = item.itemName
-        ItemDescription.text = item.description
-        ItemPriceText.text = convertCurrency(item.price)
-        ItemPriceText.adjustsFontSizeToFitWidth = true
+        itemDescriptionText.text = item.description
+        itemPriceText.text = convertCurrency(item.price)
+        itemPriceText.adjustsFontSizeToFitWidth = true
         
         if item.imageLinks != nil && item.imageLinks.count > 0 {
             downloadImages(imageurls: [item.imageLinks.first!]) { (images) in
-                self.itemImage.image = images.first as? UIImage
+                self.itemImageView.image = images.first as? UIImage
             }
         }
-        
     }
+    
+//    func generateItemCell(_ item: Item) {
+//        itemNameText.text = item.itemName
+//        ItemDescription.text = item.description
+//        ItemPriceText.text = convertCurrency(item.price)
+//        ItemPriceText.adjustsFontSizeToFitWidth = true
+//
+//        if item.imageLinks != nil && item.imageLinks.count > 0 {
+//            downloadImages(imageurls: [item.imageLinks.first!]) { (images) in
+//                self.itemImage.image = images.first as? UIImage
+//            }
+//        }
+//
+//    }
 
 }

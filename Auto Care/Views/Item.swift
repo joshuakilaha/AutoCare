@@ -28,6 +28,7 @@ class Item {
         brandId = _dictionary[cBrandId] as? String
         categoryId = _dictionary[cCategoryId] as? String
         itemName = _dictionary [cItemName] as? String
+        description = _dictionary [cDesctiption] as? String
         price = _dictionary[cPrice] as? Double
         imageLinks = _dictionary[cImageLinks]  as? [String]
     }

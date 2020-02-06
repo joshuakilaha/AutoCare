@@ -35,7 +35,7 @@ class BrandCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.width / 2 - 30, width: 80, height: 80), type: .circleStrokeSpin, color: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1), padding: nil)
+        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 50, y: self.view.frame.width / 1 - 50, width: 80, height: 80), type: .circleStrokeSpin, color: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1), padding: nil)
         
     }
     
@@ -43,6 +43,7 @@ class BrandCollectionViewController: UICollectionViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         downloadBrands()
+        
     }
     
         //Mark: Loading Indicator
@@ -72,9 +73,13 @@ class BrandCollectionViewController: UICollectionViewController {
     //Download Brands
     
     private func downloadBrands(){
+        
+        showLoadingindicator()
+        
         downloadBrandFromDatabase { (allBrands) in
             print("Brands are", allBrands.count)
             self.BrandArray = allBrands
+            self.hideLoadIndicator()
             self.collectionView.reloadData()
         }
     }
