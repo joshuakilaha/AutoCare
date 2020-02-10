@@ -33,7 +33,7 @@ class CategoryCollectionViewController: UICollectionViewController {
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         self.title = brand?.brandName
-        print("ID: ",brand!.id)
+        print("ID: ",brand!.id as Any)
 
         
         

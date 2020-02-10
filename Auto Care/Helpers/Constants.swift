@@ -27,6 +27,7 @@ public let cCategoryId = "categoryId"
 
 //Items
 public let Items_Path = "Item"
+public let cItemId = "itemId"
 public let cItemName = "itemName"
 public let cImageLinks = "imageLinks"
 public let cDesctiption = "description"
@@ -35,8 +36,10 @@ public let cPrice = "price"
 
 //Cart
 public let Cart_Path = "Cart"
+public let cItemIds = "itemIds"
 
 
 //User
 public let User_Path = "User"
+public let cUserId = "userId"
 

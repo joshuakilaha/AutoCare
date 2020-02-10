@@ -46,18 +46,6 @@ class ItemTableViewCell: UITableViewCell {
         }
     }
     
-//    func generateItemCell(_ item: Item) {
-//        itemNameText.text = item.itemName
-//        ItemDescription.text = item.description
-//        ItemPriceText.text = convertCurrency(item.price)
-//        ItemPriceText.adjustsFontSizeToFitWidth = true
-//
-//        if item.imageLinks != nil && item.imageLinks.count > 0 {
-//            downloadImages(imageurls: [item.imageLinks.first!]) { (images) in
-//                self.itemImage.image = images.first as? UIImage
-//            }
-//        }
-//
-//    }
+
 
 }

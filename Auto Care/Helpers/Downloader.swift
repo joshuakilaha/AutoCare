@@ -110,6 +110,7 @@ func uploadItemImages(images: [UIImage?], itemId: String, completion: @escaping 
         }
     }
     else {
+        
         print("No Internet Connection")
     }
 }

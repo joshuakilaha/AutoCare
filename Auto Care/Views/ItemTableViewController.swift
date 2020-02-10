@@ -38,7 +38,7 @@ class ItemTableViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         
         self.title = category?.categoryName
-        print("BrandId is from Item Table is: ", brand!.id)
+        print("BrandId is from Item Table is: ", brand!.id!)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -103,6 +103,14 @@ class ItemTableViewController: UITableViewController {
     */
 
     
+    //MARK: Table view delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        showItemView(itemArray[indexPath.row])
+    }
+    
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -115,6 +123,16 @@ class ItemTableViewController: UITableViewController {
             toAddItemVC.brand = brand
             toAddItemVC.category = category
         }
+    }
+    
+    private func showItemView(_ item: Item) {
+        
+        let itemVc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "itemView") as! ItemViewController
+        
+        itemVc.item = item
+        itemVc.brand = brand
+        itemVc.category = category
+        self.navigationController?.pushViewController(itemVc, animated: true)
     }
     
     

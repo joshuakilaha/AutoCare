@@ -42,8 +42,8 @@ class AddItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("AddItem show BrandId: ", brand?.id)
-        print("Category ID is: ", category?.id)
+        print("AddItem show BrandId: ", brand?.id as Any)
+        print("Category ID is: ", category?.id as Any)
         // Do any additional setup after loading the view.
     }
     
@@ -64,6 +64,7 @@ class AddItemViewController: UIViewController {
             SavingItem()
             
         }
+       
         else {
             self.hud.textLabel.text = "Please fill in all fields"
             self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
@@ -71,6 +72,8 @@ class AddItemViewController: UIViewController {
             self.hud.dismiss(afterDelay: 2.0)
             
         }
+        
+        
     }
     
     
@@ -121,7 +124,7 @@ class AddItemViewController: UIViewController {
         self.gallery.delegate = self
         
         Config.tabsToShow = [.imageTab, .cameraTab]
-        Config.Camera.imageLimit = 1
+        Config.Camera.imageLimit = 6
         self.present(self.gallery, animated: true, completion: nil)
     }
     
@@ -156,6 +159,23 @@ class AddItemViewController: UIViewController {
             popView()
         }
     }
+    
+    
+//
+//    private func noInternet()  -> Bool {
+//
+//        return true
+//
+////        self.hud.textLabel.text = "No Internet Connection! Please try again later"
+////        self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+////        self.hud.show(in: self.view)
+////        self.hud.dismiss(afterDelay: 10.0)
+//
+//    }
+    
+    
+    
+    
     
     
     /*
