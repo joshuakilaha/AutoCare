@@ -25,7 +25,7 @@ class CategoryCollectionViewController: UICollectionViewController {
        private let categoriesPerRow: CGFloat = 3
     
     
-    //Life Cycle
+    //MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,13 +45,15 @@ class CategoryCollectionViewController: UICollectionViewController {
         
     }
     
+    //MARK: Functions
+    
     @IBAction func addCategoryButton(_ sender: Any) {
 
         performSegue(withIdentifier: "toAddCategory", sender: self)
 
     }
     
-    
+            //MARK: Download Categories
     private func loadCategories() {
         downloadCategoryFromDatabase(brand!.id) { (allCategories) in
             print("Categories are", allCategories.count)
@@ -105,10 +107,12 @@ class CategoryCollectionViewController: UICollectionViewController {
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
+    
 
     
 }
+
+//MARK: EXTENSIONS
 
 
 extension CategoryCollectionViewController: UICollectionViewDelegateFlowLayout {

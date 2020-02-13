@@ -28,7 +28,7 @@ class Brand {
 }
 
 
-        //MARK: create Brand
+        //MARK: Create Brand
 
 func brandDictionaryFrom(_ brand: Brand) -> NSDictionary {
     return NSDictionary(objects: [brand.id!, brand.brandName!, brand.imageLinks!], forKeys: [cObjectId as NSCopying, cBrandName as NSCopying, cImageLinks as NSCopying])
@@ -36,7 +36,7 @@ func brandDictionaryFrom(_ brand: Brand) -> NSDictionary {
 }
 
 
-        //MARK: Saving brand
+        //MARK: Save brand
 
 func saveBrand(_ brand: Brand){
     let id = UUID().uuidString
@@ -45,7 +45,7 @@ func saveBrand(_ brand: Brand){
 }
 
 
-        //MARK: Downloading Brand
+        //MARK: Download Brand
 
 func downloadBrandFromDatabase(completion: @escaping (_ brandArray: [Brand]) -> Void){
     

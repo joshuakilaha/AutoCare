@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB28EE7523F5C4560006C4E8 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB28EE7423F5C4560006C4E8 /* CartViewController.swift */; };
 		AB2DB61323E079E1007C7DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB61223E079E1007C7DAB /* AppDelegate.swift */; };
 		AB2DB61523E079E1007C7DAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB61423E079E1007C7DAB /* SceneDelegate.swift */; };
 		AB2DB61A23E079E1007C7DAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2DB61823E079E1007C7DAB /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		2467D4B278FB0551E235C1A9 /* Pods-Auto Care.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Care.release.xcconfig"; path = "Target Support Files/Pods-Auto Care/Pods-Auto Care.release.xcconfig"; sourceTree = "<group>"; };
 		71886C248A2FDADAF3823A61 /* Pods-Auto Care.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Care.debug.xcconfig"; path = "Target Support Files/Pods-Auto Care/Pods-Auto Care.debug.xcconfig"; sourceTree = "<group>"; };
 		A7BAA68158037ADF0BBECE96 /* Pods_Auto_Care.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Care.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB28EE7423F5C4560006C4E8 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		AB2DB60F23E079E1007C7DAB /* Auto Care.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Care.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2DB61223E079E1007C7DAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB2DB61423E079E1007C7DAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				AB5AC70323E9449E001C563E /* AddItemViewController.swift */,
 				AB5AC70523E94CDB001C563E /* ItemTableViewController.swift */,
 				ABC9A91323EC3F16000D80FD /* ItemViewController.swift */,
+				AB28EE7423F5C4560006C4E8 /* CartViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				AB2DB64023E15199007C7DAB /* BrandCollectionViewController.swift in Sources */,
 				ABC9A91623EC48FB000D80FD /* ImageCollectionViewCell.swift in Sources */,
 				AB5AC70823E96DC9001C563E /* ItemTableViewCell.swift in Sources */,
+				AB28EE7523F5C4560006C4E8 /* CartViewController.swift in Sources */,
 				AB5AC70623E94CDB001C563E /* ItemTableViewController.swift in Sources */,
 				ABC9A91823ED922E000D80FD /* Cart.swift in Sources */,
 				ABC9A91423EC3F16000D80FD /* ItemViewController.swift in Sources */,

@@ -36,20 +36,23 @@ class Item {
 }
 
 
-    //Mark: Create Item
+                //MARK: Create Item
 
 func itemDictionaryFrom(_ item: Item) -> NSDictionary {
     return NSDictionary(objects: [item.id, item.brandId, item.categoryId, item.itemName, item.description, item.price, item.imageLinks], forKeys: [cObjectId as NSCopying, cBrandId as NSCopying, cCategoryId as NSCopying, cItemName as NSCopying,cDesctiption as NSCopying, cPrice as NSCopying, cImageLinks as NSCopying])
 }
 
 
-//Mark: Saving item
+
+            //MARK: Save item
 
 func SaveItem(_ item: Item){
     FirebaseReference(.Items).document(item.id).setData(itemDictionaryFrom(item) as! [String: Any])
 }
 
-//Mark: download Item
+
+
+            //MARK: Download Item
 
 func downloadItemsFromDatabase(_ withCategoryId: String, completion: @escaping (_ itemArray: [Item]) -> Void) {
     
@@ -68,6 +71,42 @@ func downloadItemsFromDatabase(_ withCategoryId: String, completion: @escaping (
         }
         
         completion (itemArray)
+    }
+    
+}
+
+
+
+//MARK: download items with ids for Cart
+
+func downloadItemsWithIdsForCart(_ withIds: [String], completion: @escaping (_ itemArray: [Item]) -> Void) {
+    
+    var count = 0
+    var itemArray : [Item] = []
+    
+    if withIds.count > 0 {
+        
+        for itemId in withIds {
+            FirebaseReference(.Items).document(itemId).getDocument { (snapshot, error) in
+                guard let snapshot = snapshot else {
+                    completion(itemArray)
+                    return
+                }
+                
+                if snapshot.exists {
+                    itemArray.append(Item(_dictionary: snapshot.data()! as NSDictionary))
+                    count += 1
+                } else {
+                    completion(itemArray)
+                }
+                if count == withIds.count {
+                    completion(itemArray)
+                }
+            }
+        }
+        
+    } else {
+        completion(itemArray)
     }
     
 }

@@ -123,7 +123,8 @@ class AddBrandViewController: UIViewController {
     }
     
     
-    // MARK: Saving Brand
+    // MARK: saving Brand
+    
     private func savingBrand(){
         showLoadingIndicator()
         
@@ -166,7 +167,7 @@ class AddBrandViewController: UIViewController {
 }
 
 
-//Camera Gallery extension
+//MARK: Camera Gallery extension
 
 extension AddBrandViewController: GalleryControllerDelegate {
     func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {

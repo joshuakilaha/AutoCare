@@ -30,11 +30,13 @@ class BrandCollectionViewController: UICollectionViewController {
     
     
     
-    //Life Cycle
+    //MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+      
+        
         activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 50, y: self.view.frame.width / 1 - 50, width: 80, height: 80), type: .circleStrokeSpin, color: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1), padding: nil)
         
     }
@@ -46,7 +48,7 @@ class BrandCollectionViewController: UICollectionViewController {
         
     }
     
-        //Mark: Loading Indicator
+        //MARK: Loading Indicator
     
     //show indicator
     private func showLoadingindicator() {
@@ -79,7 +81,7 @@ class BrandCollectionViewController: UICollectionViewController {
         downloadBrandFromDatabase { (allBrands) in
             print("Brands are", allBrands.count)
             self.BrandArray = allBrands
-            self.hideLoadIndicator()
+           // self.hideLoadIndicator()
             self.collectionView.reloadData()
         }
     }
@@ -99,9 +101,14 @@ class BrandCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BrandCell", for: indexPath) as! BrandCollectionViewCell
     
+        self.hideLoadIndicator()
+        
         cell.generateBrandCell(BrandArray[indexPath.row])
     
+        
+        
         return cell
+         
     }
     
     
@@ -128,6 +135,8 @@ class BrandCollectionViewController: UICollectionViewController {
 
 
 }
+
+//MARK: EXTENSIONS
 
 extension BrandCollectionViewController: UICollectionViewDelegateFlowLayout {
     

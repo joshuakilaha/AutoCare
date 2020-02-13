@@ -170,6 +170,9 @@ class ItemViewController: UIViewController {
 }
 
 
+//MARK: EXTENSIONS
+
+
 extension ItemViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return itemImages.count == 0 ? 1 : itemImages.count

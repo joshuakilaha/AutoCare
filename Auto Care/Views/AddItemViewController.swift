@@ -77,8 +77,7 @@ class AddItemViewController: UIViewController {
     }
     
     
-    
-                            //MARK:   FUNCTIONS
+                //MARK:   FUNCTIONS
     
     //dismissing keyboard
     private func dismissKeyboard(){
@@ -96,7 +95,7 @@ class AddItemViewController: UIViewController {
         return (itemNameText.text != "" && itemPriceText.text != "" && itemDescriptionText.text != "")
     }
     
-                    //loading indicator
+                            //MARK: loading indicator
     
     //showing loading Indicator
     
@@ -118,6 +117,8 @@ class AddItemViewController: UIViewController {
         }
     }
     
+                                //MARK: gallery
+    
     //show Gallery
     private func showImageGallery(){
         self.gallery = GalleryController()
@@ -130,7 +131,7 @@ class AddItemViewController: UIViewController {
     
     
     
-    //Mark: Saving Item
+                                //MARK: saving item
     
     private func SavingItem(){
         showLoadingIndicator()
@@ -190,6 +191,8 @@ class AddItemViewController: UIViewController {
 
 }
 
+
+//MARK: EXTENSIONS
 
 extension AddItemViewController: GalleryControllerDelegate {
     func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {

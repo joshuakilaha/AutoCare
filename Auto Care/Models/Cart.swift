@@ -33,6 +33,8 @@ class Cart {
 
 
 
+            //MARK: CREATING CART
+
 func cartDictionaryFrom(_ cart: Cart) -> NSDictionary {
     return NSDictionary(objects: [cart.id, cart.itemIds, cart.categoryId, cart.brandId, cart.userId], forKeys: [cObjectId as NSCopying, cItemIds as NSCopying, cCategoryId as NSCopying, cBrandId as NSCopying, cUserId as NSCopying])
 }
@@ -79,3 +81,4 @@ func updateCartInDatabase(_ cart: Cart, withValues: [String: Any], completion: @
         completion(error)
     }
 }
+
