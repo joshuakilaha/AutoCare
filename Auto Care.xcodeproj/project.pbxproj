@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB1D2A1423F9CDAA000DB741 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D2A1323F9CDAA000DB741 /* Item.swift */; };
 		AB28EE7523F5C4560006C4E8 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB28EE7423F5C4560006C4E8 /* CartViewController.swift */; };
 		AB2DB61323E079E1007C7DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB61223E079E1007C7DAB /* AppDelegate.swift */; };
 		AB2DB61523E079E1007C7DAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB61423E079E1007C7DAB /* SceneDelegate.swift */; };
@@ -27,7 +28,6 @@
 		AB5AC6FC23E4A722001C563E /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC6FB23E4A722001C563E /* CategoryCollectionViewController.swift */; };
 		AB5AC6FE23E4B682001C563E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC6FD23E4B682001C563E /* Category.swift */; };
 		AB5AC70023E4BD95001C563E /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC6FF23E4BD95001C563E /* AddCategoryViewController.swift */; };
-		AB5AC70223E93E35001C563E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC70123E93E35001C563E /* Item.swift */; };
 		AB5AC70423E9449E001C563E /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC70323E9449E001C563E /* AddItemViewController.swift */; };
 		AB5AC70623E94CDB001C563E /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC70523E94CDB001C563E /* ItemTableViewController.swift */; };
 		AB5AC70823E96DC9001C563E /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC70723E96DC9001C563E /* ItemTableViewCell.swift */; };
@@ -41,6 +41,7 @@
 		2467D4B278FB0551E235C1A9 /* Pods-Auto Care.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Care.release.xcconfig"; path = "Target Support Files/Pods-Auto Care/Pods-Auto Care.release.xcconfig"; sourceTree = "<group>"; };
 		71886C248A2FDADAF3823A61 /* Pods-Auto Care.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Care.debug.xcconfig"; path = "Target Support Files/Pods-Auto Care/Pods-Auto Care.debug.xcconfig"; sourceTree = "<group>"; };
 		A7BAA68158037ADF0BBECE96 /* Pods_Auto_Care.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Care.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB1D2A1323F9CDAA000DB741 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		AB28EE7423F5C4560006C4E8 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		AB2DB60F23E079E1007C7DAB /* Auto Care.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto Care.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2DB61223E079E1007C7DAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		AB5AC6FB23E4A722001C563E /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		AB5AC6FD23E4B682001C563E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		AB5AC6FF23E4BD95001C563E /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
-		AB5AC70123E93E35001C563E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Item.swift; path = ../Views/Item.swift; sourceTree = "<group>"; };
 		AB5AC70323E9449E001C563E /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		AB5AC70523E94CDB001C563E /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
 		AB5AC70723E96DC9001C563E /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -133,8 +133,8 @@
 			children = (
 				AB2DB62F23E0846B007C7DAB /* Brand.swift */,
 				AB5AC6FD23E4B682001C563E /* Category.swift */,
-				AB5AC70123E93E35001C563E /* Item.swift */,
 				ABC9A91723ED922E000D80FD /* Cart.swift */,
+				AB1D2A1323F9CDAA000DB741 /* Item.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,11 +304,11 @@
 			files = (
 				AB5AC70023E4BD95001C563E /* AddCategoryViewController.swift in Sources */,
 				AB2DB65023E44B13007C7DAB /* Reachability.swift in Sources */,
-				AB5AC70223E93E35001C563E /* Item.swift in Sources */,
 				AB2DB64423E1C948007C7DAB /* BrandCollectionViewCell.swift in Sources */,
 				AB2DB63823E0854B007C7DAB /* CurrencyConverter.swift in Sources */,
 				AB5AC70423E9449E001C563E /* AddItemViewController.swift in Sources */,
 				AB2DB61323E079E1007C7DAB /* AppDelegate.swift in Sources */,
+				AB1D2A1423F9CDAA000DB741 /* Item.swift in Sources */,
 				AB2DB63C23E085A6007C7DAB /* FirebaseReferences.swift in Sources */,
 				AB2DB63023E0846B007C7DAB /* Brand.swift in Sources */,
 				AB5AC6FC23E4A722001C563E /* CategoryCollectionViewController.swift in Sources */,
