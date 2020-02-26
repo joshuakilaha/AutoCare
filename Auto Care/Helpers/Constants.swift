@@ -17,6 +17,7 @@ public let cBrandName = "brandName"
 public let cObjectId = "objectId"
 public let cImageName = "imageName"
 public let cName = "name"
+public let cCountry = "country"
 
 
 //Category
@@ -42,4 +43,12 @@ public let cItemIds = "itemIds"
 //User
 public let User_Path = "User"
 public let cUserId = "userId"
+public let cEmail = "email"
+public let cFirstName = "firstName"
+public let cLastName = "lastName"
+public let cFullName = "fullName"
+public let cCurrentUser = "currentUser"
+public let cFullAddress = "fullAddress"
+public let cOnboard = "onBoard"
+public let cPurchasedItemIds = "purchasedItemIds"
 

@@ -13,6 +13,7 @@ class Brand {
     
     var id: String!
     var brandName: String!
+    //var country: String!
     var imageLinks: [String]!
     
     init() {
@@ -22,6 +23,7 @@ class Brand {
     init(_dictionary: NSDictionary) {
         id = _dictionary[cObjectId] as? String
         brandName = _dictionary[cBrandName] as? String
+       // country = _dictionary[cCountry] as? String
         imageLinks = _dictionary[cImageLinks] as? [String]
     }
     

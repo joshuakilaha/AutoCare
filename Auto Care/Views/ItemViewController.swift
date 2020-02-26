@@ -67,17 +67,19 @@ class ItemViewController: UIViewController {
         //check if user is logged in
         
         
-        downloadCartFromDatabase("1234567") { (cart) in
-            if cart == nil {
-                self.createCartForNewUser()
-            }
-            else {
-                cart!.itemIds.append(self.item.id)
-               // self.updateCart(cart: cart!, withValues: [cItemIds: cart!.itemIds])
-                self.updateCart(cart: cart!, withValues: [cItemIds : cart!.itemIds])
-            }
-        }
+//        downloadCartFromDatabase("1234567") { (cart) in
+//            if cart == nil {
+//                self.createCartForNewUser()
+//            }
+//            else {
+//                cart!.itemIds.append(self.item.id)
+//               // self.updateCart(cart: cart!, withValues: [cItemIds: cart!.itemIds])
+//                self.updateCart(cart: cart!, withValues: [cItemIds : cart!.itemIds])
+//            }
+//        }
         
+        
+        showLoginView()
 
     }
     
@@ -110,7 +112,19 @@ class ItemViewController: UIViewController {
     
     
     
+    
+    //Login
+    
+    private func showLoginView() {
+        let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
+        
+        self.present(loginView, animated: true, completion: nil)
+    }
+    
+    
     //Adding to Cart
+    
+    
     private func createCartForNewUser() {
         
         let newCart = Cart()

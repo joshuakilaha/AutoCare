@@ -31,9 +31,11 @@
 		AB5AC70423E9449E001C563E /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC70323E9449E001C563E /* AddItemViewController.swift */; };
 		AB5AC70623E94CDB001C563E /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC70523E94CDB001C563E /* ItemTableViewController.swift */; };
 		AB5AC70823E96DC9001C563E /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC70723E96DC9001C563E /* ItemTableViewCell.swift */; };
+		AB94C5122406D692005ABFA6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94C5112406D692005ABFA6 /* User.swift */; };
 		ABC9A91423EC3F16000D80FD /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A91323EC3F16000D80FD /* ItemViewController.swift */; };
 		ABC9A91623EC48FB000D80FD /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A91523EC48FB000D80FD /* ImageCollectionViewCell.swift */; };
 		ABC9A91823ED922E000D80FD /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A91723ED922E000D80FD /* Cart.swift */; };
+		ABD598692400301E008D3E3E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD598682400301E008D3E3E /* LoginViewController.swift */; };
 		C87F897FBCDDA89D0EA0AF4E /* Pods_Auto_Care.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7BAA68158037ADF0BBECE96 /* Pods_Auto_Care.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,9 +69,11 @@
 		AB5AC70323E9449E001C563E /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		AB5AC70523E94CDB001C563E /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
 		AB5AC70723E96DC9001C563E /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		AB94C5112406D692005ABFA6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ABC9A91323EC3F16000D80FD /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		ABC9A91523EC48FB000D80FD /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		ABC9A91723ED922E000D80FD /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		ABD598682400301E008D3E3E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 				AB5AC6FD23E4B682001C563E /* Category.swift */,
 				ABC9A91723ED922E000D80FD /* Cart.swift */,
 				AB1D2A1323F9CDAA000DB741 /* Item.swift */,
+				AB94C5112406D692005ABFA6 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 				AB5AC70523E94CDB001C563E /* ItemTableViewController.swift */,
 				ABC9A91323EC3F16000D80FD /* ItemViewController.swift */,
 				AB28EE7423F5C4560006C4E8 /* CartViewController.swift */,
+				ABD598682400301E008D3E3E /* LoginViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 				AB5AC70023E4BD95001C563E /* AddCategoryViewController.swift in Sources */,
 				AB2DB65023E44B13007C7DAB /* Reachability.swift in Sources */,
 				AB2DB64423E1C948007C7DAB /* BrandCollectionViewCell.swift in Sources */,
+				AB94C5122406D692005ABFA6 /* User.swift in Sources */,
 				AB2DB63823E0854B007C7DAB /* CurrencyConverter.swift in Sources */,
 				AB5AC70423E9449E001C563E /* AddItemViewController.swift in Sources */,
 				AB2DB61323E079E1007C7DAB /* AppDelegate.swift in Sources */,
@@ -314,6 +321,7 @@
 				AB5AC6FC23E4A722001C563E /* CategoryCollectionViewController.swift in Sources */,
 				AB2DB61523E079E1007C7DAB /* SceneDelegate.swift in Sources */,
 				AB2DB64023E15199007C7DAB /* BrandCollectionViewController.swift in Sources */,
+				ABD598692400301E008D3E3E /* LoginViewController.swift in Sources */,
 				ABC9A91623EC48FB000D80FD /* ImageCollectionViewCell.swift in Sources */,
 				AB5AC70823E96DC9001C563E /* ItemTableViewCell.swift in Sources */,
 				AB28EE7523F5C4560006C4E8 /* CartViewController.swift in Sources */,

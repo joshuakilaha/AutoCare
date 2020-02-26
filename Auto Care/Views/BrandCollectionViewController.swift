@@ -25,7 +25,6 @@ class BrandCollectionViewController: UICollectionViewController {
     
     //Customizing Brand Cell
     private let sectionInsets = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 20.0, right: 10.0)
-    
     private let brandsPerRow: CGFloat = 3
     
     
@@ -35,16 +34,16 @@ class BrandCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      
-        
-        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 50, y: self.view.frame.width / 1 - 50, width: 80, height: 80), type: .circleStrokeSpin, color: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1), padding: nil)
-        
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 50, y: self.view.frame.width / 1 - 50, width: 80, height: 80), type: .circleStrokeSpin, color: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1), padding: nil)
+        
         downloadBrands()
+        
         
     }
     
@@ -82,7 +81,9 @@ class BrandCollectionViewController: UICollectionViewController {
             print("Brands are", allBrands.count)
             self.BrandArray = allBrands
            // self.hideLoadIndicator()
+            
             self.collectionView.reloadData()
+            
         }
     }
 
@@ -91,21 +92,23 @@ class BrandCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        
+    
          return BrandArray.count
-        
+         
     }
     
 
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+       
+                
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BrandCell", for: indexPath) as! BrandCollectionViewCell
     
         self.hideLoadIndicator()
         
         cell.generateBrandCell(BrandArray[indexPath.row])
     
-        
         
         return cell
          
@@ -149,6 +152,7 @@ extension BrandCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+                
         return sectionInsets
     }
     
