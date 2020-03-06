@@ -54,7 +54,21 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        dissmissView()
+       
+        if textFields() {
+                  //Login users
+                  
+                  loginUser()
+                  
+              }
+              else {
+                  hud.textLabel.text = "ALL FIELDS ARE REQUIRED"
+                  hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                  hud.show(in: self.view)
+                  hud.dismiss(afterDelay: 2.0)
+              }
+        
+        
     }
     
     
@@ -76,11 +90,23 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func forgotPassword(_ sender: Any) {
-        
+        if emailTextField.text != "" {
+            
+            resetThePassword()
+            
+        } else {
+            hud.textLabel.text = "Please enter the email you want to reset"
+            hud.indicatorView = JGProgressHUDErrorIndicatorView()
+            hud.show(in: self.view)
+            hud.dismiss(afterDelay: 2.0)
+        }
     }
     
     
     @IBAction func resendEmailPressed(_ sender: Any) {
+        User.resendVerificationEmail(email: emailTextField.text!) { (error) in
+            print("Error in resending email", error?.localizedDescription)
+        }
     }
     
     
@@ -142,4 +168,59 @@ class LoginViewController: UIViewController {
         
     }
     
+    private func loginUser() {
+        
+        showLoadingIndicator()
+        
+        User.loginUserWith(email: emailTextField.text!, password: passwordTextField.text!) { (error, isEmailVerified) in
+            
+            if error == nil {
+                
+                if isEmailVerified {
+                self.dissmissView()
+                    print("Email is verified")
+                }
+                else {
+                    
+                    self.hud.textLabel.text = "Please Verify your Email!!"
+                    self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                    self.hud.show(in: self.view)
+                    self.hud.dismiss(afterDelay: 2.0)
+                    
+                    //enabling resend email button
+                    self.resendButton.isHidden = false
+                }
+            }
+            else {
+                print("error logging in User", error!.localizedDescription)
+                self.hud.textLabel.text = error!.localizedDescription
+                self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+                
+            }
+            
+            self.hideLoadingIndicator()
+        }
+    }
+    
+    private func resetThePassword() {
+      
+        User.resetPasswordFor(email: emailTextField.text!) { (error) in
+            
+            if error == nil {
+                self.hud.textLabel.text = "Please check your email to reset password!"
+                self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+                
+            }
+            else {
+                self.hud.textLabel.text = error!.localizedDescription
+                self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+            }
+        }
+    }
 }

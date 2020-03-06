@@ -88,25 +88,6 @@ class User {
     
     
     
-    //MARK: return Current User
-    
-    class func currentID() -> String {
-        return Auth.auth().currentUser!.uid
-    }
-    
-    class func currentUser() -> User? {
-    
-        if Auth.auth().currentUser != nil {
-            if let dictionary = UserDefaults.standard.object(forKey: cCurrentUser) {
-                return User.init(_dictionary: dictionary as! NSDictionary)
-            }
-        }
-        return nil
-    }
-    
-    
-  
-    
     
                 //MARK: SignUp User
 
@@ -130,6 +111,9 @@ class User {
     
     
     
+    
+
+    
             //MARK: LOGIN
       
       class func loginUserWith(email: String, password: String, completion: @escaping (_ error: Error?, _ isEmailVerified: Bool) -> Void) {
@@ -139,6 +123,7 @@ class User {
                   if authDataResult!.user.isEmailVerified {
                       
                       //Download User From Database
+                    downloadUserFromDatabase(userId: authDataResult!.user.uid, email: email)
                       completion(error, true)
                       
                       
@@ -152,4 +137,121 @@ class User {
               }
           }
       }
+    
+    //MARK: return Current User
+    
+    class func currentID() -> String {
+        return Auth.auth().currentUser!.uid
+    }
+    
+    class func currentUser() -> User? {
+    
+        if Auth.auth().currentUser != nil {
+            if let dictionary = UserDefaults.standard.object(forKey: cCurrentUser) {
+                return User.init(_dictionary: dictionary as! NSDictionary)
+            }
+        }
+        return nil
+    }
+    
+    
+    //MARK: Reset Password
+
+    class func resetPasswordFor(email: String, completion: @escaping (_ error: Error?) -> Void){
+        
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            completion(error)
+        }
+        
+    }
+    
+    class func resendVerificationEmail(email: String, completion: @escaping (_ error: Error?) -> Void) {
+        Auth.auth().currentUser?.reload(completion: { (error) in
+            Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
+                print("Was an Error in resnding Email", error?.localizedDescription)
+                completion(error)
+            })
+        })
+    }
+    
 }
+
+
+
+
+
+
+//MARK: Save user to Database
+
+func saveUserToDatabase(muser: User) {
+    FirebaseReference(.User).document(muser.objectId).setData(userDictionaryFrom(user: muser) as! [String : Any]) { (error)
+        in
+    
+        if error != nil {
+            print("error sating user \(error!.localizedDescription)")
+        }
+    }
+}
+
+
+//Current user
+func  saveUserLocally(UsersDictionary: NSDictionary) {
+    UserDefaults.standard.set(UsersDictionary, forKey: cCurrentUser)
+    UserDefaults.standard.synchronize()
+}
+
+
+
+func userDictionaryFrom(user: User) -> NSDictionary {
+    return NSDictionary(objects: [user.objectId, user.email, user.firstName, user.lastName, user.fullName, user.fullAddress ?? "", user.onBoard, user.purchasedItemIds], forKeys: [cObjectId as NSCopying, cEmail as NSCopying, cFirstName as NSCopying, cLastName as NSCopying, cFullName as NSCopying, cFullAddress as NSCopying, cOnboard as NSCopying, cPurchasedItemIds as NSCopying])
+}
+
+
+//Getting Users from database
+
+func downloadUserFromDatabase(userId: String, email: String) {
+    
+    FirebaseReference(.User).document(userId).getDocument { (snapshot, error) in
+        
+        guard let snapshot = snapshot else {
+            return
+        }
+        
+        if snapshot.exists {
+            
+            print("getting the current user")
+            saveUserLocally(UsersDictionary: snapshot.data()! as NSDictionary)
+        }
+        else {
+            //No user, save new iin firestore
+            
+            let user = User(_objectId: userId, _email: email, _firstName: "", _lastName: "")
+            saveUserLocally(UsersDictionary: userDictionaryFrom(user: user))
+            saveUserToDatabase(muser: user)
+            
+        }
+    }
+    
+}
+
+
+//MARK: Update user
+
+func updateCurrentUserFromDatabase(withValues: [String: Any], completion: @escaping(_ error: Error?) -> Void) {
+    
+    if let dictionary = UserDefaults.standard.object(forKey: cCurrentUser) {
+        let userObject = (dictionary as! NSDictionary).mutableCopy() as! NSMutableDictionary
+        
+        userObject.setValuesForKeys(withValues)
+        FirebaseReference(.User).document(User.currentID()).updateData(withValues) {
+            (error) in
+            completion(error)
+            
+            if error == nil  {
+                saveUserLocally(UsersDictionary: userObject)
+            }
+        }
+    }
+}
+
+
