@@ -1117,7 +1117,7 @@
         <!--Edit Profile-->
         <scene sceneID="iow-xJ-B08">
             <objects>
-                <viewController id="Tpd-iX-ta4" sceneMemberID="viewController">
+                <viewController id="Tpd-iX-ta4" customClass="EditProfileViewController" customModule="Auto_Care" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7xL-ff-gzL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1144,6 +1144,9 @@
                                 <state key="normal" title="Log Out">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="logoutButtonPressed:" destination="Tpd-iX-ta4" eventType="touchUpInside" id="8nW-lT-eIQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1164,8 +1167,17 @@
                         <viewLayoutGuide key="safeArea" id="Xyd-bu-j8V"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="NoI-5B-CHz">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="64s-r1-s64"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="64s-r1-s64">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="Tpd-iX-ta4" id="fwQ-X9-CuE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addressTextField" destination="H2u-oC-y19" id="dPc-GS-lej"/>
+                        <outlet property="nametextField" destination="cjM-W8-uzM" id="okJ-qm-gUn"/>
+                        <outlet property="surnameTextField" destination="PEI-4t-2we" id="Kg1-3V-Waz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3CM-ne-6cd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

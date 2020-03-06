@@ -98,7 +98,9 @@ class ProfileTableViewController: UITableViewController {
     
     
     @objc func rightBarButtonPressed () {
-        if editButtonItem.title == "Login" {
+        if editUIButtonItem.title == "Login" {
+            
+            showLoginView()
             
             //show login
         } else {
@@ -112,11 +114,12 @@ class ProfileTableViewController: UITableViewController {
     
     private func showLoginView() {
         let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
+         
         
         self.present(loginView, animated: true, completion: nil)
     }
     
     private func goToEditProfile() {
-        print("Edit profile")
+        performSegue(withIdentifier: "profileToEditSeg", sender: self)
     }
 }
