@@ -66,20 +66,23 @@ class ItemViewController: UIViewController {
         
         //check if user is logged in
         
+        if User.currentUser() != nil {
+            
+            downloadCartFromDatabase(User.currentID()) { (cart) in
+                if cart == nil {
+                    self.createCartForNewUser()
+                }
+                else {
+                    cart!.itemIds.append(self.item.id)
+                   // self.updateCart(cart: cart!, withValues: [cItemIds: cart!.itemIds])
+                    self.updateCart(cart: cart!, withValues: [cItemIds : cart!.itemIds])
+                }
+            }
+
+        } else {
+            showLoginView()
+        }
         
-//        downloadCartFromDatabase("1234567") { (cart) in
-//            if cart == nil {
-//                self.createCartForNewUser()
-//            }
-//            else {
-//                cart!.itemIds.append(self.item.id)
-//               // self.updateCart(cart: cart!, withValues: [cItemIds: cart!.itemIds])
-//                self.updateCart(cart: cart!, withValues: [cItemIds : cart!.itemIds])
-//            }
-//        }
-        
-        
-        showLoginView()
 
     }
     
@@ -129,7 +132,7 @@ class ItemViewController: UIViewController {
         
         let newCart = Cart()
         newCart.id = UUID().uuidString
-        newCart.userId = "1234567"
+        newCart.userId = User.currentID()
         newCart.itemIds = [self.item.id]
         newCart.brandId = brand?.id
         newCart.categoryId = category?.id

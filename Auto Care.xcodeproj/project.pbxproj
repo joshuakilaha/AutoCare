@@ -33,6 +33,8 @@
 		AB5AC70623E94CDB001C563E /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC70523E94CDB001C563E /* ItemTableViewController.swift */; };
 		AB5AC70823E96DC9001C563E /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC70723E96DC9001C563E /* ItemTableViewCell.swift */; };
 		AB94C5122406D692005ABFA6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94C5112406D692005ABFA6 /* User.swift */; };
+		AB98CA352412FE0600518DB6 /* PurchaseHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB98CA342412FE0600518DB6 /* PurchaseHistoryTableViewController.swift */; };
+		AB98CA3924133DC100518DB6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB98CA3824133DC100518DB6 /* SearchViewController.swift */; };
 		ABC9A91423EC3F16000D80FD /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A91323EC3F16000D80FD /* ItemViewController.swift */; };
 		ABC9A91623EC48FB000D80FD /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A91523EC48FB000D80FD /* ImageCollectionViewCell.swift */; };
 		ABC9A91823ED922E000D80FD /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A91723ED922E000D80FD /* Cart.swift */; };
@@ -74,6 +76,9 @@
 		AB5AC70523E94CDB001C563E /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
 		AB5AC70723E96DC9001C563E /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		AB94C5112406D692005ABFA6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AB98CA342412FE0600518DB6 /* PurchaseHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryTableViewController.swift; sourceTree = "<group>"; };
+		AB98CA3624130E6A00518DB6 /* Auto Care-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Auto Care-Bridging-Header.h"; sourceTree = "<group>"; };
+		AB98CA3824133DC100518DB6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		ABC9A91323EC3F16000D80FD /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		ABC9A91523EC48FB000D80FD /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		ABC9A91723ED922E000D80FD /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
@@ -157,6 +162,7 @@
 				AB2DB64523E1C958007C7DAB /* CategoryCollectionViewCell.swift */,
 				AB5AC70723E96DC9001C563E /* ItemTableViewCell.swift */,
 				ABC9A91523EC48FB000D80FD /* ImageCollectionViewCell.swift */,
+				AB98CA3624130E6A00518DB6 /* Auto Care-Bridging-Header.h */,
 			);
 			path = Contollers;
 			sourceTree = "<group>";
@@ -167,12 +173,14 @@
 				AB2DB64723E1CEA8007C7DAB /* AddBrandViewController.swift */,
 				AB2DB63F23E15199007C7DAB /* BrandCollectionViewController.swift */,
 				AB5AC6FB23E4A722001C563E /* CategoryCollectionViewController.swift */,
+				AB98CA3824133DC100518DB6 /* SearchViewController.swift */,
 				AB5AC6FF23E4BD95001C563E /* AddCategoryViewController.swift */,
 				AB5AC70323E9449E001C563E /* AddItemViewController.swift */,
 				AB5AC70523E94CDB001C563E /* ItemTableViewController.swift */,
 				ABC9A91323EC3F16000D80FD /* ItemViewController.swift */,
 				AB28EE7423F5C4560006C4E8 /* CartViewController.swift */,
 				ABE19F7724118ECC00CAB691 /* ProfileTableViewController.swift */,
+				AB98CA342412FE0600518DB6 /* PurchaseHistoryTableViewController.swift */,
 				AB164BDB2412E87D00AC7879 /* EditProfileViewController.swift */,
 				ABE19F7B2411A40A00CAB691 /* Login View */,
 			);
@@ -243,6 +251,7 @@
 				TargetAttributes = {
 					AB2DB60E23E079E1007C7DAB = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -325,7 +334,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB98CA3924133DC100518DB6 /* SearchViewController.swift in Sources */,
 				AB5AC70023E4BD95001C563E /* AddCategoryViewController.swift in Sources */,
+				AB98CA352412FE0600518DB6 /* PurchaseHistoryTableViewController.swift in Sources */,
 				AB2DB65023E44B13007C7DAB /* Reachability.swift in Sources */,
 				AB2DB64423E1C948007C7DAB /* BrandCollectionViewCell.swift in Sources */,
 				AB94C5122406D692005ABFA6 /* User.swift in Sources */,
@@ -497,6 +508,7 @@
 			baseConfigurationReference = 71886C248A2FDADAF3823A61 /* Pods-Auto Care.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Z3UL2PDB7;
 				INFOPLIST_FILE = "Auto Care/Info.plist";
@@ -506,6 +518,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "AutocareVersion3.Auto-Care";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Auto Care/Contollers/Auto Care-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -516,6 +530,7 @@
 			baseConfigurationReference = 2467D4B278FB0551E235C1A9 /* Pods-Auto Care.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Z3UL2PDB7;
 				INFOPLIST_FILE = "Auto Care/Info.plist";
@@ -525,6 +540,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "AutocareVersion3.Auto-Care";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Auto Care/Contollers/Auto Care-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

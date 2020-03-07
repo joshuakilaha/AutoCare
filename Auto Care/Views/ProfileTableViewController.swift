@@ -72,6 +72,7 @@ class ProfileTableViewController: UITableViewController {
                 finishedRegistrationOutlet.tintColor = .red
                 
             }
+            purchaseHistoryButton.isEnabled = true
         }
         else {
             finishedRegistrationOutlet.setTitle("logged Out", for: .normal)

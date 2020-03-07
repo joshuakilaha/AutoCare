@@ -26,6 +26,19 @@ class CartViewController: UIViewController {
       var cart: Cart?
       var allItems: [Item] = []
       var purchedItemsIds: [String] = []
+    
+    //MARK: PAYPAL
+    
+    var environment: String = PayPalEnvironmentNoNetwork {
+        willSet (newEnvironment) {
+            if (newEnvironment != environment) {
+                PayPalMobile.preconnect(withEnvironment: newEnvironment)
+            }
+        }
+    }
+    
+    var payPalConfig = PayPalConfiguration()
+    
       
       let hud = JGProgressHUD(style: .light)
       
@@ -37,6 +50,10 @@ class CartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setUpPayPal()
+        
+       // table.tableFooterView = footerView
+        
         CheckoutButtonPressed.layer.cornerRadius = 15
         
     }
@@ -44,26 +61,49 @@ class CartViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-       
+        if User.currentUser() != nil {
+            downloadCart()
+        }
+        else {
+            self.updateTotalPrice(true)
+        }
+            
         
         
-        //TODO: check is user is logged in
-        downloadCart()
+    
         
     }
     
     
     @IBAction func checkoutButton(_ sender: Any) {
-        
+    
+        if User.currentUser()!.onBoard {
+            payButtonPressed()
+            
+            //Proceed with Purchase
+            
+//             temp()
+//            addItemsToPurchaseHistory(self.purchedItemsIds)
+//            emptyTheCart()
+            
+        } else {
+            
+            self.hud.textLabel.text = "Please finish setting up your profile"
+            self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+            self.hud.show(in: self.view)
+            self.hud.dismiss(afterDelay: 2.0)
+            
+        }
         print("Checkout button Pressed")
     }
     
     
-                                        //MARK: Functions
+                        //MARK: Functions
    
     private func downloadCart()  {
     
-        downloadCartFromDatabase("1234567") { (cart) in
+        
+        downloadCartFromDatabase(User.currentID()) { (cart) in
             self.cart = cart
             self.downloadItemsFormCart()
             
@@ -82,6 +122,40 @@ class CartViewController: UIViewController {
         }
     }
     
+    
+    private func emptyTheCart() {
+        purchedItemsIds.removeAll()
+        allItems.removeAll()
+        tableView.reloadData()
+        
+        cart!.itemIds = []
+        
+        updateCartInDatabase(cart!, withValues: [cItemIds: cart!.itemIds]) { (error) in
+            if error != nil {
+                print("Error Updating Cart", error!.localizedDescription)
+            } else {
+                self.downloadItemsFormCart()
+            }
+        }
+    }
+    
+    private func addItemsToPurchaseHistory(_ itemIds: [String]) {
+        if User.currentUser() != nil {
+            let newItemIds = User.currentUser()!.purchasedItemIds + itemIds
+            updateCurrentUserFromDatabase(withValues: [cPurchasedItemIds: newItemIds]) { (error) in
+                
+                if error != nil {
+                    print("Error adding purchased items", error!.localizedDescription)
+                }
+            }
+    }
+}
+    
+//    func temp() {
+//        for item in allItems {
+//            purchedItemsIds.append(item.id)
+//        }
+//    }
     
     private func updateTotalPrice(_ isEmpty: Bool) {
         if isEmpty {
@@ -153,6 +227,74 @@ class CartViewController: UIViewController {
        }
        
 
+    //
+    
+    private func setUpPayPal(){
+        payPalConfig.acceptCreditCards = false
+        payPalConfig.merchantName = "AutoCare Limited"
+        payPalConfig.merchantPrivacyPolicyURL = URL(string: "https://www.paypal.com/webapps/mpp/ua/privacy-full")
+        payPalConfig.merchantUserAgreementURL = URL(string: "https://www.paypal.com/webapps/mpp/ua/useragreement-full")
+        
+        //setting up language
+        payPalConfig.languageOrLocale = Locale.preferredLanguages[0]
+        payPalConfig.payPalShippingAddressOption = .both
+        
+    }
+    
+    //Payment
+    
+    private func payButtonPressed() {
+        var itemsToBuy : [PayPalItem] = []
+        for item in allItems {
+            let tempItem = PayPalItem(name: item.itemName, withQuantity: 1, withPrice: NSDecimalNumber(value: item.price), withCurrency: "USD", withSku: nil)
+            
+            purchedItemsIds.append(item.id)
+            itemsToBuy.append(tempItem)
+                
+        }
+        
+        let subTotal = PayPalItem.totalPrice(forItems: itemsToBuy)
+        
+        ////
+        let shippingCost = NSDecimalNumber(string: "300.0")
+        let tax = NSDecimalNumber(string: "50.0")
+        
+        let paymentDetails = PayPalPaymentDetails(subtotal: subTotal, withShipping: shippingCost, withTax: tax)
+        
+        let total = subTotal.adding(shippingCost).adding(tax)
+        
+        let payment  = PayPalPayment(amount: total, currencyCode: "USD", shortDescription: "payment to Autocare Limited", intent: .sale)
+        
+        payment.items = itemsToBuy
+        payment.paymentDetails = paymentDetails
+        
+        if payment.processable {
+            
+            let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: payPalConfig, delegate: self)
+            
+            present(paymentViewController!, animated: true, completion: nil)
+        } else {
+            print("Payment not Processed")
+        }
+    }
+}
+
+extension  CartViewController:  PayPalPaymentDelegate {
+    func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
+        print("payPal payment cancelled")
+        paymentViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
+        
+        paymentViewController.dismiss(animated: true) {
+            
+            self.addItemsToPurchaseHistory(self.purchedItemsIds)
+            self.emptyTheCart()
+        }
+    }
+    
+    
 }
 
 
