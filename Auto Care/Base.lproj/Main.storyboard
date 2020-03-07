@@ -19,7 +19,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ifw-BF-MS6">
                                 <rect key="frame" x="0.0" y="93" width="414" height="715"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acb-9Q-trg">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acb-9Q-trg">
                                         <rect key="frame" x="20" y="0.0" width="374" height="120"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ywI-2R-hav">
@@ -30,6 +30,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iR-da-dB0">
                                                 <rect key="frame" x="8" y="67" width="358" height="46"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <state key="normal" title="Search">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -51,7 +54,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O25-gb-suR">
-                                        <rect key="frame" x="20" y="125" width="374" height="590"/>
+                                        <rect key="frame" x="20" y="0.0" width="374" height="715"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="100" id="5zl-eo-hOz" customClass="ItemTableViewCell" customModule="Auto_Care" customModuleProvider="target">
@@ -148,10 +151,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="seachTextField" destination="ywI-2R-hav" id="3yb-h0-Uk2"/>
                         <outlet property="searchButtonOutlets" destination="6iR-da-dB0" id="gyH-qQ-xqf"/>
                         <outlet property="searchOptionsView" destination="acb-9Q-trg" id="dXc-1c-bso"/>
-                        <outlet property="tavleview" destination="O25-gb-suR" id="gvN-4g-BcO"/>
+                        <outlet property="searchTextField" destination="ywI-2R-hav" id="3yb-h0-Uk2"/>
+                        <outlet property="tableView" destination="O25-gb-suR" id="gvN-4g-BcO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XtN-kL-UUp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

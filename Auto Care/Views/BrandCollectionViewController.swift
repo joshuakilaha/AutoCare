@@ -86,6 +86,16 @@ class BrandCollectionViewController: UICollectionViewController {
             
         }
     }
+    
+    
+    
+//    //Hide Add Button
+//
+//    private func addButton() {
+//        if User.currentUser() == nil {
+//
+//        }
+//    }
 
     
     // MARK: UICollectionViewDataSource
