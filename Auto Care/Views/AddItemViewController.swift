@@ -151,12 +151,14 @@ class AddItemViewController: UIViewController {
                 item.imageLinks = imageLinksArray
                 
                 SaveItem(item)
+                saveItemToAngolia(item: item)
                 self.hideLoadingIndicator()
                 self.popView()
             }
         }
         else {
             SaveItem(item)
+            saveItemToAngolia(item: item)
             popView()
         }
     }

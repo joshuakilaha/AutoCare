@@ -42,7 +42,14 @@ class BrandCollectionViewController: UICollectionViewController {
         
         activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 50, y: self.view.frame.width / 1 - 50, width: 80, height: 80), type: .circleStrokeSpin, color: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1), padding: nil)
         
-        downloadBrands()
+        if BrandArray != nil {
+            showLoadingindicator()
+             downloadBrands()
+            hideLoadIndicator()
+            } else {
+            print("No Brand")
+        }
+       
         
         
     }
@@ -69,20 +76,20 @@ class BrandCollectionViewController: UICollectionViewController {
     }
     
     
-                            //MARK:  - FUNCTIONS
+                        //MARK:  - FUNCTIONS
     
     //Download Brands
     
     private func downloadBrands(){
         
-        showLoadingindicator()
+      //  showLoadingindicator()
         
         downloadBrandFromDatabase { (allBrands) in
             print("Brands are", allBrands.count)
             self.BrandArray = allBrands
-           // self.hideLoadIndicator()
-            
             self.collectionView.reloadData()
+            
+            // self.hideLoadIndicator()
             
         }
     }

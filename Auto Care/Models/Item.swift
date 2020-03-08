@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import InstantSearchClient
 
 class Item {
     var id: String!
@@ -79,7 +79,7 @@ func downloadItemsFromDatabase(_ withCategoryId: String, completion: @escaping (
 
 //MARK: download items with ids for Cart
 
-func downloadItemsWithIdsForCart(_ withIds: [String], completion: @escaping (_ itemArray: [Item]) -> Void) {
+func downloadItemsWithIds(_ withIds: [String], completion: @escaping (_ itemArray: [Item]) -> Void) {
     
     var count = 0
     var itemArray : [Item] = []
@@ -107,6 +107,55 @@ func downloadItemsWithIdsForCart(_ withIds: [String], completion: @escaping (_ i
         
     } else {
         completion(itemArray)
+    }
+    
+}
+
+//MARK: Angolia
+
+func saveItemToAngolia(item: Item) {
+    let index = AlgoliaService.shared.index
+    
+    let itemToSave = itemDictionaryFrom(item) as! [String: Any]
+    
+    index.addObject(itemToSave, withID: item.id, requestOptions: nil) { (content, error) in
+        
+        if error != nil {
+            print("error saving to alngolia", error!.localizedDescription)
+        } else {
+            print("added to algolia")
+        }
+    }
+}
+
+
+//Searching
+func searchAlgolia(searchString: String, completion: @escaping (_ itemArray: [String]) -> Void ) {
+    
+    let index = AlgoliaService.shared.index
+    var resultIds: [String] = []
+    
+    let query = Query(query: searchString)
+    
+    query.attributesToRetrieve = ["itemName", "description"]
+    
+    index.search(query) { (content, error) in
+        
+        if error == nil {
+            let cont = content!["hits"] as! [[String: Any]]
+            
+            resultIds = []
+            
+            for result in cont {
+                resultIds.append(result["objectID"] as! String)
+            }
+            
+            completion(resultIds)
+        }
+        else {
+            print("Error while finding the Item", error!.localizedDescription)
+            completion(resultIds)
+        }
     }
     
 }

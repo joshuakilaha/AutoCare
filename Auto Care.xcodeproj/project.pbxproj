@@ -35,6 +35,7 @@
 		AB94C5122406D692005ABFA6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94C5112406D692005ABFA6 /* User.swift */; };
 		AB98CA352412FE0600518DB6 /* PurchaseHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB98CA342412FE0600518DB6 /* PurchaseHistoryTableViewController.swift */; };
 		AB98CA3924133DC100518DB6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB98CA3824133DC100518DB6 /* SearchViewController.swift */; };
+		AB98CA3D24143B9F00518DB6 /* AlgoliaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB98CA3C24143B9F00518DB6 /* AlgoliaService.swift */; };
 		ABC9A91423EC3F16000D80FD /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A91323EC3F16000D80FD /* ItemViewController.swift */; };
 		ABC9A91623EC48FB000D80FD /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A91523EC48FB000D80FD /* ImageCollectionViewCell.swift */; };
 		ABC9A91823ED922E000D80FD /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A91723ED922E000D80FD /* Cart.swift */; };
@@ -79,6 +80,7 @@
 		AB98CA342412FE0600518DB6 /* PurchaseHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryTableViewController.swift; sourceTree = "<group>"; };
 		AB98CA3624130E6A00518DB6 /* Auto Care-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Auto Care-Bridging-Header.h"; sourceTree = "<group>"; };
 		AB98CA3824133DC100518DB6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		AB98CA3C24143B9F00518DB6 /* AlgoliaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoliaService.swift; sourceTree = "<group>"; };
 		ABC9A91323EC3F16000D80FD /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		ABC9A91523EC48FB000D80FD /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		ABC9A91723ED922E000D80FD /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				ABC9A91723ED922E000D80FD /* Cart.swift */,
 				AB1D2A1323F9CDAA000DB741 /* Item.swift */,
 				AB94C5112406D692005ABFA6 /* User.swift */,
+				AB98CA3C24143B9F00518DB6 /* AlgoliaService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				AB2DB63823E0854B007C7DAB /* CurrencyConverter.swift in Sources */,
 				AB5AC70423E9449E001C563E /* AddItemViewController.swift in Sources */,
 				AB2DB61323E079E1007C7DAB /* AppDelegate.swift in Sources */,
+				AB98CA3D24143B9F00518DB6 /* AlgoliaService.swift in Sources */,
 				AB1D2A1423F9CDAA000DB741 /* Item.swift in Sources */,
 				ABE19F7824118ECC00CAB691 /* ProfileTableViewController.swift in Sources */,
 				AB2DB63C23E085A6007C7DAB /* FirebaseReferences.swift in Sources */,

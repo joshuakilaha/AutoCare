@@ -68,3 +68,21 @@ func downloadBrandFromDatabase(completion: @escaping (_ brandArray: [Brand]) -> 
     
 }
 
+
+//Algolia Saving Brand
+
+//func saveItemToAngolia(item: Item) {
+//    let index = AlgoliaService.shared.index
+//
+//    let itemToSave = itemDictionaryFrom(item) as! [String: Any]
+//
+//    index.addObject(itemToSave, withID: item.id, requestOptions: nil) { (content, error) in
+//
+//        if error != nil {
+//            print("error saving to alngolia", error!.localizedDescription)
+//        } else {
+//            print("added to algolia")
+//        }
+//    }
+//}
+

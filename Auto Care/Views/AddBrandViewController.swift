@@ -139,6 +139,7 @@ class AddBrandViewController: UIViewController {
                 brand.imageLinks = imagelinkArrays
                 
                 saveBrand(brand)
+               //  saveItemToAngolia(: item)
                 self.hideLoadingIndicator()
                 self.popView()
             }

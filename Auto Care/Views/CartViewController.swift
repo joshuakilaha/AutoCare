@@ -114,7 +114,7 @@ class CartViewController: UIViewController {
     private func downloadItemsFormCart() {
         
         if cart != nil {
-            downloadItemsWithIdsForCart(cart!.itemIds) { (allItems) in
+            downloadItemsWithIds(cart!.itemIds) { (allItems) in
                 self.allItems = allItems
                 self.updateTotalPrice(false)
                 self.tableView.reloadData()

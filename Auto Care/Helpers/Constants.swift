@@ -9,6 +9,10 @@
 import Foundation
 
 
+public let cAngolia_APP_ID = "5WFN6CJI3E"
+public let cAngilia_Key = "4c885170ab2f0b059146dcab88266b10"
+public let cAngolia_Admin_Key = "0a6f20765e2984edf857e9fd80f15e98"
+
 //Brand
 
 public let Brand_Path = "Brand"

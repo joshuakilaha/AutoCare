@@ -25,6 +25,7 @@ class SearchViewController: UIViewController {
     //VARS
     
     var searchResults: [Item] = []
+    var category: Category?
     
     var activityIndicator: NVActivityIndicatorView?
     
@@ -53,6 +54,35 @@ class SearchViewController: UIViewController {
     
  
     @IBAction func searchButtonPressed(_ sender: Any) {
+        
+        if searchTextField.text != "" {
+            //searching
+            
+            searchInDatabase(forName: searchTextField.text!)
+            
+            
+            emptyTextField()
+            animateSearchOptionIn()
+            dismissKeyboard()
+        }
+        
+    }
+    
+    //MARK: Search for Item In database
+    
+    private func searchInDatabase(forName: String) {
+        
+        showLoadingIndicator()
+        searchAlgolia(searchString: forName) { (itemIds) in
+            
+            downloadItemsWithIds(itemIds) { (allItems) in
+                self.searchResults = allItems
+                self.tableView.reloadData()
+                
+                self.hideLoadingIndicator()
+            }
+            
+        }
     }
     
     

@@ -54,7 +54,7 @@ class PurchaseHistoryTableViewController: UITableViewController {
     
     private func loadItems() {
         
-        downloadItemsWithIdsForCart(User.currentUser()!.purchasedItemIds) { (allItems) in
+        downloadItemsWithIds(User.currentUser()!.purchasedItemIds) { (allItems) in
             
             self.itemsArray = allItems
             print("you have \(allItems.count) items purchased")
