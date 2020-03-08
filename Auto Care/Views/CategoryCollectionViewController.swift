@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EmptyDataSet_Swift
 
 private let reuseIdentifier = "Cell"
 
@@ -35,6 +36,8 @@ class CategoryCollectionViewController: UICollectionViewController {
         self.title = brand?.brandName
         print("ID: ",brand!.id as Any)
 
+        collectionView.emptyDataSetSource = self
+        collectionView.emptyDataSetDelegate = self
         
         
     }
@@ -133,4 +136,12 @@ extension CategoryCollectionViewController: UICollectionViewDelegateFlowLayout {
                return sectionInsets.left
            }
     
+}
+
+extension CategoryCollectionViewController: EmptyDataSetDelegate, EmptyDataSetSource {
+    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        
+        return NSAttributedString(string: "No items in this category to be displayed")
+    }
 }

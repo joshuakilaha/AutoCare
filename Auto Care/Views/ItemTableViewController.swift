@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EmptyDataSet_Swift
 
 
 class ItemTableViewController: UITableViewController {
@@ -21,16 +22,7 @@ class ItemTableViewController: UITableViewController {
     
     //life Cycle
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if category != nil {
-                   
-                   //get items from database
-                    downloadItem()
-               }
-        
-    }
+  
     
     
     override func viewDidLoad() {
@@ -41,13 +33,21 @@ class ItemTableViewController: UITableViewController {
         self.title = category?.categoryName
         print("BrandId is from Item Table is: ", brand!.id!)
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
     }
+    
 
+    override func viewDidAppear(_ animated: Bool) {
+          super.viewDidAppear(animated)
+          
+          if category != nil {
+                     
+                     //get items from database
+                      downloadItem()
+                 }
+          
+      }
     // MARK: - Table view data source
 
 
@@ -144,4 +144,26 @@ class ItemTableViewController: UITableViewController {
         }
     }
 
+}
+
+
+
+
+
+extension ItemTableViewController: EmptyDataSetSource, EmptyDataSetDelegate {
+    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "Empty, No Items to be displayed!")
+    }
+    
+    
+    
+//    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+//        retun UIImage(name: "") //select from assessts with name
+//    }
+    
+    
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "Please refresh page or check later")
+    }
 }

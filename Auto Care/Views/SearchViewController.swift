@@ -8,6 +8,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import EmptyDataSet_Swift
 
 class SearchViewController: UIViewController {
 
@@ -35,6 +36,9 @@ class SearchViewController: UIViewController {
         tableView.tableFooterView = UIView()
         
         searchTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        
+        tableView.emptyDataSetDelegate = self
+        tableView.emptyDataSetSource = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -183,4 +187,21 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     
+}
+
+extension SearchViewController: EmptyDataSetSource, EmptyDataSetDelegate {
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        
+        return NSAttributedString(string: "Not Found")
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        
+        return NSAttributedString(string: "No item by \(searchTextField.text!) was found")
+        
+    }
+    
+//    func buttonImage(forEmptyDataSet scrollView: UIScrollView, for state: UIControl.State) -> UIImage? {
+//       return  UIImage(named: "")
+    //}
 }
