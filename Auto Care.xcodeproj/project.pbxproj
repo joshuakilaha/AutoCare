@@ -36,14 +36,29 @@
 		AB98CA352412FE0600518DB6 /* PurchaseHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB98CA342412FE0600518DB6 /* PurchaseHistoryTableViewController.swift */; };
 		AB98CA3924133DC100518DB6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB98CA3824133DC100518DB6 /* SearchViewController.swift */; };
 		AB98CA3D24143B9F00518DB6 /* AlgoliaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB98CA3C24143B9F00518DB6 /* AlgoliaService.swift */; };
+		ABA4999C2417C4090036F12F /* Pods_Auto_Care.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7BAA68158037ADF0BBECE96 /* Pods_Auto_Care.framework */; };
+		ABA4999D2417C4090036F12F /* Pods_Auto_Care.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7BAA68158037ADF0BBECE96 /* Pods_Auto_Care.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ABC9A91423EC3F16000D80FD /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A91323EC3F16000D80FD /* ItemViewController.swift */; };
 		ABC9A91623EC48FB000D80FD /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A91523EC48FB000D80FD /* ImageCollectionViewCell.swift */; };
 		ABC9A91823ED922E000D80FD /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A91723ED922E000D80FD /* Cart.swift */; };
 		ABD598692400301E008D3E3E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD598682400301E008D3E3E /* LoginViewController.swift */; };
 		ABE19F7824118ECC00CAB691 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE19F7724118ECC00CAB691 /* ProfileTableViewController.swift */; };
 		ABE19F7D2411A5DC00CAB691 /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE19F7C2411A5DC00CAB691 /* FinishRegistrationViewController.swift */; };
-		C87F897FBCDDA89D0EA0AF4E /* Pods_Auto_Care.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7BAA68158037ADF0BBECE96 /* Pods_Auto_Care.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ABA4999E2417C4090036F12F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ABA4999D2417C4090036F12F /* Pods_Auto_Care.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2467D4B278FB0551E235C1A9 /* Pods-Auto Care.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Care.release.xcconfig"; path = "Target Support Files/Pods-Auto Care/Pods-Auto Care.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C87F897FBCDDA89D0EA0AF4E /* Pods_Auto_Care.framework in Frameworks */,
+				ABA4999C2417C4090036F12F /* Pods_Auto_Care.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +247,7 @@
 				AB2DB60C23E079E1007C7DAB /* Frameworks */,
 				AB2DB60D23E079E1007C7DAB /* Resources */,
 				0A1A63153797F548857D3565 /* [CP] Embed Pods Frameworks */,
+				ABA4999E2417C4090036F12F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

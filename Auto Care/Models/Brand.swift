@@ -69,6 +69,12 @@ func downloadBrandFromDatabase(completion: @escaping (_ brandArray: [Brand]) -> 
 }
 
 
+
+//MARK: BRAND IMGAGE UPLOAD
+
+
+
+
 //Algolia Saving Brand
 
 //func saveItemToAngolia(item: Item) {

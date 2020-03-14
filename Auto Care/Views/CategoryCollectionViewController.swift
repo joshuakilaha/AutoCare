@@ -35,6 +35,8 @@ class CategoryCollectionViewController: UICollectionViewController {
         
         self.title = brand?.brandName
         print("ID: ",brand!.id as Any)
+        
+       // emptyView()
 
         collectionView.emptyDataSetSource = self
         collectionView.emptyDataSetDelegate = self
@@ -44,8 +46,11 @@ class CategoryCollectionViewController: UICollectionViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loadCategories()
         
+        //emptyView()
+        
+        loadCategories()
+            
     }
     
     //MARK: Functions
@@ -109,6 +114,20 @@ class CategoryCollectionViewController: UICollectionViewController {
         
         return cell
     }
+    
+//    private func emptyView() {
+//        
+//        if collectionView != nil {
+//                loadCategories()
+//                  print("There is an item")
+//              }
+//              else {
+//            print("No item found")
+//                  collectionView.emptyDataSetSource = self
+//                  collectionView.emptyDataSetDelegate = self
+//              }
+//        
+//    }
 
     
 
