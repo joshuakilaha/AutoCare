@@ -4,7 +4,7 @@ An E-commerce application similar to amazon or jiji where a user is able to purc
 
 The application is build in swift language and firebase as the main backend. Android will be coming soon 😄.
 
-The App still under contruction ⚠️ not complete. 
+The App still is under contruction ⚠️ not complete. 
 
 <img width="1102" alt="image1" src="https://user-images.githubusercontent.com/33428918/76690444-f9a55400-6650-11ea-9c07-5e260dbc6c69.png">
 <img width="1020" alt="image2" src="https://user-images.githubusercontent.com/33428918/76690420-c9f64c00-6650-11ea-8eea-28ebde2bfa03.png">
