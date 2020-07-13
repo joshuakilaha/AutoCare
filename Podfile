@@ -18,6 +18,4 @@ pod 'NVActivityIndicatorView/AppExtension'
 pod 'JGProgressHUD'
 pod 'PayPal-iOS-SDK'
 
-pod 'lottie-ios'
-
 end

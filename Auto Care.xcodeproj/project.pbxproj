@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB11C65E24BBDB1200E267D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB11C65D24BBDB1100E267D3 /* GoogleService-Info.plist */; };
 		AB164BDC2412E87D00AC7879 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB164BDB2412E87D00AC7879 /* EditProfileViewController.swift */; };
 		AB1D2A1423F9CDAA000DB741 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D2A1323F9CDAA000DB741 /* Item.swift */; };
 		AB28EE7523F5C4560006C4E8 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB28EE7423F5C4560006C4E8 /* CartViewController.swift */; };
@@ -25,7 +26,6 @@
 		AB2DB64823E1CEA8007C7DAB /* AddBrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB64723E1CEA8007C7DAB /* AddBrandViewController.swift */; };
 		AB2DB64E23E446DB007C7DAB /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB64D23E446DB007C7DAB /* Downloader.swift */; };
 		AB2DB65023E44B13007C7DAB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB64F23E44B13007C7DAB /* Reachability.swift */; };
-		AB2DB65223E469FC007C7DAB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB2DB65123E469FC007C7DAB /* GoogleService-Info.plist */; };
 		AB5AC6FC23E4A722001C563E /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC6FB23E4A722001C563E /* CategoryCollectionViewController.swift */; };
 		AB5AC6FE23E4B682001C563E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC6FD23E4B682001C563E /* Category.swift */; };
 		AB5AC70023E4BD95001C563E /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5AC6FF23E4BD95001C563E /* AddCategoryViewController.swift */; };
@@ -64,6 +64,7 @@
 		2467D4B278FB0551E235C1A9 /* Pods-Auto Care.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Care.release.xcconfig"; path = "Target Support Files/Pods-Auto Care/Pods-Auto Care.release.xcconfig"; sourceTree = "<group>"; };
 		71886C248A2FDADAF3823A61 /* Pods-Auto Care.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Care.debug.xcconfig"; path = "Target Support Files/Pods-Auto Care/Pods-Auto Care.debug.xcconfig"; sourceTree = "<group>"; };
 		A7BAA68158037ADF0BBECE96 /* Pods_Auto_Care.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Care.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB11C65D24BBDB1100E267D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AB164BDB2412E87D00AC7879 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		AB1D2A1323F9CDAA000DB741 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		AB28EE7423F5C4560006C4E8 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +85,6 @@
 		AB2DB64723E1CEA8007C7DAB /* AddBrandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBrandViewController.swift; sourceTree = "<group>"; };
 		AB2DB64D23E446DB007C7DAB /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		AB2DB64F23E44B13007C7DAB /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		AB2DB65123E469FC007C7DAB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AB5AC6FB23E4A722001C563E /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		AB5AC6FD23E4B682001C563E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		AB5AC6FF23E4BD95001C563E /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
@@ -145,10 +145,10 @@
 		AB2DB61123E079E1007C7DAB /* Auto Care */ = {
 			isa = PBXGroup;
 			children = (
+				AB11C65D24BBDB1100E267D3 /* GoogleService-Info.plist */,
 				AB2DB61223E079E1007C7DAB /* AppDelegate.swift */,
 				AB2DB61B23E079E4007C7DAB /* Assets.xcassets */,
 				AB2DB62C23E08414007C7DAB /* Contollers */,
-				AB2DB65123E469FC007C7DAB /* GoogleService-Info.plist */,
 				AB2DB62E23E0844C007C7DAB /* Helpers */,
 				AB2DB62023E079E4007C7DAB /* Info.plist */,
 				AB2DB61D23E079E4007C7DAB /* LaunchScreen.storyboard */,
@@ -298,7 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB2DB61F23E079E4007C7DAB /* LaunchScreen.storyboard in Resources */,
-				AB2DB65223E469FC007C7DAB /* GoogleService-Info.plist in Resources */,
+				AB11C65E24BBDB1200E267D3 /* GoogleService-Info.plist in Resources */,
 				AB2DB61C23E079E4007C7DAB /* Assets.xcassets in Resources */,
 				AB2DB61A23E079E1007C7DAB /* Main.storyboard in Resources */,
 			);
