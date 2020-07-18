@@ -42,6 +42,8 @@
 		ABC9A91623EC48FB000D80FD /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A91523EC48FB000D80FD /* ImageCollectionViewCell.swift */; };
 		ABC9A91823ED922E000D80FD /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A91723ED922E000D80FD /* Cart.swift */; };
 		ABD598692400301E008D3E3E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD598682400301E008D3E3E /* LoginViewController.swift */; };
+		ABD6512F24C32BFD0079CA9E /* StripeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD6512E24C32BFD0079CA9E /* StripeClient.swift */; };
+		ABD6513324C34AA10079CA9E /* CardInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD6513224C34AA10079CA9E /* CardInfoViewController.swift */; };
 		ABE19F7824118ECC00CAB691 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE19F7724118ECC00CAB691 /* ProfileTableViewController.swift */; };
 		ABE19F7D2411A5DC00CAB691 /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE19F7C2411A5DC00CAB691 /* FinishRegistrationViewController.swift */; };
 /* End PBXBuildFile section */
@@ -100,6 +102,8 @@
 		ABC9A91523EC48FB000D80FD /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		ABC9A91723ED922E000D80FD /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		ABD598682400301E008D3E3E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ABD6512E24C32BFD0079CA9E /* StripeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeClient.swift; sourceTree = "<group>"; };
+		ABD6513224C34AA10079CA9E /* CardInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoViewController.swift; sourceTree = "<group>"; };
 		ABE19F7724118ECC00CAB691 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		ABE19F7C2411A5DC00CAB691 /* FinishRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegistrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +173,7 @@
 				AB1D2A1323F9CDAA000DB741 /* Item.swift */,
 				AB94C5112406D692005ABFA6 /* User.swift */,
 				AB98CA3C24143B9F00518DB6 /* AlgoliaService.swift */,
+				ABD6512E24C32BFD0079CA9E /* StripeClient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 		AB2DB62D23E08420007C7DAB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ABD6513224C34AA10079CA9E /* CardInfoViewController.swift */,
 				AB2DB64723E1CEA8007C7DAB /* AddBrandViewController.swift */,
 				AB2DB63F23E15199007C7DAB /* BrandCollectionViewController.swift */,
 				AB5AC6FB23E4A722001C563E /* CategoryCollectionViewController.swift */,
@@ -356,8 +362,10 @@
 				AB98CA3924133DC100518DB6 /* SearchViewController.swift in Sources */,
 				AB5AC70023E4BD95001C563E /* AddCategoryViewController.swift in Sources */,
 				AB98CA352412FE0600518DB6 /* PurchaseHistoryTableViewController.swift in Sources */,
+				ABD6512F24C32BFD0079CA9E /* StripeClient.swift in Sources */,
 				AB2DB65023E44B13007C7DAB /* Reachability.swift in Sources */,
 				AB2DB64423E1C948007C7DAB /* BrandCollectionViewCell.swift in Sources */,
+				ABD6513324C34AA10079CA9E /* CardInfoViewController.swift in Sources */,
 				AB94C5122406D692005ABFA6 /* User.swift in Sources */,
 				AB2DB63823E0854B007C7DAB /* CurrencyConverter.swift in Sources */,
 				AB5AC70423E9449E001C563E /* AddItemViewController.swift in Sources */,

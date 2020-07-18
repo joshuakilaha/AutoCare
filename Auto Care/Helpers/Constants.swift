@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum Constants {
+    static let publishableKey = "pk_test_51H6EDWAM1Ft0DBZ2mN6uxFhmOHOVs5y8B7WLVWXvVvxlDW4glH6N58RelcsVDN2sF2KGZuN6FC4pkuVe3PVJcWTb00Yyg5JeOx"
+    static let baseURLString = "https://auto-care-pesa.herokuapp.com"
+    static let defaultCurrency = "usd"
+    static let defaultDescription = "Purchased From Autocare "
+}
 
 public let cAngolia_APP_ID = "5WFN6CJI3E"
 public let cAngilia_Key = "4c885170ab2f0b059146dcab88266b10"
