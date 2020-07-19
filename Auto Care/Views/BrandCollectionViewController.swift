@@ -49,9 +49,6 @@ class BrandCollectionViewController: UICollectionViewController {
             } else {
             print("No Brand")
         }
-       
-        
-        
     }
     
         //MARK: Loading Indicator

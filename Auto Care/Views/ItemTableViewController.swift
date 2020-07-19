@@ -42,7 +42,6 @@ class ItemTableViewController: UITableViewController {
           super.viewDidAppear(animated)
           
           if category != nil {
-                     
                      //get items from database
                       downloadItem()
                  }

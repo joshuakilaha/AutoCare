@@ -22,14 +22,12 @@ class PurchaseHistoryTableViewController: UITableViewController {
 
         tableView.tableFooterView = UIView()
         
-        
        
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         loadItems()
     }
 

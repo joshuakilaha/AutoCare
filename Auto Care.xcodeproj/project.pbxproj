@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB11C65E24BBDB1200E267D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB11C65D24BBDB1100E267D3 /* GoogleService-Info.plist */; };
+		8677E56624C423AA00CA95B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8677E56524C423AA00CA95B6 /* GoogleService-Info.plist */; };
 		AB164BDC2412E87D00AC7879 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB164BDB2412E87D00AC7879 /* EditProfileViewController.swift */; };
 		AB1D2A1423F9CDAA000DB741 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D2A1323F9CDAA000DB741 /* Item.swift */; };
 		AB28EE7523F5C4560006C4E8 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB28EE7423F5C4560006C4E8 /* CartViewController.swift */; };
@@ -65,8 +65,8 @@
 /* Begin PBXFileReference section */
 		2467D4B278FB0551E235C1A9 /* Pods-Auto Care.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Care.release.xcconfig"; path = "Target Support Files/Pods-Auto Care/Pods-Auto Care.release.xcconfig"; sourceTree = "<group>"; };
 		71886C248A2FDADAF3823A61 /* Pods-Auto Care.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Auto Care.debug.xcconfig"; path = "Target Support Files/Pods-Auto Care/Pods-Auto Care.debug.xcconfig"; sourceTree = "<group>"; };
+		8677E56524C423AA00CA95B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A7BAA68158037ADF0BBECE96 /* Pods_Auto_Care.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Care.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB11C65D24BBDB1100E267D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AB164BDB2412E87D00AC7879 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		AB1D2A1323F9CDAA000DB741 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		AB28EE7423F5C4560006C4E8 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 		AB2DB61123E079E1007C7DAB /* Auto Care */ = {
 			isa = PBXGroup;
 			children = (
-				AB11C65D24BBDB1100E267D3 /* GoogleService-Info.plist */,
+				8677E56524C423AA00CA95B6 /* GoogleService-Info.plist */,
 				AB2DB61223E079E1007C7DAB /* AppDelegate.swift */,
 				AB2DB61B23E079E4007C7DAB /* Assets.xcassets */,
 				AB2DB62C23E08414007C7DAB /* Contollers */,
@@ -304,7 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB2DB61F23E079E4007C7DAB /* LaunchScreen.storyboard in Resources */,
-				AB11C65E24BBDB1200E267D3 /* GoogleService-Info.plist in Resources */,
+				8677E56624C423AA00CA95B6 /* GoogleService-Info.plist in Resources */,
 				AB2DB61C23E079E4007C7DAB /* Assets.xcassets in Resources */,
 				AB2DB61A23E079E1007C7DAB /* Main.storyboard in Resources */,
 			);
