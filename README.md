@@ -13,4 +13,6 @@ The App still is under contruction ⚠️ not complete.
 <img width="362" alt="Screenshot 2020-03-14 at 08 47 19" src="https://user-images.githubusercontent.com/33428918/76690482-61f43580-6651-11ea-8170-91622b6c4ecf.png">
 <img width="373" alt="image5" src="https://user-images.githubusercontent.com/33428918/76690427-d24e8700-6650-11ea-9423-bae7851693e0.png"> 
 <img width="388" alt="image6" src="https://user-images.githubusercontent.com/33428918/76690429-d7abd180-6650-11ea-9dc6-c3c25e78e4b0.png">
+<img width="361" alt="Screenshot 2020-07-30 at 13 20 14" src="https://user-images.githubusercontent.com/33428918/88912171-91ee4f00-d267-11ea-84dc-618a5a5a341c.png">
+<img width="364" alt="Screenshot 2020-07-30 at 13 16 25" src="https://user-images.githubusercontent.com/33428918/88912164-8ef35e80-d267-11ea-8c85-9ba0608d1800.png">
 
