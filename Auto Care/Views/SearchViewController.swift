@@ -113,10 +113,9 @@ class SearchViewController: UIViewController {
     }
     
     
-    
     @objc func textFieldDidChange (_ textField: UITextField) {
         
-        print("typing")
+     //   print("typing")
         searchButtonOutlets.isEnabled = textField.text != ""
         
         if searchButtonOutlets.isEnabled {

@@ -19,4 +19,5 @@ pod 'JGProgressHUD'
 pod 'PayPal-iOS-SDK'
 pod 'Stripe'
 pod 'Alamofire'
+pod 'lottie-ios'
 end

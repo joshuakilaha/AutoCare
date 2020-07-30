@@ -8,11 +8,14 @@
 
 import UIKit
 import Stripe
+import Lottie
 
 protocol CardInfoViewControllerDelaget {
     func didClickDone(_ token: STPToken)
     func didClickCancel()
 }
+
+private var animationView: AnimationView?
 
 class CardInfoViewController: UIViewController {
     
@@ -36,6 +39,8 @@ class CardInfoViewController: UIViewController {
         view.addConstraint(NSLayoutConstraint(item: paymentCardTextfield, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -20))
         
         view.addConstraint(NSLayoutConstraint(item: paymentCardTextfield, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 20))
+        
+        lottieVisa()
         
     }
     
@@ -74,6 +79,36 @@ class CardInfoViewController: UIViewController {
                 print("Error processing token", error!.localizedDescription)
             }
         }
+    }
+    
+    
+    //MARK: LOTTIE FILE
+    
+    
+    private func lottieVisa() {
+        // 2. Start AnimationView with animation name (without extension)
+             
+             animationView = .init(name: "Creditcard")
+             
+             animationView!.frame = view.bounds
+             
+             // 3. Set animation content mode
+             
+             animationView!.contentMode = .scaleAspectFit
+             
+             // 4. Set animation loop mode
+             
+             animationView!.loopMode = .loop
+             
+             // 5. Adjust animation speed
+             
+             animationView!.animationSpeed = 0.5
+             
+             view.addSubview(animationView!)
+             
+             // 6. Play animation
+             
+             animationView!.play()
     }
 }
 
