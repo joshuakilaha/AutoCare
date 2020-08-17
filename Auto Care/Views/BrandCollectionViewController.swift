@@ -33,7 +33,15 @@ class BrandCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+          //overrideUserInterfaceStyle = .dark
 
+        if BrandArray != nil {
+                  showLoadingindicator()
+                   downloadBrands()
+                  hideLoadIndicator()
+                  } else {
+                  print("No Brand")
+              }
     }
     
     
@@ -42,13 +50,13 @@ class BrandCollectionViewController: UICollectionViewController {
         
         activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 50, y: self.view.frame.width / 1 - 50, width: 80, height: 80), type: .circleStrokeSpin, color: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1), padding: nil)
         
-        if BrandArray != nil {
-            showLoadingindicator()
-             downloadBrands()
-            hideLoadIndicator()
-            } else {
-            print("No Brand")
-        }
+//        if BrandArray != nil {
+//            showLoadingindicator()
+//             downloadBrands()
+//            hideLoadIndicator()
+//            } else {
+//            print("No Brand")
+//        }
     }
     
         //MARK: Loading Indicator
@@ -93,8 +101,8 @@ class BrandCollectionViewController: UICollectionViewController {
     
     
     
-//    //Hide Add Button
-//
+    //Hide Add Button
+
 //    private func addButton() {
 //        if User.currentUser() == nil {
 //

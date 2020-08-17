@@ -35,7 +35,7 @@ class CategoryCollectionViewController: UICollectionViewController {
         
         self.title = brand?.brandName
         print("ID: ",brand!.id as Any)
-        
+        loadCategories()
        // emptyView()
 
         collectionView.emptyDataSetSource = self
@@ -44,14 +44,14 @@ class CategoryCollectionViewController: UICollectionViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        //emptyView()
-        
-        loadCategories()
-            
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//
+//        //emptyView()
+//
+//        loadCategories()
+//
+//    }
     
     //MARK: Functions
     

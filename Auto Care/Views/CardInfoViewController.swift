@@ -40,13 +40,20 @@ class CardInfoViewController: UIViewController {
         
         view.addConstraint(NSLayoutConstraint(item: paymentCardTextfield, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 20))
         
-        lottieVisa()
+       
         
     }
     
+        override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+        
+          //  lottieVisa()
+    
+        }
+    
     //MARK: - Actions
 
-
+    
     @IBAction func cancelButtonPressed(_ sender: Any) {
         delegate?.didClickCancel()
         dismissView()
@@ -83,7 +90,6 @@ class CardInfoViewController: UIViewController {
     
     
     //MARK: LOTTIE FILE
-    
     
     private func lottieVisa() {
         // 2. Start AnimationView with animation name (without extension)
