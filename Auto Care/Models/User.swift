@@ -16,6 +16,7 @@ class User {
     var firstName: String
     var lastName: String
     var fullName: String
+    var phoneNumber: String
     var purchasedItemIds: [String]
     var fullAddress: String?
     var onBoard: Bool
@@ -23,13 +24,14 @@ class User {
     
     //MARK: Init
     
-    init(_objectId: String, _email: String, _firstName: String, _lastName: String) {
+    init(_objectId: String, _email: String, _firstName: String, _lastName: String, _phoneNumber: String) {
         
         objectId = _objectId
         email = _email
         firstName = _firstName
         lastName = _lastName
         fullName = _firstName + " " + _lastName
+        phoneNumber = _phoneNumber
         fullAddress = ""
         onBoard = false
         purchasedItemIds = []
@@ -57,6 +59,12 @@ class User {
         }
         else {
             lastName = ""
+        }
+        
+        if let pnumber = _dictionary[cPhoneNumber]{
+            phoneNumber = pnumber as! String
+        } else {
+            phoneNumber = ""
         }
         
         fullName = firstName + " " + lastName
@@ -241,7 +249,7 @@ func downloadUserFromDatabase(userId: String, email: String) {
         else {
             //No user, save new iin firestore
             
-            let user = User(_objectId: userId, _email: email, _firstName: "", _lastName: "")
+            let user = User(_objectId: userId, _email: email, _firstName: "", _lastName: "", _phoneNumber: "")
             saveUserLocally(UsersDictionary: userDictionaryFrom(user: user))
             saveUserToDatabase(muser: user)
             

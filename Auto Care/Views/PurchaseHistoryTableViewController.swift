@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import EmptyDataSet_Swift
 class PurchaseHistoryTableViewController: UITableViewController {
 
     //MARK: Vars
@@ -21,8 +21,9 @@ class PurchaseHistoryTableViewController: UITableViewController {
         super.viewDidLoad()
 
         tableView.tableFooterView = UIView()
+        tableView.emptyDataSetDelegate = self
+        tableView.emptyDataSetSource = self
         
-       
     }
     
     
@@ -59,7 +60,18 @@ class PurchaseHistoryTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
+}
 
-
-   
+extension PurchaseHistoryTableViewController: EmptyDataSetSource, EmptyDataSetDelegate {
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "You have purchased no Items")
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage(named: "Auto Care")
+    }
+    
+//    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+//        <#code#>
+//    }
 }

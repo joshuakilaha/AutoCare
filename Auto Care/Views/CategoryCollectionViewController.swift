@@ -57,9 +57,20 @@ class CategoryCollectionViewController: UICollectionViewController {
     
     @IBAction func addCategoryButton(_ sender: Any) {
 
-        performSegue(withIdentifier: "toAddCategory", sender: self)
-
+        if User.currentUser() != nil {
+            performSegue(withIdentifier: "toAddCategory", sender: self)
+        } else  {
+            self.showLoginView()
+        }
+        
     }
+    
+    
+    private func showLoginView() {
+          let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
+          
+          self.present(loginView, animated: true, completion: nil)
+      }
     
             //MARK: Download Categories
     private func loadCategories() {

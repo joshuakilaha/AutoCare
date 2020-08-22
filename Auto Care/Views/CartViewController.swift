@@ -9,6 +9,7 @@
 import UIKit
 import JGProgressHUD
 import Stripe
+import NVActivityIndicatorView
 
 class CartViewController: UIViewController {
 
@@ -17,9 +18,6 @@ class CartViewController: UIViewController {
     @IBOutlet weak var totalItems: UILabel!
     @IBOutlet weak var priceLable: UILabel!
 
-    
-
-    
 
     //MARK: VARS
     
@@ -29,22 +27,22 @@ class CartViewController: UIViewController {
     var purchedItemsIds: [String] = []
     var totalPrice = 0
   
-    
+    var activityIndicator: NVActivityIndicatorView?
       
       let hud = JGProgressHUD(style: .light)
       
-   // var automaticallyAdjustsScrollViewInsets: Bool { get set }
-    
     
     //MARK: LIFE CYCLE
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 80, height: 80),type: .circleStrokeSpin, color: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1),padding: nil)
+             
+        
+       print(showprice())
         
        // table.tableFooterView = footerView
-        
         CheckoutButtonPressed.layer.cornerRadius = 15
         
     }
@@ -61,12 +59,32 @@ class CartViewController: UIViewController {
     }
     
     
+    //   //showing loading Indicator
+        
+        private func showLoadingIndicator(){
+            if activityIndicator != nil {
+                self.view.addSubview(activityIndicator!)
+                activityIndicator!.startAnimating()
+
+            }
+          
+        }
+        
+        //Hide loading Indicator
+        private func hideLoadingIndicator(){
+            if activityIndicator != nil {
+                activityIndicator!.removeFromSuperview()
+                activityIndicator!.stopAnimating()
+                
+            }
+        }
+    
     @IBAction func checkOutButton(_ sender: Any) {
     
         if User.currentUser()!.onBoard {
             //show action
             showPaymentOptions()
-       //  finishPayment(tokken: <#T##STPToken#>)
+      
             
             
         } else {
@@ -128,12 +146,6 @@ class CartViewController: UIViewController {
             }
     }
 }
-    
-//    func temp() {
-//        for item in allItems {
-//            purchedItemsIds.append(item.id)
-//        }
-//    }
     
     private func updateTotalPrice(_ isEmpty: Bool) {
         if isEmpty {
@@ -210,8 +222,10 @@ class CartViewController: UIViewController {
  
     
     //Payment
-    
+  //MARK: Visa Payment
     private func finishPayment(tokken: STPToken) {
+        
+        
         self.totalPrice = 0
         for item in allItems {
             purchedItemsIds.append(item.id)
@@ -220,12 +234,19 @@ class CartViewController: UIViewController {
         self.totalPrice = self.totalPrice * 100
         StripeClient.sharedClient.createAndConfirmPayment(tokken, amount: totalPrice) { (error) in
             if error == nil {
-                self.emptyTheCart()
+                self.showLoadingIndicator()
+                
                 self.addItemsToPurchaseHistory(self.purchedItemsIds)
+                self.emptyTheCart()
+                
+                self.hideLoadingIndicator()
+                
                 //show notification
                 self.showNotification(text: "Payment Successful", isError: false)
+                
             } else {
-                self.showNotification(text: error!.localizedDescription, isError: true)
+                //error!.localizedDescription
+                self.showNotification(text: "Please Visit our Office for payments more than ksh.1 million", isError: true)
                 print("error", error!.localizedDescription)
             }
         }
@@ -247,7 +268,7 @@ class CartViewController: UIViewController {
         
          let CardAtion = UIAlertAction(title: "Pay with Visa Card", style: .default) { (action) in
             
-             //show card
+             
              let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "visaCard") as! CardInfoViewController
             
              vc.delegate = self
@@ -255,13 +276,16 @@ class CartViewController: UIViewController {
              self.present(vc, animated: true, completion: nil)
          }
          
-         let Mpesa = UIAlertAction(title: "Pay with Mpesa", style: .default) { (action) in
-                    //show card
-                }
+         let MpesaA = UIAlertAction(title: "Pay with Mpesa", style: .default) { (action) in
+           
+            
+            self.paywithMpesa()
+                        
+    }
          let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
          alertController.addAction(CardAtion)
-         alertController.addAction(Mpesa)
+         alertController.addAction(MpesaA)
          alertController.addAction(cancelAction)
         
         //for Ipad Views
@@ -272,6 +296,59 @@ class CartViewController: UIViewController {
          
          present(alertController, animated: true, completion: nil)
      }
+
+
+ //MARK: Mpesa Payment
+func paywithMpesa() {
+    let myUrl = URL(string: "https://project-daudi.000webhostapp.com/ladies_group/lipa_online.php");
+                    
+        var request = URLRequest(url:myUrl!)
+                    
+        request.httpMethod = "POST"// Compose a query string
+    let currentUser = User.currentUser()!
+    
+  self.totalPrice = 0
+    for item in allItems {
+        purchedItemsIds.append(item.id)
+        self.totalPrice += Int(item.price)
+    }
+    self.totalPrice = self.totalPrice * 1
+           print(currentUser.phoneNumber)
+    
+    let postString = "phone_number=\(currentUser.phoneNumber)&amount=\(totalPrice)"
+    
+      //  let postString = "phone_number=717746629&amount=1";
+                
+        request.httpBody = postString.data(using: String.Encoding.utf8);
+                    
+        let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+                        
+        if error != nil
+                {
+                    print("error=\(String(describing: error))")
+                        return
+                }
+                        
+                        // You can print out response object
+                       print("response = \(String(describing: response))")
+               
+                        //Let's convert response sent from a server side script to a NSDictionary object:
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                            
+                            if let parseJSON = json {
+                                
+                                // Now we can access value of First Name by its key
+                                let firstNameValue = parseJSON["firstName"] as? String
+                               print("firstNameValue: \(String(describing: firstNameValue))")
+                            }
+                        } catch {
+                            print(error)
+                        }
+                    }
+    task.resume()
+    
+    }
 }
 
 

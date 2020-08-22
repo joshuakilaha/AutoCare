@@ -17,7 +17,9 @@ class FinishRegistrationViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var SurnameTextField: UITextField!
     @IBOutlet weak var AddressTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var doneButtonOutlet: UIButton!
+    
     let hud = JGProgressHUD(style: .light)
 
     
@@ -37,6 +39,7 @@ class FinishRegistrationViewController: UIViewController {
         AddressTextField.addTarget(self, action: #selector(self.textFieldDidChange (_:)),
         for: UIControl.Event.editingChanged)
         
+        phoneNumberTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for:UIControl.Event.editingChanged)
         
     }
     
@@ -74,7 +77,7 @@ class FinishRegistrationViewController: UIViewController {
     }
     
     private func finishOboarding (){
-        let withValues = [cFirstName: nameTextField.text!, cLastName: SurnameTextField.text!, cOnboard: true, cFullAddress: AddressTextField.text!, cFullName: (nameTextField.text! + " " + SurnameTextField.text!)] as [String: Any]
+        let withValues = [cFirstName: nameTextField.text!, cLastName: SurnameTextField.text!, cOnboard: true, cFullAddress: AddressTextField.text!,cPhoneNumber: phoneNumberTextField.text!, cFullName: (nameTextField.text! + " " + SurnameTextField.text!)] as [String: Any]
         
         updateCurrentUserFromDatabase(withValues: withValues) { (error) in
             if error == nil {
@@ -87,7 +90,6 @@ class FinishRegistrationViewController: UIViewController {
                 
             }else {
                 print("Error updatng user \(error!.localizedDescription)")
-                
                 
                 self.hud.textLabel.text = error?.localizedDescription
                 self.hud.indicatorView = JGProgressHUDErrorIndicatorView()

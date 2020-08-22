@@ -23,6 +23,9 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var addressTextField: UITextField!
     
     
+    @IBOutlet weak var phoneNumber: UITextField!
+    
+    
     let hud = JGProgressHUD(style: .light)
     
     //View life cycle
@@ -42,7 +45,7 @@ class EditProfileViewController: UIViewController {
         dismissKeyboard()
         
         if checkTextfield() {
-            let withValues = [cFirstName: nametextField.text!, cLastName: surnameTextField.text!, cFullAddress: addressTextField.text!, cFullName: (nametextField.text! + " " + surnameTextField.text!)]
+            let withValues = [cFirstName: nametextField.text!, cLastName: surnameTextField.text!, cFullAddress: addressTextField.text!, cPhoneNumber: phoneNumber.text!, cFullName: (nametextField.text! + " " + surnameTextField.text!)]
             
             updateCurrentUserFromDatabase(withValues: withValues) { (error) in
                 
@@ -72,7 +75,9 @@ class EditProfileViewController: UIViewController {
     @IBAction func logoutButtonPressed(_ sender: Any) {
         logOutUser()
         
+        
     }
+    
     
     //Place user Info in text
     
@@ -80,8 +85,10 @@ class EditProfileViewController: UIViewController {
         if User.currentUser() != nil {
             let currentUser = User.currentUser()!
             
+            
             nametextField.text = currentUser.firstName
             surnameTextField.text = currentUser.lastName
+            phoneNumber.text = currentUser.phoneNumber
             addressTextField.text = currentUser.fullAddress
         }
     }

@@ -10,7 +10,6 @@
 		8600AAA724D2D2B8002E63E5 /* Creditcard.json in Resources */ = {isa = PBXBuildFile; fileRef = 8600AAA624D2D2B8002E63E5 /* Creditcard.json */; };
 		8600AAA924D6BB1A002E63E5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600AAA824D6BB1A002E63E5 /* MenuViewController.swift */; };
 		861A165624CEBF6100840F43 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861A165524CEBF6100840F43 /* SplashScreenViewController.swift */; };
-		861A165824CEC26600840F43 /* engine.json in Resources */ = {isa = PBXBuildFile; fileRef = 861A165724CEC26500840F43 /* engine.json */; };
 		8677E56624C423AA00CA95B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8677E56524C423AA00CA95B6 /* GoogleService-Info.plist */; };
 		AB164BDC2412E87D00AC7879 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB164BDB2412E87D00AC7879 /* EditProfileViewController.swift */; };
 		AB1D2A1423F9CDAA000DB741 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D2A1323F9CDAA000DB741 /* Item.swift */; };
@@ -72,7 +71,6 @@
 		8600AAA624D2D2B8002E63E5 /* Creditcard.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Creditcard.json; sourceTree = "<group>"; };
 		8600AAA824D6BB1A002E63E5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		861A165524CEBF6100840F43 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
-		861A165724CEC26500840F43 /* engine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = engine.json; sourceTree = "<group>"; };
 		8677E56524C423AA00CA95B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A7BAA68158037ADF0BBECE96 /* Pods_Auto_Care.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Care.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB164BDB2412E87D00AC7879 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				8600AAA624D2D2B8002E63E5 /* Creditcard.json */,
-				861A165724CEC26500840F43 /* engine.json */,
 				8677E56524C423AA00CA95B6 /* GoogleService-Info.plist */,
 				AB2DB61223E079E1007C7DAB /* AppDelegate.swift */,
 				AB2DB61B23E079E4007C7DAB /* Assets.xcassets */,
@@ -316,7 +313,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB2DB61F23E079E4007C7DAB /* LaunchScreen.storyboard in Resources */,
-				861A165824CEC26600840F43 /* engine.json in Resources */,
 				8677E56624C423AA00CA95B6 /* GoogleService-Info.plist in Resources */,
 				AB2DB61C23E079E4007C7DAB /* Assets.xcassets in Resources */,
 				8600AAA724D2D2B8002E63E5 /* Creditcard.json in Resources */,

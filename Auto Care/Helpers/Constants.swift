@@ -61,4 +61,5 @@ public let cCurrentUser = "currentUser"
 public let cFullAddress = "fullAddress"
 public let cOnboard = "onBoard"
 public let cPurchasedItemIds = "purchasedItemIds"
+public let cPhoneNumber = "phoneNumber"
 

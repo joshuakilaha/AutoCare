@@ -74,7 +74,6 @@ class ItemViewController: UIViewController {
                 }
                 else {
                     cart!.itemIds.append(self.item.id)
-                   // self.updateCart(cart: cart!, withValues: [cItemIds: cart!.itemIds])
                     self.updateCart(cart: cart!, withValues: [cItemIds : cart!.itemIds])
                 }
             }
