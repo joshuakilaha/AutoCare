@@ -2,7 +2,7 @@
 
 An E-commerce application similar to amazon or jiji where a user is able to purchase and sell an item online. 
 
-The application is build in swift language and firebase as the main backend.
+The application is built using swift language and firebase as the main backend.
 
 ![Auto Care](https://user-images.githubusercontent.com/33428918/90966903-df658100-e4e0-11ea-9f21-983d9dafcc37.png)
 
