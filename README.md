@@ -4,13 +4,20 @@ An E-commerce application similar to amazon or jiji where a user is able to purc
 
 The application is build in swift language and firebase as the main backend.
 
-<img width="1102" alt="image1" src="https://user-images.githubusercontent.com/33428918/76690444-f9a55400-6650-11ea-9c07-5e260dbc6c69.png">
-<img width="1020" alt="image2" src="https://user-images.githubusercontent.com/33428918/76690420-c9f64c00-6650-11ea-8eea-28ebde2bfa03.png">
-<img width="1024" alt="image3" src="https://user-images.githubusercontent.com/33428918/76690421-cbc00f80-6650-11ea-9447-57b25776b060.png">
-<img width="1052" alt="image4" src="https://user-images.githubusercontent.com/33428918/76690425-cd89d300-6650-11ea-934a-1ab950545ff9.png">
-<img width="362" alt="Screenshot 2020-03-14 at 08 47 19" src="https://user-images.githubusercontent.com/33428918/76690482-61f43580-6651-11ea-8170-91622b6c4ecf.png">
-<img width="373" alt="image5" src="https://user-images.githubusercontent.com/33428918/76690427-d24e8700-6650-11ea-9423-bae7851693e0.png"> 
-<img width="388" alt="image6" src="https://user-images.githubusercontent.com/33428918/76690429-d7abd180-6650-11ea-9dc6-c3c25e78e4b0.png">
-<img width="361" alt="Screenshot 2020-07-30 at 13 20 14" src="https://user-images.githubusercontent.com/33428918/88912171-91ee4f00-d267-11ea-84dc-618a5a5a341c.png">
-<img width="364" alt="Screenshot 2020-07-30 at 13 16 25" src="https://user-images.githubusercontent.com/33428918/88912164-8ef35e80-d267-11ea-8c85-9ba0608d1800.png">
+![Auto Care](https://user-images.githubusercontent.com/33428918/90966903-df658100-e4e0-11ea-9f21-983d9dafcc37.png)
+
+![IMG_0039](https://user-images.githubusercontent.com/33428918/90966906-e4c2cb80-e4e0-11ea-8ba6-c93554b5289c.jpg)
+
+![IMG_0089](https://user-images.githubusercontent.com/33428918/90966907-e8eee900-e4e0-11ea-9d41-621314450fe8.jpg)
+
+![IMG_0091](https://user-images.githubusercontent.com/33428918/90966908-ec827000-e4e0-11ea-830b-ccda85bf7509.jpg)
+
+![IMG_0083](https://user-images.githubusercontent.com/33428918/90966921-f99f5f00-e4e0-11ea-962b-dd5dadefa839.PNG)
+
+![IMG_0096](https://user-images.githubusercontent.com/33428918/90966911-eee4ca00-e4e0-11ea-95c9-c48751ad799e.jpg)
+
+![IMG_0097](https://user-images.githubusercontent.com/33428918/90966918-f1dfba80-e4e0-11ea-9049-c1fb02009aef.jpg)
+
+![IMG_0022](https://user-images.githubusercontent.com/33428918/90966981-78949780-e4e1-11ea-93f1-63d7691c569c.PNG)
+
 
