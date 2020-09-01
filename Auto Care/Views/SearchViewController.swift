@@ -44,7 +44,7 @@ class SearchViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 80, height: 80),type: .circleStrokeSpin, color: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1),padding: nil)
+        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 80, height: 80),type: .circleStrokeSpin, color: #colorLiteral(red: 0.2, green: 0.2, blue: 0.6, alpha: 1),padding: nil)
         
     }
     
@@ -119,7 +119,7 @@ class SearchViewController: UIViewController {
         searchButtonOutlets.isEnabled = textField.text != ""
         
         if searchButtonOutlets.isEnabled {
-            searchButtonOutlets.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+            searchButtonOutlets.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.6, alpha: 1)
         } else {
             disableSearchButton()
         }

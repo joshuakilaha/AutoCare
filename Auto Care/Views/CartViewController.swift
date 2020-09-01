@@ -179,7 +179,7 @@ class CartViewController: UIViewController {
         CheckoutButtonPressed.isEnabled = allItems.count > 0
         
         if CheckoutButtonPressed.isEnabled {
-            CheckoutButtonPressed.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+            CheckoutButtonPressed.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.6, alpha: 1)
         }
         else {
                 disableCheckoutButton()
@@ -300,7 +300,7 @@ class CartViewController: UIViewController {
 
  //MARK: Mpesa Payment
 func paywithMpesa() {
-    let myUrl = URL(string: "https://project-daudi.000webhostapp.com/ladies_group/lipa_online.php");
+    let myUrl = URL(string: MpesaAPI);
                     
         var request = URLRequest(url:myUrl!)
                     

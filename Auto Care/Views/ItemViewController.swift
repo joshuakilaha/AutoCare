@@ -113,8 +113,6 @@ class ItemViewController: UIViewController {
     }
     
     
-    
-    
     //Login
     
     private func showLoginView() {
@@ -168,11 +166,6 @@ class ItemViewController: UIViewController {
         }
     }
     
-    
-    
-    
-    
-
     /*
     // MARK: - Navigation
 

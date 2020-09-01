@@ -13,6 +13,7 @@ enum Constants {
     static let baseURLString = "https://auto-care-pesa.herokuapp.com"
     static let defaultCurrency = "usd"
     static let defaultDescription = "Purchased From Autocare "
+   
 }
 
 public let cAngolia_APP_ID = "5WFN6CJI3E"
@@ -63,3 +64,6 @@ public let cOnboard = "onBoard"
 public let cPurchasedItemIds = "purchasedItemIds"
 public let cPhoneNumber = "phoneNumber"
 
+//MPESA API
+
+public let MpesaAPI = "https://project-daudi.000webhostapp.com/ladies_group/lipa_online.php"
