@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 import EmptyDataSet_Swift
 
 private let reuseIdentifier = "Cell"
@@ -19,6 +20,8 @@ class CategoryCollectionViewController: UICollectionViewController {
     var category: Category?
     
     var categoryArray: [Category] = []
+    
+     let hud = JGProgressHUD(style: .dark)
     
     //Customizing Brand Cell
     private let sectionInsets = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 20.0, right: 10.0)
@@ -53,18 +56,34 @@ class CategoryCollectionViewController: UICollectionViewController {
 //
 //    }
     
-    //MARK: Functions
+  
     
     @IBAction func addCategoryButton(_ sender: Any) {
-
-        if User.currentUser() != nil {
-            performSegue(withIdentifier: "toAddCategory", sender: self)
-        } else  {
-            self.showLoginView()
-        }
         
+        if User.currentUser() == nil {
+                self.showLoginView()
+            } else {
+                 Admin()
+            }
     }
     
+      //MARK: Functions
+    
+    //Admin
+    private func Admin() {
+           if User.currentID() != AdminId {
+               //print("not Authoriized")
+       
+               self.hud.textLabel.text = "Not Authorized!"
+               self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+               self.hud.show(in: self.view)
+               self.hud.dismiss(afterDelay: 2.0)
+               
+           } else{
+                performSegue(withIdentifier: "toAddCategory", sender: self)
+              print("Welcome Josh")
+           }
+       }
     
     private func showLoginView() {
           let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")

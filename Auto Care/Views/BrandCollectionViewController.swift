@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 import NVActivityIndicatorView
 
 //private let reuseIdentifier = "Cell"
@@ -18,6 +19,7 @@ class BrandCollectionViewController: UICollectionViewController {
     var BrandArray: [Brand] = []
     var brand: Brand?
     
+    let hud = JGProgressHUD(style: .dark)
     
     //NVAIndicator
     var activityIndicator: NVActivityIndicatorView?
@@ -36,9 +38,9 @@ class BrandCollectionViewController: UICollectionViewController {
           //overrideUserInterfaceStyle = .dark
 
         if BrandArray != nil {
-                  showLoadingindicator()
+                  //showLoadingindicator()
                    downloadBrands()
-                  hideLoadIndicator()
+                  //hideLoadIndicator()
                   } else {
                   print("No Brand")
               }
@@ -59,6 +61,18 @@ class BrandCollectionViewController: UICollectionViewController {
 //            print("No Brand")
 //        }
     }
+    
+    
+    @IBAction func addBrand(_ sender: Any) {
+        
+        if User.currentUser() == nil {
+            self.showLoginView()
+        } else {
+             Admin()
+        }
+    }
+    
+    
     
         //MARK: Loading Indicator
     
@@ -88,28 +102,43 @@ class BrandCollectionViewController: UICollectionViewController {
     
     private func downloadBrands(){
         
-      //  showLoadingindicator()
-        
         downloadBrandFromDatabase { (allBrands) in
+           
             print("Brands are", allBrands.count)
             self.BrandArray = allBrands
             self.collectionView.reloadData()
-            
-            // self.hideLoadIndicator()
-            
+       
         }
     }
     
     
+
     
-    //Hide Add Button
-
-//    private func addButton() {
-//        if User.currentUser() == nil {
-//
-//        }
-//    }
-
+    private func Admin() {
+        if User.currentID() != AdminId {
+            //print("not Authoriized")
+    
+            self.hud.textLabel.text = "Not Authorized!"
+            self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+            self.hud.show(in: self.view)
+            self.hud.dismiss(afterDelay: 2.0)
+            
+        } else{
+             performSegue(withIdentifier: "toAddBrand", sender: self)
+           print("Welcome Josh")
+        }
+    }
+    
+    
+    //LoginView
+    
+    private func showLoginView() {
+           let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
+           
+           self.present(loginView, animated: true, completion: nil)
+       }
+    
+    
     
     // MARK: UICollectionViewDataSource
 

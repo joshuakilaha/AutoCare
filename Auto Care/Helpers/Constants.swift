@@ -67,3 +67,7 @@ public let cPhoneNumber = "phoneNumber"
 //MPESA API
 
 public let MpesaAPI = "https://project-daudi.000webhostapp.com/ladies_group/lipa_online.php"
+
+
+//Admin
+public let AdminId = "nHXMuhHpx1NzD7KX47GbYExxunQ2"

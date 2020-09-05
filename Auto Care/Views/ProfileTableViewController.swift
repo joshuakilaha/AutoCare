@@ -38,7 +38,6 @@ class ProfileTableViewController: UITableViewController {
         checkLoginStatus()
         checkOnBoadingStatus()
            
-           
        }
 
        // MARK: - Table view data source

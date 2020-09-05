@@ -57,7 +57,6 @@ class LoginViewController: UIViewController {
        
         if textFields() {
                   //Login users
-                  
                   loginUser()
                   
               }
@@ -111,8 +110,19 @@ class LoginViewController: UIViewController {
     
     
     
+    @IBAction func backgroundTapped(_ sender: Any) {
+    dismissKeyboard()
+    }
+    
+    
+    
     //MARK: Functions
     
+    
+    //dismissing keyboard
+     private func dismissKeyboard(){
+        self.view.endEditing(false)
+     }
     
     private func textFields() -> Bool {
         return (emailTextField.text != "" && passwordTextField.text != "")
