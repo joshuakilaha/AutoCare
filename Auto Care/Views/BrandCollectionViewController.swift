@@ -21,6 +21,13 @@ class BrandCollectionViewController: UICollectionViewController {
     
     let hud = JGProgressHUD(style: .dark)
     
+    
+    
+    //@IBOutlet weak var addBrandButton: UIBarButtonItem!
+    
+    
+    var addBrandButton: UIBarButtonItem!
+    
     //NVAIndicator
     var activityIndicator: NVActivityIndicatorView?
     
@@ -60,17 +67,28 @@ class BrandCollectionViewController: UICollectionViewController {
 //            } else {
 //            print("No Brand")
 //        }
+        
+       checkLoginStatus()
     }
     
     
     @IBAction func addBrand(_ sender: Any) {
         
         if User.currentUser() == nil {
-            self.showLoginView()
+            //TO-DO  Hide Button
+            
+            hideAddButton()
+           // self.showLoginView()
+           
+                       
         } else {
              Admin()
         }
     }
+    
+    
+    
+    
     
     
     
@@ -96,6 +114,27 @@ class BrandCollectionViewController: UICollectionViewController {
     }
     
     
+ 
+    
+    private func createRightBarButton(title: String) {
+        
+        addBrandButton = UIBarButtonItem(title: title, style: .plain, target: self, action: #selector(rightBarButtonPressed))
+                   
+            self.navigationItem.rightBarButtonItem = addBrandButton
+    }
+    
+    
+    @objc func rightBarButtonPressed () {
+           if addBrandButton.title == "Add" {
+               Admin()
+               
+           } else {
+               //go to user profile
+              print("Not Authorized")
+           }
+       }
+
+    
                         //MARK:  - FUNCTIONS
     
     //Download Brands
@@ -112,23 +151,60 @@ class BrandCollectionViewController: UICollectionViewController {
     }
     
     
+    
+       //Check User Status
+private func checkLoginStatus() {
+    if User.currentUser() == nil {
+         hideAddButton()
+    }
+    else {
+        //Admin()
+         createRightBarButton(title: "Add")
+    }
+}
+        
 
     
     private func Admin() {
         if User.currentID() != AdminId {
-            //print("not Authoriized")
-    
             self.hud.textLabel.text = "Not Authorized!"
             self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
             self.hud.show(in: self.view)
             self.hud.dismiss(afterDelay: 2.0)
+
+            print("Not Auth")
+            
+       // self.navigationController!.navigationItem.rightBarButtonItem = nil;
+    //self.navigationController?.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
+    //  hideAddButton()
             
         } else{
+              createRightBarButton(title: "Add")
+            
              performSegue(withIdentifier: "toAddBrand", sender: self)
            print("Welcome Josh")
         }
     }
     
+    
+    //hideButton
+    private func hideAddButton(){
+//        self.addBrandButton.accessibilityElementsHidden = true
+    
+        self.navigationController!.navigationItem.rightBarButtonItem = nil;
+        
+        self.navigationController?.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
+    }
+    
+    
+    //TOAdd Brnad
+    private func toBrandButton() {
+        if User.currentUser() == nil {
+            hideAddButton()
+        }else {
+            Admin()
+        }
+    }
     
     //LoginView
     

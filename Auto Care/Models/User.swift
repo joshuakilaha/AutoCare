@@ -117,11 +117,6 @@ class User {
     }
     
     
-    
-    
-    
-
-    
             //MARK: LOGIN
       
       class func loginUserWith(email: String, password: String, completion: @escaping (_ error: Error?, _ isEmailVerified: Bool) -> Void) {

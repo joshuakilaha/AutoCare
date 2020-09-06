@@ -722,13 +722,7 @@
                             <outlet property="delegate" destination="HuE-65-hVR" id="1VU-Ee-DQu"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Brand" id="I7J-tq-gHn">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TIQ-Mz-hd1">
-                            <connections>
-                                <action selector="addBrand:" destination="HuE-65-hVR" id="s6q-EL-xRZ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Brand" id="I7J-tq-gHn"/>
                     <connections>
                         <segue destination="bh6-zc-6Tv" kind="show" identifier="brandToCategorySegue" id="xrx-rn-jkj"/>
                         <segue destination="Oub-qQ-3QI" kind="show" identifier="toAddBrand" id="gM2-xe-735"/>

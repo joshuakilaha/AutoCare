@@ -99,10 +99,9 @@ class ProfileTableViewController: UITableViewController {
     
     @objc func rightBarButtonPressed () {
         if editUIButtonItem.title == "Login" {
-            
+               //show login
             showLoginView()
             
-            //show login
         } else {
             //go to user profile
             goToEditProfile()
