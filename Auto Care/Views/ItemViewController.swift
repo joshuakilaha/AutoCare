@@ -29,7 +29,7 @@ class ItemViewController: UIViewController {
     
     
     private let sectionInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
-    private let cellHeight: CGFloat = 196.0
+    private let cellHeight: CGFloat = 300.0
     private let itemsPerRow: CGFloat = 1
     
     

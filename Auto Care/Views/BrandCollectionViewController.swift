@@ -72,22 +72,19 @@ class BrandCollectionViewController: UICollectionViewController {
     }
     
     
-    @IBAction func addBrand(_ sender: Any) {
-        
-        if User.currentUser() == nil {
-            //TO-DO  Hide Button
-            
-            hideAddButton()
-           // self.showLoginView()
-           
-                       
-        } else {
-             Admin()
-        }
-    }
-    
-    
-    
+//    @IBAction func addBrand(_ sender: Any) {
+//
+//        if User.currentUser() == nil {
+//            //TO-DO  Hide Button
+//
+//            hideAddButton()
+//           // self.showLoginView()
+//
+//
+//        } else {
+//             Admin()
+//        }
+//    }
     
     
     
@@ -122,7 +119,6 @@ class BrandCollectionViewController: UICollectionViewController {
                    
             self.navigationItem.rightBarButtonItem = addBrandButton
     }
-    
     
     @objc func rightBarButtonPressed () {
            if addBrandButton.title == "Add" {
@@ -163,7 +159,6 @@ private func checkLoginStatus() {
     }
 }
         
-
     
     private func Admin() {
         if User.currentID() != AdminId {
@@ -173,11 +168,7 @@ private func checkLoginStatus() {
             self.hud.dismiss(afterDelay: 2.0)
 
             print("Not Auth")
-            
-       // self.navigationController!.navigationItem.rightBarButtonItem = nil;
-    //self.navigationController?.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
-    //  hideAddButton()
-            
+
         } else{
               createRightBarButton(title: "Add")
             
@@ -186,7 +177,7 @@ private func checkLoginStatus() {
         }
     }
     
-    
+
     //hideButton
     private func hideAddButton(){
 //        self.addBrandButton.accessibilityElementsHidden = true
@@ -196,7 +187,7 @@ private func checkLoginStatus() {
         self.navigationController?.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
     }
     
-    
+
     //TOAdd Brnad
     private func toBrandButton() {
         if User.currentUser() == nil {

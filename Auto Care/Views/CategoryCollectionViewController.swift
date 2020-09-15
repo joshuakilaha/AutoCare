@@ -16,6 +16,7 @@ class CategoryCollectionViewController: UICollectionViewController {
     
     //MARK: Var
     
+    
     var brand: Brand?
     var category: Category?
     

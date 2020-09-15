@@ -773,7 +773,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="imageCell" id="7D3-tr-u0d" customClass="ImageCollectionViewCell" customModule="Auto_Care" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="5.5" width="415" height="389"/>
+                                        <rect key="frame" x="0.0" y="6" width="415" height="389"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="07r-ZA-gWR">
                                             <rect key="frame" x="0.0" y="0.0" width="415" height="389"/>
@@ -783,7 +783,7 @@
                                                     <rect key="frame" x="8" y="26.5" width="399" height="354.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="NqR-KA-bDD">
-                                                            <rect key="frame" x="0.0" y="0.0" width="399" height="354.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="400" height="354.5"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                     </subviews>
@@ -1021,7 +1021,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYl-1s-S7K">
                                                     <rect key="frame" x="130.5" y="73" width="199.5" height="16"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="31" id="swO-te-gh1"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="swO-te-gh1"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
@@ -1325,7 +1325,7 @@
             <objects>
                 <viewController id="pdO-OV-rFU" customClass="FinishRegistrationViewController" customModule="Auto_Care" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uKC-NH-bpv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Onboading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RA3-lB-ukV">
