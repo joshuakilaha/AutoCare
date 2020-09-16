@@ -39,25 +39,16 @@ class CategoryCollectionViewController: UICollectionViewController {
         
         self.title = brand?.brandName
         print("ID: ",brand!.id as Any)
-        loadCategories()
-       // emptyView()
-
-        collectionView.emptyDataSetSource = self
-        collectionView.emptyDataSetDelegate = self
         
-        
+        if brand!.id as Any != nil {
+            loadCategories()
+           
+        } else {
+            
+            collectionView.emptyDataSetSource = self
+            collectionView.emptyDataSetDelegate = self
+        }
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//
-//        //emptyView()
-//
-//        loadCategories()
-//
-//    }
-    
-  
     
     @IBAction func addCategoryButton(_ sender: Any) {
         
@@ -145,24 +136,7 @@ class CategoryCollectionViewController: UICollectionViewController {
         
         return cell
     }
-    
-//    private func emptyView() {
-//        
-//        if collectionView != nil {
-//                loadCategories()
-//                  print("There is an item")
-//              }
-//              else {
-//            print("No item found")
-//                  collectionView.emptyDataSetSource = self
-//                  collectionView.emptyDataSetDelegate = self
-//              }
-//        
-//    }
 
-    
-
-    
 }
 
 //MARK: EXTENSIONS

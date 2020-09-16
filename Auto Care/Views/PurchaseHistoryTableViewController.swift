@@ -71,7 +71,4 @@ extension PurchaseHistoryTableViewController: EmptyDataSetSource, EmptyDataSetDe
         return UIImage(named: "Auto Care")
     }
     
-//    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-//        <#code#>
-//    }
 }

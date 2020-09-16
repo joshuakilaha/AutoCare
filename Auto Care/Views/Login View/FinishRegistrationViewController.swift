@@ -22,9 +22,6 @@ class FinishRegistrationViewController: UIViewController {
     
     let hud = JGProgressHUD(style: .light)
 
-    
-    
-    
     //Life cycle
     
     override func viewDidLoad() {

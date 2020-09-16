@@ -22,9 +22,6 @@ class ItemTableViewController: UITableViewController {
     
     //life Cycle
     
-  
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +29,7 @@ class ItemTableViewController: UITableViewController {
         
         self.title = category?.categoryName
         print("BrandId is from Item Table is: ", brand!.id!)
-
+        print("category ID: ", category!.id!)
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
     }
@@ -124,22 +121,11 @@ class ItemTableViewController: UITableViewController {
 
 }
 
-
-
-
-
 extension ItemTableViewController: EmptyDataSetSource, EmptyDataSetDelegate {
     
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         return NSAttributedString(string: "Empty, No Items to be displayed!")
     }
-    
-    
-    
-//    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
-//        retun UIImage(name: "") //select from assessts with name
-//    }
-    
     
     func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         return NSAttributedString(string: "Please refresh page or check later")

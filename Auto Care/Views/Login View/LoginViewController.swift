@@ -59,15 +59,12 @@ class LoginViewController: UIViewController {
                   //Login users
                   loginUser()
                   
-              }
-              else {
-                  hud.textLabel.text = "ALL FIELDS ARE REQUIRED"
-                  hud.indicatorView = JGProgressHUDErrorIndicatorView()
-                  hud.show(in: self.view)
-                  hud.dismiss(afterDelay: 2.0)
-              }
-        
-        
+              } else {
+                hud.textLabel.text = "ALL FIELDS ARE REQUIRED"
+                hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                hud.show(in: self.view)
+                hud.dismiss(afterDelay: 2.0)
+        }
     }
     
     
@@ -173,8 +170,6 @@ class LoginViewController: UIViewController {
             
              self.hideLoadingIndicator()
         }
-        
-       
         
     }
     

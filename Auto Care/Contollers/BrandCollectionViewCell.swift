@@ -13,10 +13,6 @@ class BrandCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var brandImageView: UIImageView!
     @IBOutlet weak var brandNameCell: UILabel!
     
-    //layout.scrollDirection = .horizontal
-    
-
-     
     func generateBrandCell(_ brand: Brand) {
         brandNameCell.text = brand.brandName
         

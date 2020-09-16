@@ -11,19 +11,12 @@ import UIKit
 
 class ItemTableViewCell: UITableViewCell {
     
-    
-
- 
-    
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemNameText: UILabel!
     @IBOutlet weak var itemDescriptionText: UILabel!
     @IBOutlet weak var itemPriceText: UILabel!
     
   
-    
-    
-    
     //MARK: LIFE CYCLE
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,16 +25,11 @@ class ItemTableViewCell: UITableViewCell {
         
     }
     
-    
-    
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    
-    
     
     func generateItemCell(_ item: Item) {
         itemNameText.text = item.itemName
@@ -55,7 +43,4 @@ class ItemTableViewCell: UITableViewCell {
             }
         }
     }
-    
-
-
 }

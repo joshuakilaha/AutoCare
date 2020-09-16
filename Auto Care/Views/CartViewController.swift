@@ -41,8 +41,6 @@ class CartViewController: UIViewController {
              
         
        print(showprice())
-        
-       // table.tableFooterView = footerView
         CheckoutButtonPressed.layer.cornerRadius = 15
         
     }
@@ -59,7 +57,7 @@ class CartViewController: UIViewController {
     }
     
     
-    //   //showing loading Indicator
+    //showing loading Indicator
         
         private func showLoadingIndicator(){
             if activityIndicator != nil {
@@ -215,11 +213,7 @@ class CartViewController: UIViewController {
                   itemVc.item = withItem
                   self.navigationController?.pushViewController(itemVc, animated: true)
        }
-       
-
-    //
-    
- 
+        
     
     //Payment
   //MARK: Visa Payment

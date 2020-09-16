@@ -10,7 +10,7 @@ import UIKit
 import JGProgressHUD
 import NVActivityIndicatorView
 
-//private let reuseIdentifier = "Cell"
+
 
 class BrandCollectionViewController: UICollectionViewController {
     
@@ -20,12 +20,7 @@ class BrandCollectionViewController: UICollectionViewController {
     var brand: Brand?
     
     let hud = JGProgressHUD(style: .dark)
-    
-    
-    
-    //@IBOutlet weak var addBrandButton: UIBarButtonItem!
-    
-    
+        
     var addBrandButton: UIBarButtonItem!
     
     //NVAIndicator
@@ -59,36 +54,11 @@ class BrandCollectionViewController: UICollectionViewController {
         super.viewDidAppear(animated)
         
         activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 50, y: self.view.frame.width / 1 - 50, width: 80, height: 80), type: .circleStrokeSpin, color: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1), padding: nil)
-        
-//        if BrandArray != nil {
-//            showLoadingindicator()
-//             downloadBrands()
-//            hideLoadIndicator()
-//            } else {
-//            print("No Brand")
-//        }
-        
+                
        checkLoginStatus()
     }
     
-    
-//    @IBAction func addBrand(_ sender: Any) {
-//
-//        if User.currentUser() == nil {
-//            //TO-DO  Hide Button
-//
-//            hideAddButton()
-//           // self.showLoginView()
-//
-//
-//        } else {
-//             Admin()
-//        }
-//    }
-    
-    
-    
-    
+        
         //MARK: Loading Indicator
     
     //show indicator
@@ -110,8 +80,6 @@ class BrandCollectionViewController: UICollectionViewController {
         }
     }
     
-    
- 
     
     private func createRightBarButton(title: String) {
         
@@ -180,7 +148,6 @@ private func checkLoginStatus() {
 
     //hideButton
     private func hideAddButton(){
-//        self.addBrandButton.accessibilityElementsHidden = true
     
         self.navigationController!.navigationItem.rightBarButtonItem = nil;
         
@@ -240,7 +207,7 @@ private func checkLoginStatus() {
     //moving to Category
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "brandToCategorySegue", sender: BrandArray[indexPath.row])
-       // print("Brand selected is:",brand?.brandName)
+
     }
     
     

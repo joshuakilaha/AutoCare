@@ -195,11 +195,6 @@ class User {
     
 }
 
-
-
-
-
-
 //MARK: Save user to Database
 
 func saveUserToDatabase(muser: User) {

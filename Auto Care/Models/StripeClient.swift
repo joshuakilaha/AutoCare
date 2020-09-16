@@ -11,8 +11,6 @@ import Stripe
 import Alamofire
 
 
-
-
 class StripeClient {
     static let sharedClient = StripeClient()
     
