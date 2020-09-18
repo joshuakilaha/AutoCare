@@ -23,6 +23,8 @@ class AddItemViewController: UIViewController {
     //MARK: Vars
     var category: Category!
     var brand: Brand!
+    var user: User!
+    
     
     var gallery: GalleryController!
     let  hud = JGProgressHUD(style: .light)
@@ -37,6 +39,8 @@ class AddItemViewController: UIViewController {
         super.viewDidAppear(animated)
         
         activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 60, height: 60), type: .circleStrokeSpin, color: #colorLiteral(red: 0.2, green: 0.2, blue: 0.6, alpha: 1), padding: nil)
+    
+        print("User ID:", User.currentID())
     }
     
     override func viewDidLoad() {
@@ -138,12 +142,15 @@ class AddItemViewController: UIViewController {
         
         let item = Item()
         
+        let owner = User.currentID()
+        
         item.id = UUID().uuidString
         item.itemName = itemNameText.text!
         item.brandId = brand.id
         item.categoryId = category.id
         item.description = itemDescriptionText.text
         item.price = Double(itemPriceText.text!)
+        item.userId = owner
         
         
         if itemImages.count > 0 {

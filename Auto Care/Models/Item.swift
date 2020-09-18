@@ -18,6 +18,7 @@ class Item {
     var description: String!
     var price: Double!
     var imageLinks: [String]!
+    var userId: String!
     
     init() {
         
@@ -31,6 +32,7 @@ class Item {
         description = _dictionary [cDesctiption] as? String
         price = _dictionary[cPrice] as? Double
         imageLinks = _dictionary[cImageLinks]  as? [String]
+        userId = _dictionary[cUserForItemId] as? String
     }
     
 }
@@ -39,7 +41,7 @@ class Item {
                 //MARK: Create Item
 
 func itemDictionaryFrom(_ item: Item) -> NSDictionary {
-    return NSDictionary(objects: [item.id, item.brandId, item.categoryId, item.itemName, item.description, item.price, item.imageLinks], forKeys: [cObjectId as NSCopying, cBrandId as NSCopying, cCategoryId as NSCopying, cItemName as NSCopying,cDesctiption as NSCopying, cPrice as NSCopying, cImageLinks as NSCopying])
+    return NSDictionary(objects: [item.id, item.brandId, item.categoryId, item.itemName, item.description, item.price, item.imageLinks, item.userId], forKeys: [cObjectId as NSCopying, cBrandId as NSCopying, cCategoryId as NSCopying, cItemName as NSCopying,cDesctiption as NSCopying, cPrice as NSCopying, cImageLinks as NSCopying, cUserForItemId as NSCopying])
 }
 
 

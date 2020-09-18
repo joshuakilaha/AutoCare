@@ -44,6 +44,7 @@ public let cItemName = "itemName"
 public let cImageLinks = "imageLinks"
 public let cDesctiption = "description"
 public let cPrice = "price"
+public let cUserForItemId = "User's Id"
 
 
 //Cart
