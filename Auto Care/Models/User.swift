@@ -18,6 +18,7 @@ class User {
     var fullName: String
     var phoneNumber: String
     var purchasedItemIds: [String]
+    var userItems: [String]
     var fullAddress: String?
     var onBoard: Bool
     
@@ -35,6 +36,7 @@ class User {
         fullAddress = ""
         onBoard = false
         purchasedItemIds = []
+        userItems = []
     }
     
     init(_dictionary: NSDictionary) {
@@ -90,6 +92,12 @@ class User {
         }
         else {
             purchasedItemIds = []
+        }
+        
+        if let useritemids = _dictionary[cUserItems] {
+            userItems = useritemids as! [String]
+        } else {
+            userItems = []
         }
         
     }
@@ -217,7 +225,7 @@ func  saveUserLocally(UsersDictionary: NSDictionary) {
 
 
 func userDictionaryFrom(user: User) -> NSDictionary {
-    return NSDictionary(objects: [user.objectId, user.email, user.firstName, user.lastName, user.fullName, user.fullAddress ?? "", user.onBoard, user.purchasedItemIds], forKeys: [cObjectId as NSCopying, cEmail as NSCopying, cFirstName as NSCopying, cLastName as NSCopying, cFullName as NSCopying, cFullAddress as NSCopying, cOnboard as NSCopying, cPurchasedItemIds as NSCopying])
+    return NSDictionary(objects: [user.objectId, user.email, user.firstName, user.lastName, user.fullName, user.fullAddress ?? "", user.onBoard, user.purchasedItemIds, user.userItems], forKeys: [cObjectId as NSCopying, cEmail as NSCopying, cFirstName as NSCopying, cLastName as NSCopying, cFullName as NSCopying, cFullAddress as NSCopying, cOnboard as NSCopying, cPurchasedItemIds as NSCopying, cUserItems as NSCopying])
 }
 
 

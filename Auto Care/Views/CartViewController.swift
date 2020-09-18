@@ -84,7 +84,6 @@ class CartViewController: UIViewController {
             showPaymentOptions()
       
             
-            
         } else {
             self.showNotification(text: "Please finish setting up your profile", isError: true)
         }

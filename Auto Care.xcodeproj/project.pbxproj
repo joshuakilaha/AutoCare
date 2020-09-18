@@ -10,6 +10,7 @@
 		8600AAA724D2D2B8002E63E5 /* Creditcard.json in Resources */ = {isa = PBXBuildFile; fileRef = 8600AAA624D2D2B8002E63E5 /* Creditcard.json */; };
 		8600AAA924D6BB1A002E63E5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600AAA824D6BB1A002E63E5 /* MenuViewController.swift */; };
 		861A165624CEBF6100840F43 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861A165524CEBF6100840F43 /* SplashScreenViewController.swift */; };
+		866C0A7525156699008B5415 /* MyItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866C0A7425156699008B5415 /* MyItemsTableViewController.swift */; };
 		8677E56624C423AA00CA95B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8677E56524C423AA00CA95B6 /* GoogleService-Info.plist */; };
 		AB164BDC2412E87D00AC7879 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB164BDB2412E87D00AC7879 /* EditProfileViewController.swift */; };
 		AB1D2A1423F9CDAA000DB741 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D2A1323F9CDAA000DB741 /* Item.swift */; };
@@ -71,6 +72,7 @@
 		8600AAA624D2D2B8002E63E5 /* Creditcard.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Creditcard.json; sourceTree = "<group>"; };
 		8600AAA824D6BB1A002E63E5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		861A165524CEBF6100840F43 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		866C0A7425156699008B5415 /* MyItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyItemsTableViewController.swift; sourceTree = "<group>"; };
 		8677E56524C423AA00CA95B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A7BAA68158037ADF0BBECE96 /* Pods_Auto_Care.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Care.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB164BDB2412E87D00AC7879 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				861A165524CEBF6100840F43 /* SplashScreenViewController.swift */,
 				8600AAA824D6BB1A002E63E5 /* MenuViewController.swift */,
 				ABD6513224C34AA10079CA9E /* CardInfoViewController.swift */,
+				866C0A7425156699008B5415 /* MyItemsTableViewController.swift */,
 				AB2DB64723E1CEA8007C7DAB /* AddBrandViewController.swift */,
 				AB2DB63F23E15199007C7DAB /* BrandCollectionViewController.swift */,
 				AB5AC6FB23E4A722001C563E /* CategoryCollectionViewController.swift */,
@@ -373,6 +376,7 @@
 				AB5AC70023E4BD95001C563E /* AddCategoryViewController.swift in Sources */,
 				AB98CA352412FE0600518DB6 /* PurchaseHistoryTableViewController.swift in Sources */,
 				ABD6512F24C32BFD0079CA9E /* StripeClient.swift in Sources */,
+				866C0A7525156699008B5415 /* MyItemsTableViewController.swift in Sources */,
 				861A165624CEBF6100840F43 /* SplashScreenViewController.swift in Sources */,
 				AB2DB65023E44B13007C7DAB /* Reachability.swift in Sources */,
 				AB2DB64423E1C948007C7DAB /* BrandCollectionViewCell.swift in Sources */,

@@ -25,6 +25,8 @@ class AddItemViewController: UIViewController {
     var brand: Brand!
     var user: User!
     
+    var allItems: [Category] = []
+    var UserItemsIds: [String] = []
     
     var gallery: GalleryController!
     let  hud = JGProgressHUD(style: .light)
@@ -146,6 +148,7 @@ class AddItemViewController: UIViewController {
         let owner = User.currentUser()
         let ownerPhoneNumber  = User.currentUser()
         
+    
         item.id = UUID().uuidString
         item.itemName = itemNameText.text!
         item.brandId = brand.id
@@ -155,12 +158,15 @@ class AddItemViewController: UIViewController {
         item.userId = ownerId
         item.owner = owner?.fullName
         item.phoneNumber = ownerPhoneNumber?.phoneNumber
-        
+        UserItemsIds.append(item.id)
+       
+
         
         if itemImages.count > 0 {
             uploadItemImages(images: itemImages, itemId: item.id) { (imageLinksArray) in
                 item.imageLinks = imageLinksArray
                 
+                self.addItemsToUserLibrary(self.UserItemsIds)
                 SaveItem(item)
                 saveItemToAngolia(item: item)
                 self.hideLoadingIndicator()
@@ -168,40 +174,23 @@ class AddItemViewController: UIViewController {
             }
         }
         else {
+            self.addItemsToUserLibrary(self.UserItemsIds)
             SaveItem(item)
             saveItemToAngolia(item: item)
             popView()
         }
     }
     
-    
-//
-//    private func noInternet()  -> Bool {
-//
-//        return true
-//
-////        self.hud.textLabel.text = "No Internet Connection! Please try again later"
-////        self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
-////        self.hud.show(in: self.view)
-////        self.hud.dismiss(afterDelay: 10.0)
-//
-//    }
-    
-    
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func addItemsToUserLibrary(_ itemIds: [String]){
+        if User.currentUser() != nil {
+            let newItemId = User.currentUser()!.userItems + itemIds
+            updateCurrentUserFromDatabase(withValues: [cUserItems: newItemId]) { (error) in
+                if error != nil {
+                    print("Error adding Item", error!.localizedDescription)
+                }
+            }
+        }
     }
-    */
-
 }
 
 
