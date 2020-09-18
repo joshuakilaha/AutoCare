@@ -85,10 +85,10 @@ class EditProfileViewController: UIViewController {
         if User.currentUser() != nil {
             let currentUser = User.currentUser()!
             
-            
+            let phone = "0\(currentUser.phoneNumber)"
             nametextField.text = currentUser.firstName
             surnameTextField.text = currentUser.lastName
-            phoneNumber.text = currentUser.phoneNumber
+            phoneNumber.text = phone
             addressTextField.text = currentUser.fullAddress
         }
     }

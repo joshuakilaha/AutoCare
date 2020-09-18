@@ -15,7 +15,8 @@ class ItemViewController: UIViewController {
     @IBOutlet weak var itemNameText: UILabel!
     @IBOutlet weak var itemDescriptionText: UITextView!
     @IBOutlet weak var ItemPriceText: UILabel!
-    
+    @IBOutlet weak var sellerNameText: UILabel!
+    @IBOutlet weak var sellerPhoneNumber: UILabel!
     
     //Mark: VARS
     
@@ -87,12 +88,15 @@ class ItemViewController: UIViewController {
     
     //Getting Item from db
     private func SetupItemUI () {
+        
         if item != nil {
+            let ownerPhoneNumber = "0\(item.phoneNumber ?? "Phone")"
             self.title = item.itemName
             itemNameText.text = item.itemName
             itemDescriptionText.text = item.description
             ItemPriceText.text = convertCurrency(item.price)
-            
+            sellerNameText.text = item.owner
+            sellerPhoneNumber.text = ownerPhoneNumber
         }
     }
     

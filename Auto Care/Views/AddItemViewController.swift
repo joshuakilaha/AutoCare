@@ -142,7 +142,9 @@ class AddItemViewController: UIViewController {
         
         let item = Item()
         
-        let owner = User.currentID()
+        let ownerId = User.currentID()
+        let owner = User.currentUser()
+        let ownerPhoneNumber  = User.currentUser()
         
         item.id = UUID().uuidString
         item.itemName = itemNameText.text!
@@ -150,7 +152,9 @@ class AddItemViewController: UIViewController {
         item.categoryId = category.id
         item.description = itemDescriptionText.text
         item.price = Double(itemPriceText.text!)
-        item.userId = owner
+        item.userId = ownerId
+        item.owner = owner?.fullName
+        item.phoneNumber = ownerPhoneNumber?.phoneNumber
         
         
         if itemImages.count > 0 {
