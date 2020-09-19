@@ -120,15 +120,19 @@ class BrandCollectionViewController: UICollectionViewController {
 private func checkLoginStatus() {
     if User.currentUser() == nil {
          hideAddButton()
+        
     }
     else {
         //Admin()
          createRightBarButton(title: "Add")
     }
+ 
 }
         
     
     private func Admin() {
+        
+        
         if User.currentID() != AdminId {
             self.hud.textLabel.text = "Not Authorized!"
             self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
@@ -136,12 +140,14 @@ private func checkLoginStatus() {
             self.hud.dismiss(afterDelay: 2.0)
 
             print("Not Auth")
-
-        } else{
-              createRightBarButton(title: "Add")
             
+          
+            
+            
+        } else{
+             createRightBarButton(title: "Add")
              performSegue(withIdentifier: "toAddBrand", sender: self)
-           print("Welcome Josh")
+             print("Welcome Josh")
         }
     }
     

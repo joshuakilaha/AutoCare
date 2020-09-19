@@ -196,9 +196,6 @@ class User {
         catch let error as NSError {
             completion(error)
         }
-        
-        
-        
     }
     
 }

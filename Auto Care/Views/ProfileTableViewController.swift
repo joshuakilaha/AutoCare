@@ -17,10 +17,16 @@ class ProfileTableViewController: UITableViewController {
        
        @IBOutlet weak var purchaseHistoryButton: UIButton!
        
-       //MARK: VARS
+    @IBOutlet weak var myItemButton: UIButton!
+    //MARK: VARS
       
     var editUIButtonItem: UIBarButtonItem!
-       
+    
+    
+    @IBOutlet weak var myItemTableViewCell: UITableViewCell!
+    
+    @IBOutlet weak var myPurchaseHistoryTableCell: UITableViewCell!
+    
        //Life Cycle
        override func viewDidLoad() {
            super.viewDidLoad()
@@ -46,7 +52,7 @@ class ProfileTableViewController: UITableViewController {
        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
           
            
-           return 3
+           return 4
        }
     
     //MARK: Table view Delegate
@@ -71,12 +77,18 @@ class ProfileTableViewController: UITableViewController {
                 finishedRegistrationOutlet.tintColor = .red
                 
             }
+            myPurchaseHistoryTableCell.isHidden = false
+            myItemTableViewCell.isHidden = false
+            myItemButton.isEnabled = true
             purchaseHistoryButton.isEnabled = true
         }
         else {
             finishedRegistrationOutlet.setTitle("logged Out", for: .normal)
             finishedRegistrationOutlet.isEnabled = false
             purchaseHistoryButton.isEnabled = false
+            myItemButton.isEnabled = false
+            myPurchaseHistoryTableCell.isHidden = true
+            myItemTableViewCell.isHidden = true
         }
     }
        
