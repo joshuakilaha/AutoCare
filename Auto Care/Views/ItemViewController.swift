@@ -90,6 +90,7 @@ class ItemViewController: UIViewController {
     private func SetupItemUI () {
         
         if item != nil {
+            
             let ownerPhoneNumber = "0\(item.phoneNumber ?? "Phone")"
             self.title = item.itemName
             itemNameText.text = item.itemName
@@ -97,6 +98,12 @@ class ItemViewController: UIViewController {
             ItemPriceText.text = convertCurrency(item.price)
             sellerNameText.text = item.owner
             sellerPhoneNumber.text = ownerPhoneNumber
+            
+            //TO DO: Hide Seller and Phone Number Lable
+            if User.currentUser() == nil {
+                sellerNameText.isHidden = true
+                sellerPhoneNumber.isHidden = true
+            }
         }
     }
     

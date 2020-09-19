@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import InstantSearchClient
+import FirebaseAuth
 
 class Item {
     var id: String!
@@ -168,3 +169,38 @@ func searchAlgolia(searchString: String, completion: @escaping (_ itemArray: [St
 
 
 
+//Update Item
+func  saveItemLocally(ItemDictionary: NSDictionary) {
+    UserDefaults.standard.set(ItemDictionary, forKey: cUserForItemId)
+    UserDefaults.standard.synchronize()
+}
+
+func currentUserItemID() -> String {
+    return Auth.auth().currentUser!.uid
+}
+
+func currentItem() -> Item? {
+    if Auth.auth().currentUser != nil {
+        if let dictionary = UserDefaults.standard.object(forKey: cUserForItemId){
+            return Item.init(_dictionary: dictionary as! NSDictionary)
+        }
+    }
+    
+    return nil
+}
+
+func updateUserItemFromDatabase(withValues: [String: Any], completion: @escaping(_ error: Error?) -> Void){
+    
+    if let dictionary = UserDefaults.standard.object(forKey: cUserForItemId){
+        let userItem = (dictionary as! NSDictionary).mutableCopy() as! NSMutableDictionary
+        
+        userItem.setValuesForKeys(withValues)
+        FirebaseReference(.Items).document(User.currentID()).updateData(withValues) {
+            (error) in
+            completion(error)
+            if error == nil {
+                saveItemLocally(ItemDictionary: userItem)
+            }
+        }
+    }
+}
