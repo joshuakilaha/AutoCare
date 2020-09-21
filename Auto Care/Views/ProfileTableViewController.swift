@@ -72,6 +72,8 @@ class ProfileTableViewController: UITableViewController {
     
     private func checkOnBoadingStatus() {
         
+        //AdminView()
+        
         if User.currentUser() != nil {
             if User.currentUser()!.onBoard {
                 finishedRegistrationOutlet.setTitle("Account is Active", for: .normal)
@@ -84,11 +86,19 @@ class ProfileTableViewController: UITableViewController {
             }
             myPurchaseHistoryTableCell.isHidden = false
             myItemTableViewCell.isHidden = false
-            itemsInDBTableCell.isHidden = false
+            
+         //   itemsInDBTableCell.isHidden = false
             
             myItemButton.isEnabled = true
             purchaseHistoryButton.isEnabled = true
             itemsinDB.isEnabled = true
+            
+            
+            if User.currentID() != AdminId {
+                   itemsInDBTableCell.isHidden = true
+               } else {
+                   itemsInDBTableCell.isHidden = false
+               }
             
         }
         else {
@@ -143,5 +153,17 @@ class ProfileTableViewController: UITableViewController {
     
     private func goToEditProfile() {
         performSegue(withIdentifier: "profileToEditSeg", sender: self)
+    }
+    
+    
+    //MARK: ADMIN
+    
+    private func AdminView() {
+    
+        if User.currentID() != AdminId {
+            itemsInDBTableCell.isHidden = true
+        } else {
+            itemsInDBTableCell.isHidden = false
+        }
     }
 }
