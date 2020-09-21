@@ -53,7 +53,13 @@ class ItemViewController: UIViewController {
         print("item name: ",item.itemName!)
         
         // Do any additional setup after loading the view.
+        
     }
+    
+    
+    
+    
+    
     
     
     

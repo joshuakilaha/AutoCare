@@ -12,6 +12,7 @@
 		861A165624CEBF6100840F43 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861A165524CEBF6100840F43 /* SplashScreenViewController.swift */; };
 		866C0A7525156699008B5415 /* MyItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866C0A7425156699008B5415 /* MyItemsTableViewController.swift */; };
 		866C0A7825166535008B5415 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 866C0A7725166535008B5415 /* IQKeyboardManagerSwift */; };
+		866C0A7A251938E3008B5415 /* ItemsInDBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866C0A79251938E3008B5415 /* ItemsInDBTableViewController.swift */; };
 		8677E56624C423AA00CA95B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8677E56524C423AA00CA95B6 /* GoogleService-Info.plist */; };
 		AB164BDC2412E87D00AC7879 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB164BDB2412E87D00AC7879 /* EditProfileViewController.swift */; };
 		AB1D2A1423F9CDAA000DB741 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D2A1323F9CDAA000DB741 /* Item.swift */; };
@@ -74,6 +75,7 @@
 		8600AAA824D6BB1A002E63E5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		861A165524CEBF6100840F43 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		866C0A7425156699008B5415 /* MyItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyItemsTableViewController.swift; sourceTree = "<group>"; };
+		866C0A79251938E3008B5415 /* ItemsInDBTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsInDBTableViewController.swift; sourceTree = "<group>"; };
 		8677E56524C423AA00CA95B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A7BAA68158037ADF0BBECE96 /* Pods_Auto_Care.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Care.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB164BDB2412E87D00AC7879 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				861A165524CEBF6100840F43 /* SplashScreenViewController.swift */,
+				866C0A79251938E3008B5415 /* ItemsInDBTableViewController.swift */,
 				8600AAA824D6BB1A002E63E5 /* MenuViewController.swift */,
 				ABD6513224C34AA10079CA9E /* CardInfoViewController.swift */,
 				866C0A7425156699008B5415 /* MyItemsTableViewController.swift */,
@@ -415,6 +418,7 @@
 				8600AAA924D6BB1A002E63E5 /* MenuViewController.swift in Sources */,
 				AB5AC6FE23E4B682001C563E /* Category.swift in Sources */,
 				AB2DB64623E1C958007C7DAB /* CategoryCollectionViewCell.swift in Sources */,
+				866C0A7A251938E3008B5415 /* ItemsInDBTableViewController.swift in Sources */,
 				AB2DB64823E1CEA8007C7DAB /* AddBrandViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

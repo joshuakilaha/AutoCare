@@ -18,6 +18,7 @@ class ProfileTableViewController: UITableViewController {
        @IBOutlet weak var purchaseHistoryButton: UIButton!
        
     @IBOutlet weak var myItemButton: UIButton!
+    @IBOutlet weak var itemsinDB: UIButton!
     //MARK: VARS
       
     var editUIButtonItem: UIBarButtonItem!
@@ -25,7 +26,11 @@ class ProfileTableViewController: UITableViewController {
     
     @IBOutlet weak var myItemTableViewCell: UITableViewCell!
     
-    @IBOutlet weak var myPurchaseHistoryTableCell: UITableViewCell!
+    @IBOutlet weak var myPurchaseHistoryTableCell:
+    UITableViewCell!
+    
+    @IBOutlet weak var itemsInDBTableCell: UITableViewCell!
+  
     
        //Life Cycle
        override func viewDidLoad() {
@@ -52,7 +57,7 @@ class ProfileTableViewController: UITableViewController {
        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
           
            
-           return 4
+           return 5
        }
     
     //MARK: Table view Delegate
@@ -79,16 +84,22 @@ class ProfileTableViewController: UITableViewController {
             }
             myPurchaseHistoryTableCell.isHidden = false
             myItemTableViewCell.isHidden = false
+            itemsInDBTableCell.isHidden = false
+            
             myItemButton.isEnabled = true
             purchaseHistoryButton.isEnabled = true
+            itemsinDB.isEnabled = true
+            
         }
         else {
             finishedRegistrationOutlet.setTitle("logged Out", for: .normal)
             finishedRegistrationOutlet.isEnabled = false
             purchaseHistoryButton.isEnabled = false
             myItemButton.isEnabled = false
+            itemsinDB.isEnabled = false
             myPurchaseHistoryTableCell.isHidden = true
             myItemTableViewCell.isHidden = true
+            itemsInDBTableCell.isHidden = true
         }
     }
        

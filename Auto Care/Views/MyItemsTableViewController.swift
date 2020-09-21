@@ -8,10 +8,13 @@
 
 import UIKit
 import EmptyDataSet_Swift
+
 class MyItemsTableViewController: UITableViewController {
     
     
     var itemsArray: [Item] = []
+    var category: Category?
+      var brand: Brand?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,18 @@ class MyItemsTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         loadItems()
+    }
+    
+    
+    
+    private func showItemView(_ item: Item) {
+        
+        let itemVc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "itemView") as! ItemViewController
+        
+        itemVc.item = item
+        itemVc.brand = brand
+        itemVc.category = category
+        self.navigationController?.pushViewController(itemVc, animated: true)
     }
     
 
@@ -43,6 +58,14 @@ class MyItemsTableViewController: UITableViewController {
 
         return cell
     }
+    
+    
+     //MARK: Table view delegate
+     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         tableView.deselectRow(at: indexPath, animated: true)
+         showItemView(itemsArray[indexPath.row])
+     }
+     
     
     //MARK: Functions
     
