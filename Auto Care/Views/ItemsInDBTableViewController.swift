@@ -12,8 +12,10 @@ import EmptyDataSet_Swift
 class ItemsInDBTableViewController: UITableViewController {
     
     var itemsArray: [Item] = []
-       var category: Category?
-         var brand: Brand?
+    var category: Category?
+    var brand: Brand?
+    var item: Item?
+    var user: User?
 
        override func viewDidLoad() {
            super.viewDidLoad()
@@ -64,6 +66,25 @@ class ItemsInDBTableViewController: UITableViewController {
             tableView.deselectRow(at: indexPath, animated: true)
             showItemView(itemsArray[indexPath.row])
         }
+    
+    
+    //Deleting Item 
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+          
+          if editingStyle == .delete {
+              
+            
+            let itemToDelete = itemsArray[indexPath.row]
+            itemsArray.remove(at: indexPath.row)
+            tableView.reloadData()
+            
+            deleteItemFromDB(itemToDelete)
+            
+            
+            //FirebaseReference(.User).document(user?.userItems)
+          }
+      }
+    
         
        
        //MARK: Functions
@@ -77,16 +98,6 @@ class ItemsInDBTableViewController: UITableViewController {
                 }
     
         }
-       
-//       private func loadItems() {
-//
-//           downloadItemsWithIds(User.currentUser()!.userItems) { (allItems) in
-//
-//                  self.itemsArray = allItems
-//                  print("you have \(allItems.count) added to Auto Care")
-//                  self.tableView.reloadData()
-//              }
-//          }
 }
 
 extension ItemsInDBTableViewController: EmptyDataSetSource, EmptyDataSetDelegate {

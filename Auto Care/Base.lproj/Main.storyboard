@@ -1976,6 +1976,81 @@ You may not use data mining, robots, screen scraping, or similar data gathering 
             </objects>
             <point key="canvasLocation" x="2683" y="-1525"/>
         </scene>
+        <!--Edit Item View Controller-->
+        <scene sceneID="AMR-IA-YL6">
+            <objects>
+                <viewController storyboardIdentifier="editItemView" id="YoD-VX-ZO5" customClass="EditItemViewController" customModule="Auto_Care" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cxO-iV-fNp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="item Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oT5-9J-k4H">
+                                <rect key="frame" x="20" y="124" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IaU-Hz-SM5">
+                                <rect key="frame" x="20" y="238" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hSf-2K-OcN">
+                                <rect key="frame" x="20" y="352" width="374" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="sbH-cP-MQe"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKg-2o-0bd">
+                                <rect key="frame" x="319" y="59" width="55" height="30"/>
+                                <color key="backgroundColor" name="Primary Color Auto Care"/>
+                                <state key="normal" title="Update ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateButton:" destination="YoD-VX-ZO5" eventType="touchUpInside" id="IL5-la-9t6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="eOm-kB-gpT" firstAttribute="trailing" secondItem="hSf-2K-OcN" secondAttribute="trailing" constant="20" id="2ZJ-RG-D05"/>
+                            <constraint firstItem="oT5-9J-k4H" firstAttribute="top" secondItem="eOm-kB-gpT" secondAttribute="top" constant="80" id="A8i-G1-pQQ"/>
+                            <constraint firstItem="hSf-2K-OcN" firstAttribute="leading" secondItem="eOm-kB-gpT" secondAttribute="leading" constant="20" id="DDZ-4w-yDY"/>
+                            <constraint firstItem="oT5-9J-k4H" firstAttribute="leading" secondItem="eOm-kB-gpT" secondAttribute="leading" constant="20" id="I0P-N0-yD3"/>
+                            <constraint firstItem="QKg-2o-0bd" firstAttribute="top" secondItem="eOm-kB-gpT" secondAttribute="top" constant="15" id="Nzy-GG-XY8"/>
+                            <constraint firstItem="eOm-kB-gpT" firstAttribute="trailing" secondItem="oT5-9J-k4H" secondAttribute="trailing" constant="20" id="QNJ-Lg-VZo"/>
+                            <constraint firstItem="eOm-kB-gpT" firstAttribute="trailing" secondItem="QKg-2o-0bd" secondAttribute="trailing" constant="40" id="cPm-Ek-2vh"/>
+                            <constraint firstItem="eOm-kB-gpT" firstAttribute="trailing" secondItem="IaU-Hz-SM5" secondAttribute="trailing" constant="20" id="gGo-3Z-5aG"/>
+                            <constraint firstItem="IaU-Hz-SM5" firstAttribute="leading" secondItem="eOm-kB-gpT" secondAttribute="leading" constant="20" id="lmP-PE-feV"/>
+                            <constraint firstItem="hSf-2K-OcN" firstAttribute="top" secondItem="IaU-Hz-SM5" secondAttribute="bottom" constant="80" id="rVv-GD-juN"/>
+                            <constraint firstItem="IaU-Hz-SM5" firstAttribute="top" secondItem="oT5-9J-k4H" secondAttribute="bottom" constant="80" id="sif-fG-p8C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eOm-kB-gpT"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="YS0-pY-U58" appends="YES" id="qpG-Q5-OjC"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="ItemPriceTextFied" destination="IaU-Hz-SM5" id="FIE-Hx-U9S"/>
+                        <outlet property="itemDescription" destination="hSf-2K-OcN" id="pW0-fo-w7k"/>
+                        <outlet property="itemNameTextField" destination="oT5-9J-k4H" id="4O4-de-52Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pkr-ch-Hce" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="YS0-pY-U58">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="YoD-VX-ZO5" id="H4j-55-4Bc"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="7308.6956521739139" y="-121.20535714285714"/>
+        </scene>
     </scenes>
     <color key="tintColor" name="Primary Color Auto Care"/>
     <resources>

@@ -32,15 +32,28 @@ class MyItemsTableViewController: UITableViewController {
     
     
     
+//    private func showItemView(_ item: Item) {
+//
+//        let itemVc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "itemView") as! ItemViewController
+//
+//        itemVc.item = item
+//        itemVc.brand = brand
+//        itemVc.category = category
+//        self.navigationController?.pushViewController(itemVc, animated: true)
+//    }
+    
+    
+    
     private func showItemView(_ item: Item) {
-        
-        let itemVc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "itemView") as! ItemViewController
-        
-        itemVc.item = item
-        itemVc.brand = brand
-        itemVc.category = category
-        self.navigationController?.pushViewController(itemVc, animated: true)
-    }
+         
+         let itemVc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "editItemView") as! EditItemViewController
+         
+         itemVc.item = item
+         itemVc.brand = brand
+         itemVc.category = category
+         self.navigationController?.pushViewController(itemVc, animated: true)
+     }
+    
     
 
     // MARK: - Table view data source
