@@ -274,3 +274,21 @@ func updateCurrentUserFromDatabase(withValues: [String: Any], completion: @escap
 }
 
 
+//Gett Usets
+func downloadAllUsers(completion: @escaping(_ usersArrary: [User]) -> Void){
+    var usersArrary : [User] = []
+    
+    FirebaseReference(.User).getDocuments { (snapshot, error) in
+        guard let snapshot = snapshot else {
+            completion (usersArrary)
+            return
+        }
+        if !snapshot.isEmpty {
+            for userDictionary in snapshot.documents {
+                usersArrary.append(User(_dictionary: userDictionary.data() as NSDictionary))
+            }
+        }
+        completion(usersArrary)
+    }
+}
+
