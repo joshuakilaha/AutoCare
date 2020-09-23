@@ -19,6 +19,7 @@ class ProfileTableViewController: UITableViewController {
        
     @IBOutlet weak var myItemButton: UIButton!
     @IBOutlet weak var itemsinDB: UIButton!
+    @IBOutlet weak var userDatabaseButton: UIButton!
     //MARK: VARS
       
     var editUIButtonItem: UIBarButtonItem!
@@ -32,7 +33,9 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var itemsInDBTableCell: UITableViewCell!
   
     
-       //Life Cycle
+    @IBOutlet weak var databaseUsersTableCell: UITableViewCell!
+    
+    //Life Cycle
        override func viewDidLoad() {
            super.viewDidLoad()
 
@@ -92,6 +95,7 @@ class ProfileTableViewController: UITableViewController {
             myItemButton.isEnabled = true
             purchaseHistoryButton.isEnabled = true
             itemsinDB.isEnabled = true
+            userDatabaseButton.isEnabled = true
             
             
             if User.currentID() != AdminId {
@@ -107,9 +111,11 @@ class ProfileTableViewController: UITableViewController {
             purchaseHistoryButton.isEnabled = false
             myItemButton.isEnabled = false
             itemsinDB.isEnabled = false
+            userDatabaseButton.isEnabled = false
             myPurchaseHistoryTableCell.isHidden = true
             myItemTableViewCell.isHidden = true
             itemsInDBTableCell.isHidden = true
+            databaseUsersTableCell.isHidden = true
         }
     }
        
@@ -162,8 +168,10 @@ class ProfileTableViewController: UITableViewController {
     
         if User.currentID() != AdminId {
             itemsInDBTableCell.isHidden = true
+            databaseUsersTableCell.isHidden = true
         } else {
             itemsInDBTableCell.isHidden = false
+            databaseUsersTableCell.isHidden = false
         }
     }
 }

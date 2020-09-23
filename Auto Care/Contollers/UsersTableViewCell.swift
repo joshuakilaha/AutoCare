@@ -27,9 +27,12 @@ class UsersTableViewCell: UITableViewCell {
     }
     
     func generateUsersDetail(_ user: User){
+        
+         let phone = "0\(user.phoneNumber)"
+        
         userNameLable.text = user.fullName
         emailLable.text = user.email
-        phoneNumberLable.text = user.phoneNumber
+        phoneNumberLable.text = phone
     }
 
 }

@@ -17,6 +17,7 @@
 		8677E56624C423AA00CA95B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8677E56524C423AA00CA95B6 /* GoogleService-Info.plist */; };
 		8691F74C251B6F4E00F6AB9A /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8691F74B251B6F4E00F6AB9A /* UsersTableViewController.swift */; };
 		8691F74E251B732800F6AB9A /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8691F74D251B732800F6AB9A /* UsersTableViewCell.swift */; };
+		8691F750251B8C8100F6AB9A /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8691F74F251B8C8100F6AB9A /* UserDetailsViewController.swift */; };
 		AB164BDC2412E87D00AC7879 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB164BDB2412E87D00AC7879 /* EditProfileViewController.swift */; };
 		AB1D2A1423F9CDAA000DB741 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1D2A1323F9CDAA000DB741 /* Item.swift */; };
 		AB28EE7523F5C4560006C4E8 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB28EE7423F5C4560006C4E8 /* CartViewController.swift */; };
@@ -83,6 +84,7 @@
 		8677E56524C423AA00CA95B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8691F74B251B6F4E00F6AB9A /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		8691F74D251B732800F6AB9A /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
+		8691F74F251B8C8100F6AB9A /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		A7BAA68158037ADF0BBECE96 /* Pods_Auto_Care.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Auto_Care.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB164BDB2412E87D00AC7879 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		AB1D2A1323F9CDAA000DB741 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				861A165524CEBF6100840F43 /* SplashScreenViewController.swift */,
+				8691F74F251B8C8100F6AB9A /* UserDetailsViewController.swift */,
 				8691F74B251B6F4E00F6AB9A /* UsersTableViewController.swift */,
 				866C0A79251938E3008B5415 /* ItemsInDBTableViewController.swift */,
 				8600AAA824D6BB1A002E63E5 /* MenuViewController.swift */,
@@ -419,6 +422,7 @@
 				8691F74E251B732800F6AB9A /* UsersTableViewCell.swift in Sources */,
 				ABC9A91623EC48FB000D80FD /* ImageCollectionViewCell.swift in Sources */,
 				AB5AC70823E96DC9001C563E /* ItemTableViewCell.swift in Sources */,
+				8691F750251B8C8100F6AB9A /* UserDetailsViewController.swift in Sources */,
 				8691F74C251B6F4E00F6AB9A /* UsersTableViewController.swift in Sources */,
 				AB28EE7523F5C4560006C4E8 /* CartViewController.swift in Sources */,
 				AB5AC70623E94CDB001C563E /* ItemTableViewController.swift in Sources */,

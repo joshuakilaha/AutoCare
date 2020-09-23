@@ -57,12 +57,6 @@ class ItemViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
-    
-    
     @objc func backAction() {
         self.navigationController?.popViewController(animated: true)
     }

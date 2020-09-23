@@ -10,10 +10,21 @@ import UIKit
 
 class UserDetailsViewController: UIViewController {
 
+    
+    var user : User!
+
+    @IBOutlet weak var fullNameLable: UILabel!
+    @IBOutlet weak var firstNameLable: UILabel!
+    @IBOutlet weak var lastNameLable: UILabel!
+    @IBOutlet weak var userEmaillLable: UILabel!
+    @IBOutlet weak var mobileNumberLable: UILabel!
+    @IBOutlet weak var onBoardLable: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        showDetails()
     }
     
 
@@ -26,5 +37,20 @@ class UserDetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    private func showDetails() {
+        if user != nil {
+            let phone = "0\(user.phoneNumber)"
+            fullNameLable.text = user.fullName
+            firstNameLable.text = user.firstName
+            lastNameLable.text = user.lastName
+            userEmaillLable.text = user.email
+            mobileNumberLable.text = phone
+            onBoardLable.text = String(user.onBoard)
+        }
+    }
+    
+    
 
 }

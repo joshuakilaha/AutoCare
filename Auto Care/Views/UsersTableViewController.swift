@@ -12,6 +12,8 @@ class UsersTableViewController: UITableViewController {
     
     //MARK: Vars
     var userArrary: [User] = []
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,12 @@ class UsersTableViewController: UITableViewController {
         return cell
     }
     
+    
+    //MARK: Table view delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        showUserDetailView(userArrary[indexPath.row])
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -88,18 +96,29 @@ class UsersTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
     }
-    */
     
+    */
     
    // MARK: FUNCTIONS
     
+    //Load User Details
     private func loadUsers() {
         
         downloadAllUsers { (allUsers) in
             self.userArrary = allUsers
             self.tableView.reloadData()
         }
+    }
+    
+    
+    //To User Detail
+    private func showUserDetailView(_ user: User){
+        let userVc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "userDetails") as! UserDetailsViewController
+        
+        userVc.user = user
+        self.navigationController?.pushViewController(userVc, animated: true)
     }
 
 }
