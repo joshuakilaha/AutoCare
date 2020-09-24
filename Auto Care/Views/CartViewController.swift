@@ -1,11 +1,9 @@
-//
 //  CartViewController.swift
 //  Auto Care
 //
 //  Created by Kilz on 13/02/2020.
 //  Copyright © 2020 Kilz. All rights reserved.
 //
-
 import UIKit
 import JGProgressHUD
 import Stripe
@@ -291,62 +289,119 @@ class CartViewController: UIViewController {
      }
 
 
+    
+    struct serverResponse: Codable {
+        var loginResults: [loginResult]
+    }
+    
+    struct loginResult: Codable {
+        //var correctCredentials: Bool
+        var message: String
+    }
+    
+    struct credentialsFormat: Codable {
+        var phone: String
+        var price: Int
+    }
+
+    
  //MARK: Mpesa Payment
-func paywithMpesa() {
-    let myUrl = URL(string: MpesaAPI);
-                    
-        var request = URLRequest(url:myUrl!)
-                    
-        request.httpMethod = "POST"// Compose a query string
-    let currentUser = User.currentUser()!
     
-  self.totalPrice = 0
-    for item in allItems {
-        purchedItemsIds.append(item.id)
-        self.totalPrice += Int(item.price)
-    }
-    self.totalPrice = self.totalPrice * 1
-           print(currentUser.phoneNumber)
-    
-    let postString = "phone_number=\(currentUser.phoneNumber)&amount=\(totalPrice)"
-    
-      //  let postString = "phone_number=717746629&amount=1";
+    func paywithMpesa () {
+
+         let currentUser = User.currentUser()!
+          self.totalPrice = 0
+            for item in allItems {
+                purchedItemsIds.append(item.id)
+                self.totalPrice += Int(item.price)
+            }
+            self.totalPrice = self.totalPrice * 1
+                   print(currentUser.phoneNumber)
+        
+        
+        var request = URLRequest(url: URL(string: MpesaAPI)!)
+        request.httpMethod = "POST"
+        let postString = "phone_number=\(currentUser.phoneNumber)&amount=\(totalPrice)"
+
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print("error=\(error)")
+                return
+            }
+            
+            if let array = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [[String:Any]],
+            
+               let obj = array.first {
                 
-        request.httpBody = postString.data(using: String.Encoding.utf8);
+                 let id = obj[""] as? String
+                 //Set id to label on main thread
+                 DispatchQueue.main.async {
                     
-        let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-                        
-        if error != nil
-                {
-                    print("error=\(String(describing: error))")
-                        return
-                }
-                        
-                        // You can print out response object
-                       print("response = \(String(describing: response))")
-               
-                        //Let's convert response sent from a server side script to a NSDictionary object:
-                        do {
-                            let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
-                            
-                            if let parseJSON = json {
-                                
-                                // Now we can access value of First Name by its key
-                                let firstNameValue = parseJSON["firstName"] as? String
-                               print("firstNameValue: \(String(describing: firstNameValue))")
-                            }
-                        } catch {
-                            print(error)
-                        }
-                    }
-    task.resume()
-    
+                    print("ID:\(String(describing: id))")
+                    
+                 }
+            }
+        }
+        
+        self.showLoadingIndicator()
+        task.resume()
     }
+    
+    
+    
+//func paywithMpesa() {
+//    let myUrl = URL(string: MpesaAPI);
+//
+//    var request = URLRequest(url:myUrl!)
+//
+//    request.httpMethod = "POST"// Compose a query string
+//    let currentUser = User.currentUser()!
+//
+//  self.totalPrice = 0
+//    for item in allItems {
+//        purchedItemsIds.append(item.id)
+//        self.totalPrice += Int(item.price)
+//    }
+//    self.totalPrice = self.totalPrice * 1
+//           print(currentUser.phoneNumber)
+//
+//    guard let encoded = try? JSONEncoder().encode(credentialsFormat(phone: currentUser.phoneNumber, price: totalPrice)) else {
+//            print("Failed to encode data")
+//        return()
+//    }
+//
+//
+//    request.httpMethod = "POST"
+//    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//    request.httpBody = encoded
+//
+//
+//
+//        URLSession.shared.dataTask(with: request) { data, response, error in
+//            if let data = data {
+//                print(data)
+//                if let decodedResponse = try? JSONDecoder().decode(serverResponse.self, from: data) {
+//                    // we have good data – go back to the main thread
+//                    print(decodedResponse)
+//                    DispatchQueue.main.async {
+//                        // update our UI
+//                        print(decodedResponse.loginResults)
+//                    }
+//
+//                    // everything is good, so we can exit
+//                    return
+//                }
+//            }
+//            // if we're still here it means there was a problem
+//            print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+//        }.resume()
+//
+//    }
 }
 
 
 //MARK: EXTENSIONS
-
 extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allItems.count
@@ -415,3 +470,66 @@ extension CartViewController: CardInfoViewControllerDelaget {
     
     
 }
+
+
+
+
+  //  URLSession.shared.dataTask(with: request) { (responseData, response, error) in
+//        if let error = error {
+//            print("Error making PUT request: \(error.localizedDescription)")
+//            return
+//        }
+//
+//        if let responseCode = (response as? HTTPURLResponse)?.statusCode, let responseData = responseData {
+//            guard responseCode == 200 else {
+//                print("Invalid response code: \(responseCode)")
+//                return
+//            }
+//
+//
+//            if let responseJSONData = try? JSONSerialization.jsonObject(with: responseData, options: .allowFragments) {
+//                print("Response JSON data = \(responseJSONData)")
+//            }
+//        }
+//    }.resume()
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   // let postString = "phone_number=\(currentUser.phoneNumber)&amount=\(totalPrice)"
+    
+      //  let postString = "phone_number=717746629&amount=1";
+                
+       // request.httpBody = postString.data(using: String.Encoding.utf8);
+//
+//        let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+//
+//        if error != nil
+//                {
+//                    print("error=\(String(describing: error))")
+//                        return
+//                }
+//
+//                        // You can print out response object
+//                       print("response = \(String(describing: response))")
+//
+//                        //Let's convert response sent from a server side script to a NSDictionary object:
+//                        do {
+//                            let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+//
+//                            if let parseJSON = json {
+//
+//                                // Now we can access value of First Name by its key
+//                                let firstNameValue = parseJSON["firstName"] as? String
+//                               print("firstNameValue: \(String(describing: firstNameValue))")
+//                            }
+//
+//
+//                        } catch {
+//                            print(error)
+//                        }
+//
+//
+//                    }
+//    task.resume()
+    
+    ///

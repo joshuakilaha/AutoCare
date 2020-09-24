@@ -848,7 +848,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="imageCell" id="7D3-tr-u0d" customClass="ImageCollectionViewCell" customModule="Auto_Care" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="6" width="415" height="389"/>
+                                        <rect key="frame" x="0.0" y="5.5" width="415" height="389"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="07r-ZA-gWR">
                                             <rect key="frame" x="0.0" y="0.0" width="415" height="389"/>
@@ -1438,7 +1438,7 @@
             <objects>
                 <viewController id="pdO-OV-rFU" customClass="FinishRegistrationViewController" customModule="Auto_Care" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uKC-NH-bpv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Onboarding" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RA3-lB-ukV">
@@ -1817,7 +1817,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rR-gQ-zmx">
-                                            <rect key="frame" x="235" y="99.5" width="160" height="21"/>
+                                            <rect key="frame" x="198" y="99.5" width="160" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="160" id="VSF-2T-3LH"/>
                                             </constraints>
@@ -1828,10 +1828,10 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="1rR-gQ-zmx" firstAttribute="top" secondItem="mn7-dz-N02" secondAttribute="bottom" constant="15" id="1Yo-dN-POX"/>
-                                        <constraint firstItem="1rR-gQ-zmx" firstAttribute="trailing" secondItem="FhW-ca-WB1" secondAttribute="trailingMargin" constant="20" id="8S1-vZ-aly"/>
                                         <constraint firstItem="1UT-JG-CFE" firstAttribute="top" secondItem="FhW-ca-WB1" secondAttribute="topMargin" constant="5" id="GUh-Hr-jq7"/>
                                         <constraint firstItem="1UT-JG-CFE" firstAttribute="leading" secondItem="FhW-ca-WB1" secondAttribute="leadingMargin" constant="5" id="MnJ-ql-apZ"/>
                                         <constraint firstItem="mn7-dz-N02" firstAttribute="leading" secondItem="FhW-ca-WB1" secondAttribute="leadingMargin" constant="20" id="N9P-wf-xi5"/>
+                                        <constraint firstAttribute="trailing" secondItem="1rR-gQ-zmx" secondAttribute="trailing" constant="25" id="U5E-g8-ngI"/>
                                         <constraint firstItem="mn7-dz-N02" firstAttribute="top" secondItem="1UT-JG-CFE" secondAttribute="bottom" constant="15" id="kSx-e4-PNT"/>
                                     </constraints>
                                 </tableViewCellContentView>

@@ -79,14 +79,10 @@ class ItemsInDBTableViewController: UITableViewController {
             tableView.reloadData()
             
             deleteItemFromDB(itemToDelete)
-            
-            
-            //FirebaseReference(.User).document(user?.userItems)
-          }
+        }
       }
     
-        
-       
+    
        //MARK: Functions
     
     

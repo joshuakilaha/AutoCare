@@ -100,8 +100,10 @@ class ProfileTableViewController: UITableViewController {
             
             if User.currentID() != AdminId {
                    itemsInDBTableCell.isHidden = true
+                 databaseUsersTableCell.isHidden = true
                } else {
                    itemsInDBTableCell.isHidden = false
+                  databaseUsersTableCell.isHidden = false
                }
             
         }

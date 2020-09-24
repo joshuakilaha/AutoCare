@@ -80,6 +80,20 @@ class MyItemsTableViewController: UITableViewController {
      }
      
     
+    //Deleting Item
+     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+           
+           if editingStyle == .delete {
+               
+             
+             let itemToDelete = itemsArray[indexPath.row]
+             itemsArray.remove(at: indexPath.row)
+             tableView.reloadData()
+             
+             deleteItemFromDB(itemToDelete)
+         }
+       }
+    
     //MARK: Functions
     
     private func loadItems() {
