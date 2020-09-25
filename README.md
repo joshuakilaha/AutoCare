@@ -27,3 +27,6 @@ Payment of item from the cart view by using either Mpesa or Visa Card
 
 Once the payment is successful the cart will be emptied and the item added to purchase history. 
 ![IMG_0144](https://user-images.githubusercontent.com/33428918/94312628-e96a1c00-ff85-11ea-93c7-c9f374a05d1a.jpg)
+
+Application Logo
+![Auto Care](https://user-images.githubusercontent.com/33428918/90966903-df658100-e4e0-11ea-9f21-983d9dafcc37.png)
