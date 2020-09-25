@@ -4,22 +4,26 @@ An E-commerce application similar to amazon or jiji where a user is able to purc
 
 The application is built using swift language and firebase as the main backend.
 
-![Auto Care](https://user-images.githubusercontent.com/33428918/90966903-df658100-e4e0-11ea-9f21-983d9dafcc37.png)
-
-![IMG_0039](https://user-images.githubusercontent.com/33428918/90966906-e4c2cb80-e4e0-11ea-8ba6-c93554b5289c.jpg)
-
-![IMG_0089](https://user-images.githubusercontent.com/33428918/90966907-e8eee900-e4e0-11ea-9d41-621314450fe8.jpg)
-
-![IMG_0091](https://user-images.githubusercontent.com/33428918/90966908-ec827000-e4e0-11ea-830b-ccda85bf7509.jpg)
-
-![IMG_0083](https://user-images.githubusercontent.com/33428918/90966921-f99f5f00-e4e0-11ea-962b-dd5dadefa839.PNG)
-
-![IMG_0088](https://user-images.githubusercontent.com/33428918/90967036-49caf100-e4e2-11ea-9f89-a6adbe02bbf7.jpg)
-
-![IMG_0096](https://user-images.githubusercontent.com/33428918/90966911-eee4ca00-e4e0-11ea-95c9-c48751ad799e.jpg)
-
-![IMG_0097](https://user-images.githubusercontent.com/33428918/90966918-f1dfba80-e4e0-11ea-9049-c1fb02009aef.jpg)
-
-![IMG_0022](https://user-images.githubusercontent.com/33428918/90966981-78949780-e4e1-11ea-93f1-63d7691c569c.PNG)
 
 
+
+Splash Screen, login and user profile views of the application
+![IMG_0134](https://user-images.githubusercontent.com/33428918/94312653-f129c080-ff85-11ea-9cdd-ed630844a360.jpg)
+
+User Registration and verification of email
+![IMG_0136](https://user-images.githubusercontent.com/33428918/94312651-f0912a00-ff85-11ea-89bf-26096a5962d1.jpg)
+
+Finishing user registration by adding name, age, postal address and phone number. 
+![IMG_0139](https://user-images.githubusercontent.com/33428918/94312650-eff89380-ff85-11ea-8a1e-3a4bc68c3944.jpg)
+
+Overall layout of the application from the Brand view to category and items.
+![IMG_0140](https://user-images.githubusercontent.com/33428918/94312647-ef5ffd00-ff85-11ea-8078-92d525d2d774.jpg)
+
+Item selection and adding it to cart
+![IMG_0141](https://user-images.githubusercontent.com/33428918/94312645-ee2ed000-ff85-11ea-9633-e68d68bf479c.jpg)
+
+Payment of item from the cart view by using either Mpesa or Visa Card
+![IMG_0142](https://user-images.githubusercontent.com/33428918/94312641-ed963980-ff85-11ea-8f4d-0082e246d637.jpg)
+
+Once the payment is successful the cart will be emptied and the item added to purchase history. 
+![IMG_0144](https://user-images.githubusercontent.com/33428918/94312628-e96a1c00-ff85-11ea-93c7-c9f374a05d1a.jpg)
