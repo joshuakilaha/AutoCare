@@ -93,6 +93,26 @@ class CategoryCollectionViewController: UICollectionViewController {
     }
 
     
+//    //toAddCategory
+//    private func toAddCategory() {
+//        if User.currentUser() == nil {
+//            hideAddButton()
+//        } else {
+//            Admin()
+//        }
+//    }
+//
+    
+//    //hideAddButton
+//    private func hideAddButton(){
+//
+//        self.navigationController!.navigationItem.rightBarButtonItem = nil;
+//
+//        self.navigationController?.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
+//    }
+    
+    
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation

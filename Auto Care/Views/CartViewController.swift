@@ -288,7 +288,6 @@ class CartViewController: UIViewController {
          present(alertController, animated: true, completion: nil)
      }
 
-
     
     struct serverResponse: Codable {
         var loginResults: [loginResult]
@@ -321,7 +320,8 @@ class CartViewController: UIViewController {
         
         var request = URLRequest(url: URL(string: MpesaAPI)!)
         request.httpMethod = "POST"
-        let postString = "phone_number=\(currentUser.phoneNumber)&amount=\(totalPrice)"
+        //let postString = "phone_number=\(currentUser.phoneNumber)&amount=\(totalPrice)"
+        let postString = "phone=\(currentUser.phoneNumber)&amount=\(totalPrice)"
 
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in

@@ -56,6 +56,8 @@
 		ABD6513324C34AA10079CA9E /* CardInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD6513224C34AA10079CA9E /* CardInfoViewController.swift */; };
 		ABE19F7824118ECC00CAB691 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE19F7724118ECC00CAB691 /* ProfileTableViewController.swift */; };
 		ABE19F7D2411A5DC00CAB691 /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE19F7C2411A5DC00CAB691 /* FinishRegistrationViewController.swift */; };
+		C83851EA25BDDFCB001053B0 /* Pods-Auto Care.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 71886C248A2FDADAF3823A61 /* Pods-Auto Care.debug.xcconfig */; };
+		C83851EB25BDDFCE001053B0 /* Pods-Auto Care.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2467D4B278FB0551E235C1A9 /* Pods-Auto Care.release.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -338,11 +340,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C83851EA25BDDFCB001053B0 /* Pods-Auto Care.debug.xcconfig in Resources */,
 				AB2DB61F23E079E4007C7DAB /* LaunchScreen.storyboard in Resources */,
 				8677E56624C423AA00CA95B6 /* GoogleService-Info.plist in Resources */,
 				AB2DB61C23E079E4007C7DAB /* Assets.xcassets in Resources */,
 				8600AAA724D2D2B8002E63E5 /* Creditcard.json in Resources */,
 				AB2DB61A23E079E1007C7DAB /* Main.storyboard in Resources */,
+				C83851EB25BDDFCE001053B0 /* Pods-Auto Care.release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

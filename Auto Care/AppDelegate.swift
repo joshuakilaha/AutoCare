@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: PAYPAL init
     
     func initializeStripe()  {
-        STPAPIClient.shared().publishableKey = Constants.publishableKey
+        STPAPIClient.shared.publishableKey = Constants.publishableKey
         StripeClient.sharedClient.baseURLString = Constants.baseURLString
     }
 }

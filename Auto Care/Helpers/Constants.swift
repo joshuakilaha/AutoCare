@@ -68,7 +68,9 @@ public let cUserItems = "UserItemIds"
 
 //MPESA API
 
-public let MpesaAPI = "https://project-daudi.000webhostapp.com/ladies_group/lipa_online.php"
+//public let MpesaAPI = "https://project-daudi.000webhostapp.com/ladies_group/lipa_online.php"
+
+public let MpesaAPI = "https://47b59ffec79c.ngrok.io/api/mpesa/stk/push"
 
 
 //Admin

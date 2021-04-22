@@ -72,11 +72,11 @@ class CardInfoViewController: UIViewController {
     private func processCard() {
         let cardParams = STPCardParams()
         cardParams.number = paymentCardTextfield.cardNumber
-        cardParams.expMonth = paymentCardTextfield.expirationMonth
-        cardParams.expYear = paymentCardTextfield.expirationYear
+        cardParams.expMonth = UInt(paymentCardTextfield.expirationMonth)
+        cardParams.expYear = UInt(paymentCardTextfield.expirationYear)
         cardParams.cvc = paymentCardTextfield.cvc
         
-        STPAPIClient.shared().createToken(withCard: cardParams) { (token, error) in
+        STPAPIClient.shared.createToken(withCard: cardParams) { (token, error) in
             if error == nil {
                
                 self.delegate?.didClickDone(token!)
