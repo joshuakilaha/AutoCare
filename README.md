@@ -5,7 +5,10 @@ An E-commerce application similar to amazon or jiji where a user is able to purc
 The application is built using swift language and firebase as the main backend.
 
 
-
+### Application Logo
+<p float="center">
+<img src ="https://user-images.githubusercontent.com/33428918/90966903-df658100-e4e0-11ea-9f21-983d9dafcc37.png" width="150" height="150" />
+ </p>
 
 ### Splash Screen, login and user profile views of the application
 ![IMG_0134](https://user-images.githubusercontent.com/33428918/94312653-f129c080-ff85-11ea-9cdd-ed630844a360.jpg)
@@ -27,7 +30,7 @@ Home, Categories & Items.
 ![IMG_0142](https://user-images.githubusercontent.com/33428918/94312641-ed963980-ff85-11ea-8f4d-0082e246d637.jpg)
 
 ### Payment status and history. 
-![IMG_0144](https://user-images.githubusercontent.com/33428918/94312628-e96a1c00-ff85-11ea-93c7-c9f374a05d1a.jpg)
 
-### Application Logo
-![Auto Care](https://user-images.githubusercontent.com/33428918/90966903-df658100-e4e0-11ea-9f21-983d9dafcc37.png)
+<p float="center">
+<img src ="https://user-images.githubusercontent.com/33428918/94312628-e96a1c00-ff85-11ea-93c7-c9f374a05d1a.jpg" width="600" height="450" />
+ </p>
