@@ -5,7 +5,7 @@ An E-commerce application similar to amazon and ebay where a user is able to pur
 The application is built using swift UIKit, firebase as the main backend javascript to handle payments for both Credit Card and Mpesa.
 
 
-### Application Logo
+### Logo
 <p float="center">
 <img src ="https://user-images.githubusercontent.com/33428918/90966903-df658100-e4e0-11ea-9f21-983d9dafcc37.png" width="150" height="150" />
  </p>
@@ -33,4 +33,4 @@ Home, Categories & Items.
 
 <p float="center">
 <img src ="https://user-images.githubusercontent.com/33428918/94312628-e96a1c00-ff85-11ea-93c7-c9f374a05d1a.jpg" width="600" height="450" />
- </p>
+</p>
