@@ -1,8 +1,8 @@
 # AutoCare App
 
-An E-commerce application similar to amazon or jiji where a user is able to purchase and sell an item online. 
+An E-commerce application similar to amazon and ebay where a user is able to purchase and sell an item online. 
 
-The application is built using swift language and firebase as the main backend.
+The application is built using swift UIKit, firebase as the main backend javascript to handle payments for both Credit Card and Mpesa.
 
 
 ### Application Logo
